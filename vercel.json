@@ -3,6 +3,12 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/assets/images/:path*",
+      "destination": "https://raw.githubusercontent.com/Sean10000/LaunchManager/main/assets/:path*"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
