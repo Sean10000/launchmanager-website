@@ -3,10 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LaunchManager — Free macOS launchd Manager</title>
-  <meta name="description" content="A native macOS app to browse, create, edit, and control LaunchAgents and LaunchDaemons — free and open source under MIT." />
-  <meta property="og:title" content="LaunchManager" />
-  <meta property="og:description" content="Manage launchd LaunchAgents and LaunchDaemons from a clean native UI." />
+  <title>LaunchManager — Free macOS Task Scheduler &amp; launchd Manager</title>
+  <meta name="description" content="Free, open-source macOS task scheduler for launchd. Schedule scripts, backups, and background jobs with a native GUI — a free alternative to LaunchControl, Lingon Pro, and LaunchD Task Scheduler." />
+  <meta name="keywords" content="macOS task scheduler, launchd manager, macOS cron alternative, schedule scripts macOS, LaunchControl alternative, Lingon alternative, LaunchAgents, LaunchDaemons, macOS automation" />
+  <meta property="og:title" content="LaunchManager — macOS Task Scheduler" />
+  <meta property="og:description" content="Schedule and manage macOS background jobs with launchd — free, native, and open source." />
+  <meta property="og:type" content="website" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LaunchManager",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "macOS 14+",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "A free, open-source macOS task scheduler and launchd manager for LaunchAgents and LaunchDaemons.",
+    "downloadUrl": "https://github.com/Sean10000/LaunchManager/releases/latest",
+    "license": "https://opensource.org/licenses/MIT",
+    "author": { "@type": "Person", "name": "Sean10000" }
+  }
+  </script>
   <meta property="og:image" content="/assets/images/homepage-en.png" />
   <meta property="og:url" content="https://launchmanager.dev" />
   <meta name="theme-color" content="#0a0a0c" />
@@ -469,6 +485,142 @@
       padding: 0.25rem;
     }
 
+    .prose-block {
+      max-width: 42rem;
+      margin: 0 auto 2rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .prose-block p + p { margin-top: 1rem; }
+
+    .prose-block strong { color: var(--text); font-weight: 600; }
+
+    .schedule-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .schedule-type {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+
+    .schedule-type h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .schedule-type p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .schedule-type code {
+      font-size: 0.78rem;
+      color: var(--accent);
+    }
+
+    .use-cases {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .use-case {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+
+    .use-case h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .use-case p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .replace-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .replace-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .replace-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+    }
+
+    .replace-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .replace-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .replace-card .savings {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .faq-list {
+      max-width: 44rem;
+      margin: 0 auto;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.25rem;
+    }
+
+    .faq-item h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .faq-item p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .section-alt {
+      background: linear-gradient(180deg, rgba(10, 132, 255, 0.04), transparent);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
     @media (max-width: 720px) {
       .nav-links { display: none; }
       .nav-links.open {
@@ -497,10 +649,11 @@
       </a>
       <button class="menu-toggle" type="button" aria-label="Menu" id="menu-toggle">☰</button>
       <ul class="nav-links" id="nav-links">
+        <li><a href="#scheduling">Scheduling</a></li>
         <li><a href="#features">Features</a></li>
-        <li><a href="#screenshots">Screenshots</a></li>
         <li><a href="#install">Install</a></li>
         <li><a href="#compare">Compare</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
       <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener">Download</a>
@@ -515,9 +668,9 @@
         <span class="badge mit">MIT License</span>
         <span class="badge">Open Source</span>
       </div>
-      <h1>Manage launchd<br />without the XML headache</h1>
+      <h1>Schedule macOS tasks<br />without the XML headache</h1>
       <p class="lead">
-        A native macOS app for LaunchAgents and LaunchDaemons — browse, create, edit, and control scheduled tasks from a clean SwiftUI interface.
+        A native macOS task scheduler for LaunchAgents and LaunchDaemons — create cron-like jobs, run scripts on intervals, and manage background tasks from a clean SwiftUI interface. Free, open source, and built on Apple's launchd.
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary btn-lg" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener">
@@ -538,20 +691,122 @@
       </div>
     </section>
 
+    <section id="scheduling" class="section-alt">
+      <div class="container">
+        <h2>macOS task scheduling, done right</h2>
+        <p class="section-desc">Every Mac already has a built-in scheduler called <strong>launchd</strong>. LaunchManager gives you a visual interface to it — no XML files, no terminal commands, no paid subscription.</p>
+
+        <div class="prose-block">
+          <p>
+            On macOS, <strong>launchd</strong> is the system service that runs scheduled tasks, keeps background processes alive, and starts programs at login or boot. Tools like <strong>LaunchControl</strong>, <strong>Lingon Pro</strong>, and <strong>LaunchD Task Scheduler</strong> are paid front-ends to the same underlying technology. LaunchManager does the same job — browse, create, edit, load, and monitor launchd jobs — but it is <strong>free, open source (MIT)</strong>, and does not require the app to stay running in the background.
+          </p>
+          <p>
+            Whether you are migrating from <code>crontab</code>, replacing a $30 scheduler app, or setting up your first automated backup script, LaunchManager lets you define schedules through a guided form instead of hand-editing plist XML.
+          </p>
+        </div>
+
+        <h2 style="font-size: 1.35rem; margin-bottom: 1.25rem;">Schedule types launchd supports</h2>
+        <div class="schedule-types">
+          <article class="schedule-type">
+            <h3>⏱ Interval scheduling</h3>
+            <p>Run a script or program every N seconds — ideal for health checks, log rotation, or periodic syncs. Equivalent to a simple cron <code>*/5 * * * *</code> job, managed visually.</p>
+          </article>
+          <article class="schedule-type">
+            <h3>📅 Calendar scheduling</h3>
+            <p>Run at specific times: daily at 3:00 AM, weekdays at 9:00 AM, or on the 1st of each month. launchd's <code>StartCalendarInterval</code> covers most cron use cases natively on macOS.</p>
+          </article>
+          <article class="schedule-type">
+            <h3>🚀 Run at load / login</h3>
+            <p>Start a job when you log in or when the system boots. Perfect for auto-starting dev servers, VPN helpers, or menu-bar utilities without adding Login Items manually.</p>
+          </article>
+          <article class="schedule-type">
+            <h3>🔄 Keep alive</h3>
+            <p>Automatically restart a process if it exits or crashes. Useful for local APIs, file watchers, and long-running workers that must stay up 24/7.</p>
+          </article>
+          <article class="schedule-type">
+            <h3>📁 Watch paths</h3>
+            <p>Trigger a script when files or folders change. Handy for rebuilding assets, processing uploads, or reacting to config changes without a polling loop.</p>
+          </article>
+          <article class="schedule-type">
+            <h3>👤 User, system agent &amp; daemon</h3>
+            <p>Schedule jobs at the right privilege level: per-user agents, system-wide agents, or headless daemons that run without anyone logged in.</p>
+          </article>
+        </div>
+
+        <h2 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Common scheduling use cases</h2>
+        <p class="section-desc">Real tasks macOS users schedule with launchd every day.</p>
+        <div class="use-cases">
+          <article class="use-case">
+            <h3>Nightly backups</h3>
+            <p>Run <code>rsync</code>, <code>restic</code>, or custom shell scripts on a calendar schedule while you sleep.</p>
+          </article>
+          <article class="use-case">
+            <h3>Dev environment automation</h3>
+            <p>Auto-start Docker, databases, or local web servers at login so your stack is ready when you open the IDE.</p>
+          </article>
+          <article class="use-case">
+            <h3>Cleanup &amp; maintenance</h3>
+            <p>Purge caches, rotate logs, empty Trash folders, or prune old build artifacts on a fixed interval.</p>
+          </article>
+          <article class="use-case">
+            <h3>Data sync &amp; ETL</h3>
+            <p>Pull reports from APIs, sync cloud storage, or run Python/Node data pipelines on a timetable.</p>
+          </article>
+          <article class="use-case">
+            <h3>Health monitoring</h3>
+            <p>Ping services, check disk space, or send alerts when a local process stops responding.</p>
+          </article>
+          <article class="use-case">
+            <h3>Replace crontab</h3>
+            <p>Apple recommends launchd over cron on modern macOS. LaunchManager makes the migration straightforward with a GUI.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="replace">
+      <div class="container">
+        <h2>Replace paid macOS schedulers</h2>
+        <p class="section-desc">LaunchManager covers the everyday scheduling workflow that paid apps charge for — because launchd itself is free and built into macOS.</p>
+        <div class="replace-grid">
+          <article class="replace-card">
+            <h3>vs. LaunchControl (~$33)</h3>
+            <p>LaunchControl is the most feature-rich paid option, with an AI assistant and expert XML editor. For standard job creation, scheduling, load/unload, and log viewing, LaunchManager matches the essentials at zero cost.</p>
+            <span class="savings">Save ~$33 · MIT open source</span>
+          </article>
+          <article class="replace-card">
+            <h3>vs. Lingon Pro ($23.99)</h3>
+            <p>Lingon Pro requires the app to stay running for some operations and is closed source. LaunchManager talks directly to launchd — close the app and your scheduled jobs keep running independently.</p>
+            <span class="savings">Save $23.99 · No background app required</span>
+          </article>
+          <article class="replace-card">
+            <h3>vs. LaunchD Task Scheduler ($5)</h3>
+            <p>A lightweight App Store scheduler with limited system daemon support and no invalid-plist recovery. LaunchManager offers full scope coverage, inline error handling, and system log access — still free.</p>
+            <span class="savings">Save $5 · Full agent &amp; daemon support</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="features">
       <div class="container">
-        <h2>Everything you need for launchd</h2>
+        <h2>Everything you need for launchd scheduling</h2>
         <p class="section-desc">Free, native, and built for everyday macOS power users — no subscription, no background daemon required.</p>
         <div class="features">
           <article class="feature-card">
+            <div class="feature-icon">⏰</div>
+            <h3>Visual schedule editor</h3>
+            <p>Set intervals, calendar triggers, run-at-load, and keep-alive options through a form — no plist XML required.</p>
+          </article>
+          <article class="feature-card">
             <div class="feature-icon">📂</div>
             <h3>Browse all scopes</h3>
-            <p>User Agents, System Agents, and System Daemons in one sidebar — see everything launchd knows about.</p>
+            <p>User Agents, System Agents, and System Daemons in one sidebar — see every scheduled job launchd knows about.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">✏️</div>
             <h3>Create &amp; edit jobs</h3>
-            <p>Form-based plist editing. No manual XML unless you want to dive into the terminal yourself.</p>
+            <p>Form-based plist editing for programs, arguments, working directories, environment variables, and schedule keys.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">▶️</div>
@@ -675,6 +930,27 @@ open LaunchManager.xcodeproj</code></pre>
                 <td class="yes">✓</td>
               </tr>
               <tr>
+                <td>Interval &amp; calendar scheduling</td>
+                <td class="col-highlight yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="yes">✓</td>
+              </tr>
+              <tr>
+                <td>Run at load / keep alive</td>
+                <td class="col-highlight yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="warn">Limited</td>
+              </tr>
+              <tr>
+                <td>System Agent / Daemon support</td>
+                <td class="col-highlight yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="yes">✓ (Pro)</td>
+                <td class="warn">Limited</td>
+              </tr>
+              <tr>
                 <td>Log viewer</td>
                 <td class="col-highlight">File + system log</td>
                 <td>Advanced</td>
@@ -716,6 +992,39 @@ open LaunchManager.xcodeproj</code></pre>
           Power users needing an AI assistant or expert XML editor may prefer
           <a href="https://www.soma-zone.com/LaunchControl/" target="_blank" rel="noopener">LaunchControl</a>.
         </p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2>Frequently asked questions</h2>
+        <p class="section-desc">Common questions about macOS task scheduling with LaunchManager.</p>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3>What is launchd and why use it instead of cron?</h3>
+            <p>launchd is Apple's native service manager on macOS. It handles scheduling, process supervision, and resource limits in one system. Apple has deprecated cron in favor of launchd on modern macOS — jobs created with LaunchManager use the supported, first-class API.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Can LaunchManager replace LaunchControl or Lingon?</h3>
+            <p>Yes, for everyday scheduling: creating jobs, setting intervals or calendar triggers, loading/unloading, and viewing logs. If you need an AI assistant or raw XML expert editor, LaunchControl still leads there. For most users who just want reliable scheduled tasks, LaunchManager is a capable free replacement.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Do scheduled jobs keep running after I quit LaunchManager?</h3>
+            <p>Yes. Once a job is loaded into launchd, macOS runs it on schedule independently. LaunchManager is only the configuration tool — it does not need to stay open, unlike some paid schedulers.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Can I schedule shell scripts and Python programs?</h3>
+            <p>Absolutely. Point a job at any executable — shell scripts, Python, Node.js, compiled binaries, or AppleScript wrappers. Set the program path, optional arguments, working directory, and environment variables in the create/edit form.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Is LaunchManager safe and open source?</h3>
+            <p>LaunchManager is MIT licensed. You can read every line of Swift source on GitHub, build it yourself in Xcode, and verify exactly what it does. It uses standard macOS APIs (<code>launchctl</code>) and prompts for admin credentials only when system-level operations require it.</p>
+          </article>
+          <article class="faq-item">
+            <h3>What macOS version do I need?</h3>
+            <p>macOS 14 Sonoma or later. Install via Homebrew (<code>brew install --cask launchmanager</code>), download the DMG from GitHub Releases, or build from source with Xcode 16.</p>
+          </article>
+        </div>
       </div>
     </section>
 
