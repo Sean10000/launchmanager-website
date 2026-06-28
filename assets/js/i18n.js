@@ -22,7 +22,7 @@
       "hero.title": "Manage launchd jobs<br />on your Mac",
       "hero.lead":
         "LaunchManager is a native macOS app to browse, create, edit, and control LaunchAgents and LaunchDaemons — without editing XML by hand.",
-      "hero.cta.download": "Download v1.3.0",
+      "hero.cta.download": "Download",
       "hero.cta.github": "View on GitHub",
       "hero.value":
         "launchd runs the background jobs on every Mac. LaunchManager gives you a clean UI to see what is loaded, fix broken plists, and control jobs with load, start, and stop — free and open source.",
@@ -162,7 +162,7 @@
       "hero.title": "在 Mac 上管理<br />launchd 任务",
       "hero.lead":
         "LaunchManager 是一款原生 macOS 应用，用于浏览、创建、编辑和控制 LaunchAgents 与 LaunchDaemons——无需手写 XML。",
-      "hero.cta.download": "下载 v1.3.0",
+      "hero.cta.download": "下载",
       "hero.cta.github": "在 GitHub 查看",
       "hero.value":
         "launchd 负责 Mac 上所有后台任务。LaunchManager 提供清晰界面，查看已加载任务、修复损坏的 plist，并通过加载、启动、停止进行操作——免费开源。",
@@ -306,7 +306,37 @@
     if (metaDesc && desc) metaDesc.setAttribute("content", desc);
 
     localStorage.setItem(STORAGE_KEY, lang);
+    applyReleaseLabels(lang);
     document.dispatchEvent(new CustomEvent("langchange", { detail: { lang } }));
+  }
+
+  let latestTag = null;
+
+  function applyReleaseLabels(lang) {
+    const dict = i18n[lang || localStorage.getItem(STORAGE_KEY) || detectLang()];
+    const base = dict?.["hero.cta.download"];
+    if (!base) return;
+    const text = latestTag ? `${base} ${latestTag}` : base;
+    document.querySelectorAll("[data-release-download]").forEach((el) => {
+      el.textContent = text;
+    });
+  }
+
+  async function fetchLatestRelease() {
+    try {
+      const res = await fetch(
+        "https://api.github.com/repos/Sean10000/LaunchManager/releases/latest",
+        { headers: { Accept: "application/vnd.github+json" } }
+      );
+      if (!res.ok) return;
+      const data = await res.json();
+      if (data.tag_name) {
+        latestTag = data.tag_name;
+        applyReleaseLabels();
+      }
+    } catch (_) {
+      /* keep generic Download label */
+    }
   }
 
   function toggleLang() {
@@ -316,6 +346,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     applyLang(detectLang());
+    fetchLatestRelease();
     document.getElementById("lang-toggle")?.addEventListener("click", toggleLang);
   });
 
