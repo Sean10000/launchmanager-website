@@ -3,28 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LaunchManager — Free macOS Task Scheduler &amp; launchd Manager</title>
-  <meta name="description" content="Free, open-source macOS task scheduler for launchd. Schedule scripts, backups, and background jobs with a native GUI — a free alternative to LaunchControl, Lingon Pro, and LaunchD Task Scheduler." />
-  <meta name="keywords" content="macOS task scheduler, launchd manager, macOS cron alternative, schedule scripts macOS, LaunchControl alternative, Lingon alternative, LaunchAgents, LaunchDaemons, macOS automation" />
-  <meta property="og:title" content="LaunchManager — macOS Task Scheduler" />
-  <meta property="og:description" content="Schedule and manage macOS background jobs with launchd — free, native, and open source." />
+  <title>LaunchManager — Free macOS launchd Manager</title>
+  <meta name="description" content="Native macOS app to browse, create, edit, and control LaunchAgents and LaunchDaemons. Free, open source, MIT." />
+  <meta property="og:title" content="LaunchManager — macOS launchd Manager" />
+  <meta property="og:description" content="Browse, create, edit, and control LaunchAgents and LaunchDaemons from a native macOS UI." />
   <meta property="og:type" content="website" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "LaunchManager",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "macOS 14+",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "A free, open-source macOS task scheduler and launchd manager for LaunchAgents and LaunchDaemons.",
-    "downloadUrl": "https://github.com/Sean10000/LaunchManager/releases/latest",
-    "license": "https://opensource.org/licenses/MIT",
-    "author": { "@type": "Person", "name": "Sean10000" }
-  }
-  </script>
   <meta property="og:image" content="/assets/images/homepage-en.png" />
-  <meta property="og:url" content="https://launchmanager.dev" />
+  <meta property="og:url" content="https://launchmanager.seanhub.top/" />
   <meta name="theme-color" content="#0a0a0c" />
   <link rel="canonical" href="https://launchmanager.seanhub.top/" />
   <link rel="icon" href="/assets/images/logo.png" />
@@ -102,10 +87,16 @@
 
     .brand img { width: 28px; height: 28px; border-radius: 6px; }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.25rem;
       list-style: none;
     }
 
@@ -118,7 +109,24 @@
 
     .nav-links a:hover { color: var(--text); }
 
-  .btn {
+    .lang-toggle {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.65rem;
+      border-radius: 980px;
+      cursor: pointer;
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .lang-toggle:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -135,10 +143,7 @@
 
     .btn:active { transform: scale(0.97); }
 
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-    }
+    .btn-primary { background: var(--accent); color: #fff; }
 
     .btn-primary:hover {
       background: var(--accent-hover);
@@ -167,7 +172,7 @@
     }
 
     .hero {
-      padding: 4.5rem 0 3rem;
+      padding: 4.5rem 0 2.5rem;
       text-align: center;
     }
 
@@ -203,7 +208,15 @@
       font-size: clamp(1.05rem, 2vw, 1.25rem);
       color: var(--text-muted);
       max-width: 36rem;
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero-value {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 40rem;
       margin: 0 auto 2rem;
+      line-height: 1.7;
     }
 
     .hero-cta {
@@ -219,17 +232,11 @@
       border-radius: var(--radius-lg);
       overflow: hidden;
       border: 1px solid var(--border);
-      box-shadow:
-        0 0 0 1px rgba(255, 255, 255, 0.04),
-        0 24px 80px rgba(0, 0, 0, 0.55);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 24px 80px rgba(0, 0, 0, 0.55);
       background: var(--bg-elevated);
     }
 
-    .hero-shot img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+    .hero-shot img { display: block; width: 100%; height: auto; }
 
     .hero-shot::after {
       content: "";
@@ -239,7 +246,7 @@
       pointer-events: none;
     }
 
-    section { padding: 4.5rem 0; }
+    section { padding: 4rem 0; }
 
     section h2 {
       font-size: clamp(1.75rem, 3vw, 2.25rem);
@@ -275,10 +282,7 @@
       transform: translateY(-2px);
     }
 
-    .feature-icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
+    .feature-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
 
     .feature-card h3 {
       font-size: 1rem;
@@ -312,10 +316,40 @@
       border-top: 1px solid var(--border);
     }
 
-    .screenshot-card img {
-      display: block;
-      width: 100%;
-      height: auto;
+    .screenshot-card img { display: block; width: 100%; height: auto; }
+
+    .schedule-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .schedule-type {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+
+    .schedule-type h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .schedule-type p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .scheduling-note {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      max-width: 36rem;
+      margin: 0 auto;
     }
 
     .install-grid {
@@ -345,10 +379,7 @@
       margin-bottom: 0.5rem;
     }
 
-    .install-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.5rem;
-    }
+    .install-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
 
     .install-card p {
       font-size: 0.85rem;
@@ -368,8 +399,6 @@
       font-family: "SF Mono", ui-monospace, Menlo, monospace;
       line-height: 1.5;
     }
-
-    code { font-family: inherit; }
 
     .compare-wrap {
       overflow-x: auto;
@@ -398,14 +427,11 @@
       top: 0;
     }
 
-    th:first-child,
-    td:first-child { font-weight: 500; }
+    th:first-child, td:first-child { font-weight: 500; }
 
     tr:last-child td { border-bottom: none; }
 
-    .col-highlight {
-      background: rgba(10, 132, 255, 0.08);
-    }
+    .col-highlight { background: rgba(10, 132, 255, 0.08); }
 
     .yes { color: var(--green); }
     .no { color: #ff453a; }
@@ -444,6 +470,32 @@
       font-weight: 700;
       font-size: 0.85rem;
       border-radius: 50%;
+    }
+
+    .faq-list {
+      max-width: 44rem;
+      margin: 0 auto;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.25rem;
+    }
+
+    .faq-item h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .faq-item p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.55;
     }
 
     .support {
@@ -485,136 +537,6 @@
       padding: 0.25rem;
     }
 
-    .prose-block {
-      max-width: 42rem;
-      margin: 0 auto 2rem;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    .prose-block p + p { margin-top: 1rem; }
-
-    .prose-block strong { color: var(--text); font-weight: 600; }
-
-    .schedule-types {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .schedule-type {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-    }
-
-    .schedule-type h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .schedule-type p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .schedule-type code {
-      font-size: 0.78rem;
-      color: var(--accent);
-    }
-
-    .use-cases {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
-    }
-
-    .use-case {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-    }
-
-    .use-case h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-    }
-
-    .use-case p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .replace-grid {
-      display: grid;
-      gap: 1rem;
-    }
-
-    @media (min-width: 768px) {
-      .replace-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .replace-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.35rem;
-    }
-
-    .replace-card h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .replace-card p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-
-    .replace-card .savings {
-      display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--green);
-    }
-
-    .faq-list {
-      max-width: 44rem;
-      margin: 0 auto;
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .faq-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.15rem 1.25rem;
-    }
-
-    .faq-item h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .faq-item p {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-
     .section-alt {
       background: linear-gradient(180deg, rgba(10, 132, 255, 0.04), transparent);
       border-top: 1px solid var(--border);
@@ -643,47 +565,53 @@
 <body>
   <header class="nav">
     <div class="nav-inner">
-      <a class="brand" href="#">
+      <a class="brand" href="/">
         <img src="/assets/images/logo.png" alt="" width="28" height="28" />
         LaunchManager
       </a>
       <button class="menu-toggle" type="button" aria-label="Menu" id="menu-toggle">☰</button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#scheduling">Scheduling</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#install">Install</a></li>
-        <li><a href="#compare">Compare</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener">GitHub</a></li>
-      </ul>
-      <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener">Download</a>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#features" data-i18n="nav.features">Features</a></li>
+          <li><a href="#scheduling" data-i18n="nav.scheduling">Scheduling</a></li>
+          <li><a href="#install" data-i18n="nav.install">Install</a></li>
+          <li><a href="#compare" data-i18n="nav.compare">Compare</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+        <button class="lang-toggle" type="button" id="lang-toggle" aria-label="Switch language" data-i18n="nav.lang">中文</button>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download">Download</a>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero container">
       <div class="badges">
-        <span class="badge">macOS 14+</span>
-        <span class="badge">Swift 5.10</span>
-        <span class="badge mit">MIT License</span>
-        <span class="badge">Open Source</span>
+        <span class="badge" data-i18n="hero.badge.macos">macOS 14+</span>
+        <span class="badge" data-i18n="hero.badge.swift">Swift 5.10</span>
+        <span class="badge mit" data-i18n="hero.badge.mit">MIT License</span>
+        <span class="badge" data-i18n="hero.badge.oss">Open Source</span>
       </div>
-      <h1>Schedule macOS tasks<br />without the XML headache</h1>
-      <p class="lead">
-        A native macOS task scheduler for LaunchAgents and LaunchDaemons — create cron-like jobs, run scripts on intervals, and manage background tasks from a clean SwiftUI interface. Free, open source, and built on Apple's launchd.
+      <h1 data-i18n-html="hero.title">Manage launchd jobs<br />on your Mac</h1>
+      <p class="lead" data-i18n="hero.lead">
+        LaunchManager is a native macOS app to browse, create, edit, and control LaunchAgents and LaunchDaemons — without editing XML by hand.
+      </p>
+      <p class="hero-value" data-i18n="hero.value">
+        launchd runs the background jobs on every Mac. LaunchManager gives you a clean UI to see what is loaded, fix broken plists, and control jobs with load, start, and stop — free and open source.
       </p>
       <div class="hero-cta">
-        <a class="btn btn-primary btn-lg" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener">
+        <a class="btn btn-primary btn-lg" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="hero.cta.download">
           Download v1.3.0
         </a>
-        <a class="btn btn-ghost btn-lg" href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener">
+        <a class="btn btn-ghost btn-lg" href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener" data-i18n="hero.cta.github">
           View on GitHub
         </a>
       </div>
       <div class="hero-shot">
         <img
           src="/assets/images/homepage-en.png"
-          alt="LaunchManager main window showing User Agents list"
+          alt="LaunchManager main window"
           width="1200"
           height="auto"
           loading="eager"
@@ -691,142 +619,42 @@
       </div>
     </section>
 
-    <section id="scheduling" class="section-alt">
-      <div class="container">
-        <h2>macOS task scheduling, done right</h2>
-        <p class="section-desc">Every Mac already has a built-in scheduler called <strong>launchd</strong>. LaunchManager gives you a visual interface to it — no XML files, no terminal commands, no paid subscription.</p>
-
-        <div class="prose-block">
-          <p>
-            On macOS, <strong>launchd</strong> is the system service that runs scheduled tasks, keeps background processes alive, and starts programs at login or boot. Tools like <strong>LaunchControl</strong>, <strong>Lingon Pro</strong>, and <strong>LaunchD Task Scheduler</strong> are paid front-ends to the same underlying technology. LaunchManager does the same job — browse, create, edit, load, and monitor launchd jobs — but it is <strong>free, open source (MIT)</strong>, and does not require the app to stay running in the background.
-          </p>
-          <p>
-            Whether you are migrating from <code>crontab</code>, replacing a $30 scheduler app, or setting up your first automated backup script, LaunchManager lets you define schedules through a guided form instead of hand-editing plist XML.
-          </p>
-        </div>
-
-        <h2 style="font-size: 1.35rem; margin-bottom: 1.25rem;">Schedule types launchd supports</h2>
-        <div class="schedule-types">
-          <article class="schedule-type">
-            <h3>⏱ Interval scheduling</h3>
-            <p>Run a script or program every N seconds — ideal for health checks, log rotation, or periodic syncs. Equivalent to a simple cron <code>*/5 * * * *</code> job, managed visually.</p>
-          </article>
-          <article class="schedule-type">
-            <h3>📅 Calendar scheduling</h3>
-            <p>Run at specific times: daily at 3:00 AM, weekdays at 9:00 AM, or on the 1st of each month. launchd's <code>StartCalendarInterval</code> covers most cron use cases natively on macOS.</p>
-          </article>
-          <article class="schedule-type">
-            <h3>🚀 Run at load / login</h3>
-            <p>Start a job when you log in or when the system boots. Perfect for auto-starting dev servers, VPN helpers, or menu-bar utilities without adding Login Items manually.</p>
-          </article>
-          <article class="schedule-type">
-            <h3>🔄 Keep alive</h3>
-            <p>Automatically restart a process if it exits or crashes. Useful for local APIs, file watchers, and long-running workers that must stay up 24/7.</p>
-          </article>
-          <article class="schedule-type">
-            <h3>📁 Watch paths</h3>
-            <p>Trigger a script when files or folders change. Handy for rebuilding assets, processing uploads, or reacting to config changes without a polling loop.</p>
-          </article>
-          <article class="schedule-type">
-            <h3>👤 User, system agent &amp; daemon</h3>
-            <p>Schedule jobs at the right privilege level: per-user agents, system-wide agents, or headless daemons that run without anyone logged in.</p>
-          </article>
-        </div>
-
-        <h2 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Common scheduling use cases</h2>
-        <p class="section-desc">Real tasks macOS users schedule with launchd every day.</p>
-        <div class="use-cases">
-          <article class="use-case">
-            <h3>Nightly backups</h3>
-            <p>Run <code>rsync</code>, <code>restic</code>, or custom shell scripts on a calendar schedule while you sleep.</p>
-          </article>
-          <article class="use-case">
-            <h3>Dev environment automation</h3>
-            <p>Auto-start Docker, databases, or local web servers at login so your stack is ready when you open the IDE.</p>
-          </article>
-          <article class="use-case">
-            <h3>Cleanup &amp; maintenance</h3>
-            <p>Purge caches, rotate logs, empty Trash folders, or prune old build artifacts on a fixed interval.</p>
-          </article>
-          <article class="use-case">
-            <h3>Data sync &amp; ETL</h3>
-            <p>Pull reports from APIs, sync cloud storage, or run Python/Node data pipelines on a timetable.</p>
-          </article>
-          <article class="use-case">
-            <h3>Health monitoring</h3>
-            <p>Ping services, check disk space, or send alerts when a local process stops responding.</p>
-          </article>
-          <article class="use-case">
-            <h3>Replace crontab</h3>
-            <p>Apple recommends launchd over cron on modern macOS. LaunchManager makes the migration straightforward with a GUI.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="replace">
-      <div class="container">
-        <h2>Replace paid macOS schedulers</h2>
-        <p class="section-desc">LaunchManager covers the everyday scheduling workflow that paid apps charge for — because launchd itself is free and built into macOS.</p>
-        <div class="replace-grid">
-          <article class="replace-card">
-            <h3>vs. LaunchControl (~$33)</h3>
-            <p>LaunchControl is the most feature-rich paid option, with an AI assistant and expert XML editor. For standard job creation, scheduling, load/unload, and log viewing, LaunchManager matches the essentials at zero cost.</p>
-            <span class="savings">Save ~$33 · MIT open source</span>
-          </article>
-          <article class="replace-card">
-            <h3>vs. Lingon Pro ($23.99)</h3>
-            <p>Lingon Pro requires the app to stay running for some operations and is closed source. LaunchManager talks directly to launchd — close the app and your scheduled jobs keep running independently.</p>
-            <span class="savings">Save $23.99 · No background app required</span>
-          </article>
-          <article class="replace-card">
-            <h3>vs. LaunchD Task Scheduler ($5)</h3>
-            <p>A lightweight App Store scheduler with limited system daemon support and no invalid-plist recovery. LaunchManager offers full scope coverage, inline error handling, and system log access — still free.</p>
-            <span class="savings">Save $5 · Full agent &amp; daemon support</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section id="features">
       <div class="container">
-        <h2>Everything you need for launchd scheduling</h2>
-        <p class="section-desc">Free, native, and built for everyday macOS power users — no subscription, no background daemon required.</p>
+        <h2 data-i18n="features.title">Everything for everyday launchd management</h2>
+        <p class="section-desc" data-i18n="features.desc">
+          Built for developers and power users who work with LaunchAgents and LaunchDaemons regularly.
+        </p>
         <div class="features">
           <article class="feature-card">
-            <div class="feature-icon">⏰</div>
-            <h3>Visual schedule editor</h3>
-            <p>Set intervals, calendar triggers, run-at-load, and keep-alive options through a form — no plist XML required.</p>
-          </article>
-          <article class="feature-card">
             <div class="feature-icon">📂</div>
-            <h3>Browse all scopes</h3>
-            <p>User Agents, System Agents, and System Daemons in one sidebar — see every scheduled job launchd knows about.</p>
+            <h3 data-i18n="features.browse.title">Browse all scopes</h3>
+            <p data-i18n="features.browse.desc">User Agents, System Agents, and System Daemons in one sidebar.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">✏️</div>
-            <h3>Create &amp; edit jobs</h3>
-            <p>Form-based plist editing for programs, arguments, working directories, environment variables, and schedule keys.</p>
+            <h3 data-i18n="features.edit.title">Create &amp; edit jobs</h3>
+            <p data-i18n="features.edit.desc">Form-based editing for program path, arguments, and plist fields.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">▶️</div>
-            <h3>Load, start, stop</h3>
-            <p>Control jobs with row actions. Privilege escalation prompts when system-level operations need admin.</p>
+            <h3 data-i18n="features.control.title">Load, start, stop</h3>
+            <p data-i18n="features.control.desc">Control jobs from the list. Admin prompt when system scope needs it.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">📋</div>
-            <h3>Log viewer</h3>
-            <p>File-based stdout/stderr logs plus system log via <code>log show</code> — debug without leaving the app.</p>
+            <h3 data-i18n="features.logs.title">Log viewer</h3>
+            <p data-i18n="features.logs.desc">File logs and system log output, without leaving the app.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">⚠️</div>
-            <h3>Invalid plist handling</h3>
-            <p>Empty or malformed plists surface inline with a one-click delete — something paid tools often skip.</p>
+            <h3 data-i18n="features.invalid.title">Invalid plist handling</h3>
+            <p data-i18n="features.invalid.desc">Broken or empty plists show inline, with a one-click delete.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">🔓</div>
-            <h3>Open source</h3>
-            <p>MIT licensed. Inspect the Swift code, contribute on GitHub, or build from source with Xcode 16.</p>
+            <h3 data-i18n="features.oss.title">Open source</h3>
+            <p data-i18n="features.oss.desc">MIT licensed. Inspect the code on GitHub or build with Xcode.</p>
           </article>
         </div>
       </div>
@@ -834,43 +662,69 @@
 
     <section id="screenshots">
       <div class="container">
-        <h2>See it in action</h2>
-        <p class="section-desc">A focused UI for the jobs that keep your Mac running.</p>
+        <h2 data-i18n="screenshots.title">See it in action</h2>
+        <p class="section-desc" data-i18n="screenshots.desc">A focused UI for the jobs that keep your Mac running.</p>
         <div class="screenshots">
           <figure class="screenshot-card">
             <img src="/assets/images/home-en.png" alt="Agent list view" loading="lazy" />
-            <figcaption>Browse agents and daemons by scope</figcaption>
+            <figcaption data-i18n="screenshots.cap1">Browse agents and daemons by scope</figcaption>
           </figure>
           <figure class="screenshot-card">
             <img src="/assets/images/create_new_job_en.png" alt="Create new job form" loading="lazy" />
-            <figcaption>Create jobs with a guided form</figcaption>
+            <figcaption data-i18n="screenshots.cap2">Create and edit jobs with a guided form</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
+    <section id="scheduling" class="section-alt">
+      <div class="container">
+        <h2 data-i18n="scheduling.title">Schedule jobs when you need them</h2>
+        <p class="section-desc" data-i18n="scheduling.desc">
+          launchd can run jobs on a timer or at login. LaunchManager lets you set those options in the same form — no separate scheduler app required for basic use.
+        </p>
+        <div class="schedule-types">
+          <article class="schedule-type">
+            <h3 data-i18n="scheduling.interval.title">Intervals</h3>
+            <p data-i18n="scheduling.interval.desc">Run a script every N seconds.</p>
+          </article>
+          <article class="schedule-type">
+            <h3 data-i18n="scheduling.calendar.title">Calendar</h3>
+            <p data-i18n="scheduling.calendar.desc">Run at a set time, like a simple cron job.</p>
+          </article>
+          <article class="schedule-type">
+            <h3 data-i18n="scheduling.login.title">At login / keep alive</h3>
+            <p data-i18n="scheduling.login.desc">Start on boot or restart if a process exits.</p>
+          </article>
+        </div>
+        <p class="scheduling-note" data-i18n="scheduling.note">
+          For most users, this covers everyday scheduling without a paid launchd GUI.
+        </p>
+      </div>
+    </section>
+
     <section id="install">
       <div class="container">
-        <h2>Get LaunchManager</h2>
-        <p class="section-desc">Pick the install path that fits you. Requires macOS 14 Sonoma or later.</p>
+        <h2 data-i18n="install.title">Get LaunchManager</h2>
+        <p class="section-desc" data-i18n="install.desc">macOS 14 Sonoma or later.</p>
         <div class="install-grid">
           <article class="install-card">
-            <span class="tag">Recommended</span>
-            <h3>Homebrew</h3>
-            <p>Fast updates via tap. Best for developers already on Homebrew.</p>
+            <span class="tag" data-i18n="install.brew.tag">Recommended</span>
+            <h3 data-i18n="install.brew.title">Homebrew</h3>
+            <p data-i18n="install.brew.desc">Fast updates via tap. Best for developers already on Homebrew.</p>
             <pre><code>brew tap Sean10000/tap
 brew install --cask launchmanager</code></pre>
           </article>
           <article class="install-card">
-            <span class="tag">Direct</span>
-            <h3>Download DMG</h3>
-            <p>Grab the latest release, drag to Applications. Right-click → Open on first launch (not notarized).</p>
-            <a class="btn btn-primary" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener">Download DMG</a>
+            <span class="tag" data-i18n="install.dmg.tag">Direct</span>
+            <h3 data-i18n="install.dmg.title">Download DMG</h3>
+            <p data-i18n="install.dmg.desc">Grab the latest release, drag to Applications. Right-click → Open on first launch (not notarized).</p>
+            <a class="btn btn-primary" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="install.dmg.btn">Download DMG</a>
           </article>
           <article class="install-card">
-            <span class="tag">Developers</span>
-            <h3>Build from source</h3>
-            <p>Clone the repo and open in Xcode 16. Build and run with ⌘R.</p>
+            <span class="tag" data-i18n="install.src.tag">Developers</span>
+            <h3 data-i18n="install.src.title">Build from source</h3>
+            <p data-i18n="install.src.desc">Clone the repo and open in Xcode 16. Build and run with ⌘R.</p>
             <pre><code>git clone https://github.com/Sean10000/LaunchManager.git
 cd LaunchManager
 open LaunchManager.xcodeproj</code></pre>
@@ -881,21 +735,23 @@ open LaunchManager.xcodeproj</code></pre>
 
     <section id="usage">
       <div class="container">
-        <h2>Quick start</h2>
-        <p class="section-desc">Four steps to take control of your launchd jobs.</p>
+        <h2 data-i18n="usage.title">Quick start</h2>
+        <p class="section-desc" data-i18n="usage.desc">Four steps to take control of your launchd jobs.</p>
         <ol class="usage-steps">
-          <li>Select a scope from the sidebar: <strong>User Agents</strong>, <strong>System Agents</strong>, or <strong>System Daemons</strong>.</li>
-          <li>Click <strong>+</strong> to create a job, or the pencil icon to edit an existing one.</li>
-          <li>Use row buttons to <strong>load</strong>, <strong>start</strong>, or <strong>stop</strong> a job.</li>
-          <li>Expand a row (chevron) for details and log output.</li>
+          <li data-i18n-html="usage.step1">Pick a scope: <strong>User Agents</strong>, <strong>System Agents</strong>, or <strong>System Daemons</strong>.</li>
+          <li data-i18n-html="usage.step2">Click <strong>+</strong> to create a job, or the pencil to edit.</li>
+          <li data-i18n-html="usage.step3">Use row actions to <strong>load</strong>, <strong>start</strong>, or <strong>stop</strong>.</li>
+          <li data-i18n-html="usage.step4">Expand a row to see details and logs.</li>
         </ol>
       </div>
     </section>
 
     <section id="compare">
       <div class="container">
-        <h2>How it compares</h2>
-        <p class="section-desc">LaunchManager is ideal if you want a free, native, open-source tool for everyday launchd management.</p>
+        <h2 data-i18n="compare.title">How it compares</h2>
+        <p class="section-desc" data-i18n="compare.desc">
+          A free option for everyday launchd management. Paid tools add extras like AI or an XML editor.
+        </p>
         <div class="compare-wrap">
           <table>
             <thead>
@@ -909,77 +765,77 @@ open LaunchManager.xcodeproj</code></pre>
             </thead>
             <tbody>
               <tr>
-                <td>Price</td>
-                <td class="col-highlight"><strong>Free &amp; OSS</strong></td>
+                <td data-i18n="compare.row.price">Price</td>
+                <td class="col-highlight"><strong data-i18n="compare.lm.price">Free &amp; OSS</strong></td>
                 <td>~$33</td>
                 <td>$23.99</td>
                 <td>$5.00</td>
               </tr>
               <tr>
-                <td>Browse agents &amp; daemons</td>
+                <td data-i18n="compare.row.browse">Browse agents &amp; daemons</td>
                 <td class="col-highlight yes">✓</td>
                 <td class="yes">✓</td>
                 <td class="yes">✓</td>
                 <td class="yes">✓</td>
               </tr>
               <tr>
-                <td>Create &amp; edit (GUI)</td>
+                <td data-i18n="compare.row.gui">Create &amp; edit (GUI)</td>
                 <td class="col-highlight yes">✓</td>
                 <td class="yes">✓</td>
                 <td class="yes">✓</td>
                 <td class="yes">✓</td>
               </tr>
               <tr>
-                <td>Interval &amp; calendar scheduling</td>
+                <td data-i18n="compare.row.schedule">Interval &amp; calendar scheduling</td>
                 <td class="col-highlight yes">✓</td>
                 <td class="yes">✓</td>
                 <td class="yes">✓</td>
                 <td class="yes">✓</td>
               </tr>
               <tr>
-                <td>Run at load / keep alive</td>
+                <td data-i18n="compare.row.keepalive">Run at load / keep alive</td>
                 <td class="col-highlight yes">✓</td>
                 <td class="yes">✓</td>
                 <td class="yes">✓</td>
-                <td class="warn">Limited</td>
+                <td class="warn" data-i18n="compare.ldts.keepalive">Limited</td>
               </tr>
               <tr>
-                <td>System Agent / Daemon support</td>
+                <td data-i18n="compare.row.system">System Agent / Daemon support</td>
                 <td class="col-highlight yes">✓</td>
                 <td class="yes">✓</td>
-                <td class="yes">✓ (Pro)</td>
-                <td class="warn">Limited</td>
+                <td class="yes" data-i18n="compare.lingon.system">✓ (Pro)</td>
+                <td class="warn" data-i18n="compare.ldts.system">Limited</td>
               </tr>
               <tr>
-                <td>Log viewer</td>
-                <td class="col-highlight">File + system log</td>
-                <td>Advanced</td>
+                <td data-i18n="compare.row.logs">Log viewer</td>
+                <td class="col-highlight" data-i18n="compare.lm.logs">File + system log</td>
+                <td data-i18n="compare.lc.logs">Advanced</td>
                 <td class="yes">✓</td>
                 <td class="yes">✓</td>
               </tr>
               <tr>
-                <td>Invalid plist detection</td>
-                <td class="col-highlight yes">✓ inline + delete</td>
+                <td data-i18n="compare.row.invalid">Invalid plist detection</td>
+                <td class="col-highlight yes" data-i18n="compare.lm.invalid">✓ inline + delete</td>
                 <td class="no">✗</td>
                 <td class="no">✗</td>
                 <td class="no">✗</td>
               </tr>
               <tr>
-                <td>App must stay running</td>
-                <td class="col-highlight yes">Not required</td>
-                <td class="yes">Not required</td>
-                <td class="warn">Required</td>
-                <td class="yes">Not required</td>
+                <td data-i18n="compare.row.running">App must stay running</td>
+                <td class="col-highlight yes" data-i18n="compare.lm.running">Not required</td>
+                <td class="yes" data-i18n="compare.lm.running">Not required</td>
+                <td class="warn" data-i18n="compare.lingon.running">Required</td>
+                <td class="yes" data-i18n="compare.lm.running">Not required</td>
               </tr>
               <tr>
-                <td>AI assistant</td>
+                <td data-i18n="compare.row.ai">AI assistant</td>
                 <td class="col-highlight no">✗</td>
-                <td class="yes">7 LLM providers</td>
+                <td class="yes" data-i18n="compare.lc.ai">7 LLM providers</td>
                 <td class="no">✗</td>
                 <td class="no">✗</td>
               </tr>
               <tr>
-                <td>Open source</td>
+                <td data-i18n="compare.row.oss">Open source</td>
                 <td class="col-highlight yes">MIT</td>
                 <td class="no">✗</td>
                 <td class="no">✗</td>
@@ -988,7 +844,7 @@ open LaunchManager.xcodeproj</code></pre>
             </tbody>
           </table>
         </div>
-        <p class="section-desc" style="margin-top: 1.5rem; font-size: 0.85rem;">
+        <p class="section-desc" style="margin-top: 1.5rem; font-size: 0.85rem;" data-i18n-html="compare.note">
           Power users needing an AI assistant or expert XML editor may prefer
           <a href="https://www.soma-zone.com/LaunchControl/" target="_blank" rel="noopener">LaunchControl</a>.
         </p>
@@ -997,32 +853,24 @@ open LaunchManager.xcodeproj</code></pre>
 
     <section id="faq">
       <div class="container">
-        <h2>Frequently asked questions</h2>
-        <p class="section-desc">Common questions about macOS task scheduling with LaunchManager.</p>
+        <h2 data-i18n="faq.title">Frequently asked questions</h2>
+        <p class="section-desc" data-i18n="faq.desc">Common questions about LaunchManager.</p>
         <div class="faq-list">
           <article class="faq-item">
-            <h3>What is launchd and why use it instead of cron?</h3>
-            <p>launchd is Apple's native service manager on macOS. It handles scheduling, process supervision, and resource limits in one system. Apple has deprecated cron in favor of launchd on modern macOS — jobs created with LaunchManager use the supported, first-class API.</p>
+            <h3 data-i18n="faq.q1">What is LaunchManager?</h3>
+            <p data-i18n="faq.a1">A native macOS app to manage LaunchAgents and LaunchDaemons with a GUI instead of hand-editing plists.</p>
           </article>
           <article class="faq-item">
-            <h3>Can LaunchManager replace LaunchControl or Lingon?</h3>
-            <p>Yes, for everyday scheduling: creating jobs, setting intervals or calendar triggers, loading/unloading, and viewing logs. If you need an AI assistant or raw XML expert editor, LaunchControl still leads there. For most users who just want reliable scheduled tasks, LaunchManager is a capable free replacement.</p>
+            <h3 data-i18n="faq.q2">Do jobs keep running after I quit the app?</h3>
+            <p data-i18n="faq.a2">Yes. launchd runs loaded jobs. LaunchManager is only for setup and control.</p>
           </article>
           <article class="faq-item">
-            <h3>Do scheduled jobs keep running after I quit LaunchManager?</h3>
-            <p>Yes. Once a job is loaded into launchd, macOS runs it on schedule independently. LaunchManager is only the configuration tool — it does not need to stay open, unlike some paid schedulers.</p>
+            <h3 data-i18n="faq.q3">Can I manage system-level jobs?</h3>
+            <p data-i18n="faq.a3">Yes, with admin approval when needed.</p>
           </article>
           <article class="faq-item">
-            <h3>Can I schedule shell scripts and Python programs?</h3>
-            <p>Absolutely. Point a job at any executable — shell scripts, Python, Node.js, compiled binaries, or AppleScript wrappers. Set the program path, optional arguments, working directory, and environment variables in the create/edit form.</p>
-          </article>
-          <article class="faq-item">
-            <h3>Is LaunchManager safe and open source?</h3>
-            <p>LaunchManager is MIT licensed. You can read every line of Swift source on GitHub, build it yourself in Xcode, and verify exactly what it does. It uses standard macOS APIs (<code>launchctl</code>) and prompts for admin credentials only when system-level operations require it.</p>
-          </article>
-          <article class="faq-item">
-            <h3>What macOS version do I need?</h3>
-            <p>macOS 14 Sonoma or later. Install via Homebrew (<code>brew install --cask launchmanager</code>), download the DMG from GitHub Releases, or build from source with Xcode 16.</p>
+            <h3 data-i18n="faq.q4">What do I need to run it?</h3>
+            <p data-i18n="faq.a4">macOS 14+, via Homebrew, DMG, or build from source.</p>
           </article>
         </div>
       </div>
@@ -1030,8 +878,8 @@ open LaunchManager.xcodeproj</code></pre>
 
     <section class="support" id="support">
       <div class="container">
-        <h2>Support the project</h2>
-        <p class="section-desc">If LaunchManager saved you some time, feel free to buy me a coffee. Americano is better. ☕</p>
+        <h2 data-i18n="support.title">Support the project</h2>
+        <p class="section-desc" data-i18n="support.desc">If LaunchManager saved you time, feel free to buy me a coffee. Americano is better. ☕</p>
         <img
           src="/assets/images/wechat-reward.jpg"
           alt="WeChat reward QR code"
@@ -1046,16 +894,17 @@ open LaunchManager.xcodeproj</code></pre>
   <footer>
     <div class="container">
       <nav class="links">
-        <a href="https://github.com/Sean10000/LaunchManager">GitHub</a>
-        <a href="https://github.com/Sean10000/LaunchManager/releases">Releases</a>
-        <a href="https://github.com/Sean10000/LaunchManager/blob/main/LICENSE">MIT License</a>
-        <a href="https://github.com/Sean10000/LaunchManager/issues">Issues</a>
+        <a href="https://github.com/Sean10000/LaunchManager" data-i18n="footer.github">GitHub</a>
+        <a href="https://github.com/Sean10000/LaunchManager/releases" data-i18n="footer.releases">Releases</a>
+        <a href="https://github.com/Sean10000/LaunchManager/blob/main/LICENSE" data-i18n="footer.license">MIT License</a>
+        <a href="https://github.com/Sean10000/LaunchManager/issues" data-i18n="footer.issues">Issues</a>
       </nav>
-      <p>Built with Swift &amp; SwiftUI · Acknowledgements to <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> for AI pair programming</p>
-      <p style="margin-top: 0.5rem;">© Sean10000 · LaunchManager is not affiliated with Apple Inc.</p>
+      <p data-i18n-html="footer.built">Built with Swift &amp; SwiftUI · Acknowledgements to <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> for AI pair programming</p>
+      <p style="margin-top: 0.5rem;" data-i18n="footer.copy">© Sean10000 · LaunchManager is not affiliated with Apple Inc.</p>
     </div>
   </footer>
 
+  <script src="/assets/js/i18n.js"></script>
   <script>
     document.getElementById("menu-toggle")?.addEventListener("click", () => {
       document.getElementById("nav-links")?.classList.toggle("open");
