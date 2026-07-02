@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LaunchManager — Free macOS launchd Manager</title>
-  <meta name="description" content="Native macOS app to browse, create, edit, and control LaunchAgents and LaunchDaemons. Free, open source, MIT." />
-  <meta property="og:title" content="LaunchManager — macOS launchd Manager" />
-  <meta property="og:description" content="Browse, create, edit, and control LaunchAgents and LaunchDaemons from a native macOS UI." />
+  <meta name="description" content="Native macOS app to manage launchd jobs and scan local TCP services. Docker-aware port monitoring. Free, open source, MIT." />
+  <meta property="og:title" content="LaunchManager — macOS launchd &amp; Services Manager" />
+  <meta property="og:description" content="Manage LaunchAgents and LaunchDaemons, scan local TCP listeners, and control Docker containers from a native macOS UI." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/images/homepage-en.png" />
   <meta property="og:url" content="https://launchmanager.seanhub.top/" />
@@ -543,6 +543,61 @@
       border-bottom: 1px solid var(--border);
     }
 
+    .whatsnew-grid {
+      display: grid;
+      gap: 1rem;
+      max-width: 52rem;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .whatsnew-grid { grid-template-columns: repeat(2, 1fr); }
+      .whatsnew-grid .whatsnew-lead { grid-column: 1 / -1; }
+    }
+
+    .whatsnew-lead p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    .whatsnew-lead p:last-child { margin-bottom: 0; }
+
+    .whatsnew-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+
+    .whatsnew-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .whatsnew-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .whatsnew-card li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .whatsnew-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
     @media (max-width: 720px) {
       .nav-links { display: none; }
       .nav-links.open {
@@ -572,6 +627,7 @@
       <button class="menu-toggle" type="button" aria-label="Menu" id="menu-toggle">☰</button>
       <div class="nav-right">
         <ul class="nav-links" id="nav-links">
+          <li><a href="#whatsnew" data-i18n="nav.whatsnew">What's new</a></li>
           <li><a href="#features" data-i18n="nav.features">Features</a></li>
           <li><a href="#scheduling" data-i18n="nav.scheduling">Scheduling</a></li>
           <li><a href="#install" data-i18n="nav.install">Install</a></li>
@@ -595,10 +651,10 @@
       </div>
       <h1 data-i18n-html="hero.title">Manage launchd jobs<br />on your Mac</h1>
       <p class="lead" data-i18n="hero.lead">
-        LaunchManager is a native macOS app to browse, create, edit, and control LaunchAgents and LaunchDaemons — without editing XML by hand.
+        LaunchManager is a native macOS dev-environment control panel — manage LaunchAgents and LaunchDaemons, and see what's running on your machine, without editing XML or digging through lsof.
       </p>
       <p class="hero-value" data-i18n="hero.value">
-        launchd runs the background jobs on every Mac. LaunchManager gives you a clean UI to see what is loaded, fix broken plists, and control jobs with load, start, and stop — free and open source.
+        launchd runs the background jobs on every Mac. LaunchManager gives you a clean UI to browse loaded jobs, scan local TCP listeners, fix broken plists, and control services with load, start, and stop — free and open source.
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary btn-lg" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="hero.cta.download" data-release-download>
@@ -619,13 +675,56 @@
       </div>
     </section>
 
+    <section id="whatsnew" class="section-alt">
+      <div class="container">
+        <h2 data-i18n="whatsnew.title">LaunchManager v1.6.0 is out</h2>
+        <p class="section-desc" data-i18n="whatsnew.desc">A dev-environment control panel alongside launchd management.</p>
+        <div class="whatsnew-grid">
+          <article class="whatsnew-card whatsnew-lead">
+            <h3 data-i18n="whatsnew.services.title">What's new: Services</h3>
+            <p data-i18n="whatsnew.services.lead">
+              Scan local TCP listeners from the sidebar (refreshes every 3 seconds). See what's running on your machine without digging through lsof or Activity Monitor.
+            </p>
+          </article>
+          <article class="whatsnew-card">
+            <h3 data-i18n="whatsnew.naming.title">Smarter naming</h3>
+            <ul>
+              <li data-i18n="whatsnew.naming.item1">Host mechanisms (Docker port-forward, Colima, SSH tunnels) are labeled clearly — not as raw process names like docker-proxy</li>
+              <li data-i18n="whatsnew.naming.item2">Known services (Next.js, Redis, PostgreSQL) are identified when we're confident</li>
+              <li data-i18n="whatsnew.naming.item3">Custom names for anything else — rename in the expanded row and it persists across restarts</li>
+            </ul>
+          </article>
+          <article class="whatsnew-card">
+            <h3 data-i18n="whatsnew.docker.title">Docker-aware</h3>
+            <ul>
+              <li data-i18n="whatsnew.docker.item1">Resolves container name, image, and Compose project via docker ps</li>
+              <li data-i18n="whatsnew.docker.item2">Stop containers with docker stop — no more killing docker-proxy and breaking Docker</li>
+              <li data-i18n="whatsnew.docker.item3">List split into Docker and Local instance sections</li>
+            </ul>
+          </article>
+          <article class="whatsnew-card">
+            <h3 data-i18n="whatsnew.improved.title">Also improved</h3>
+            <ul>
+              <li data-i18n="whatsnew.improved.item1">Full process names from ps (fixes truncated names like cloudflar, ControlCe)</li>
+              <li data-i18n="whatsnew.improved.item2">Docker CLI works from the GUI app via common install paths + PATH fallback</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="features">
       <div class="container">
-        <h2 data-i18n="features.title">Everything for everyday launchd management</h2>
+        <h2 data-i18n="features.title">Everything for everyday dev-environment control</h2>
         <p class="section-desc" data-i18n="features.desc">
-          Built for developers and power users who work with LaunchAgents and LaunchDaemons regularly.
+          Built for developers who manage launchd jobs and local services on their Mac every day.
         </p>
         <div class="features">
+          <article class="feature-card">
+            <div class="feature-icon">🔌</div>
+            <h3 data-i18n="features.services.title">Services scanner</h3>
+            <p data-i18n="features.services.desc">See local TCP listeners in the sidebar — Docker-aware, with smart names and custom labels that persist.</p>
+          </article>
           <article class="feature-card">
             <div class="feature-icon">📂</div>
             <h3 data-i18n="features.browse.title">Browse all scopes</h3>
@@ -713,6 +812,7 @@
             <h3 data-i18n="install.brew.title">Homebrew</h3>
             <p data-i18n="install.brew.desc">Fast updates via tap. Best for developers already on Homebrew.</p>
             <pre><code>brew tap Sean10000/tap
+brew trust --cask sean10000/tap/launchmanager
 brew install --cask launchmanager</code></pre>
           </article>
           <article class="install-card">
@@ -807,6 +907,13 @@ open LaunchManager.xcodeproj</code></pre>
                 <td class="warn" data-i18n="compare.ldts.system">Limited</td>
               </tr>
               <tr>
+                <td data-i18n="compare.row.services">Local TCP / port monitoring</td>
+                <td class="col-highlight yes" data-i18n="compare.lm.services">✓ Docker-aware</td>
+                <td class="no">✗</td>
+                <td class="no">✗</td>
+                <td class="no">✗</td>
+              </tr>
+              <tr>
                 <td data-i18n="compare.row.logs">Log viewer</td>
                 <td class="col-highlight" data-i18n="compare.lm.logs">File + system log</td>
                 <td data-i18n="compare.lc.logs">Advanced</td>
@@ -858,7 +965,7 @@ open LaunchManager.xcodeproj</code></pre>
         <div class="faq-list">
           <article class="faq-item">
             <h3 data-i18n="faq.q1">What is LaunchManager?</h3>
-            <p data-i18n="faq.a1">A native macOS app to manage LaunchAgents and LaunchDaemons with a GUI instead of hand-editing plists.</p>
+            <p data-i18n="faq.a1">A native macOS app to manage LaunchAgents and LaunchDaemons, scan local TCP services, and control Docker containers — all from a GUI instead of hand-editing plists or running lsof.</p>
           </article>
           <article class="faq-item">
             <h3 data-i18n="faq.q2">Do jobs keep running after I quit the app?</h3>

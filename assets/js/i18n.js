@@ -5,8 +5,9 @@
     en: {
       "meta.title": "LaunchManager — Free macOS launchd Manager",
       "meta.description":
-        "Native macOS app to browse, create, edit, and control LaunchAgents and LaunchDaemons. Free, open source, MIT.",
+        "Native macOS app to manage launchd jobs and scan local TCP services. Docker-aware port monitoring. Free, open source, MIT.",
 
+      "nav.whatsnew": "What's new",
       "nav.features": "Features",
       "nav.scheduling": "Scheduling",
       "nav.install": "Install",
@@ -21,15 +22,43 @@
       "hero.badge.oss": "Open Source",
       "hero.title": "Manage launchd jobs<br />on your Mac",
       "hero.lead":
-        "LaunchManager is a native macOS app to browse, create, edit, and control LaunchAgents and LaunchDaemons — without editing XML by hand.",
+        "LaunchManager is a native macOS dev-environment control panel — manage LaunchAgents and LaunchDaemons, and see what's running on your machine, without editing XML or digging through lsof.",
       "hero.cta.download": "Download",
       "hero.cta.github": "View on GitHub",
       "hero.value":
-        "launchd runs the background jobs on every Mac. LaunchManager gives you a clean UI to see what is loaded, fix broken plists, and control jobs with load, start, and stop — free and open source.",
+        "launchd runs the background jobs on every Mac. LaunchManager gives you a clean UI to browse loaded jobs, scan local TCP listeners, fix broken plists, and control services with load, start, and stop — free and open source.",
 
-      "features.title": "Everything for everyday launchd management",
+      "whatsnew.title": "LaunchManager v1.6.0 is out",
+      "whatsnew.desc": "A dev-environment control panel alongside launchd management.",
+      "whatsnew.services.title": "What's new: Services",
+      "whatsnew.services.lead":
+        "Scan local TCP listeners from the sidebar (refreshes every 3 seconds). See what's running on your machine without digging through lsof or Activity Monitor.",
+      "whatsnew.naming.title": "Smarter naming",
+      "whatsnew.naming.item1":
+        "Host mechanisms (Docker port-forward, Colima, SSH tunnels) are labeled clearly — not as raw process names like docker-proxy",
+      "whatsnew.naming.item2":
+        "Known services (Next.js, Redis, PostgreSQL) are identified when we're confident",
+      "whatsnew.naming.item3":
+        "Custom names for anything else — rename in the expanded row and it persists across restarts",
+      "whatsnew.docker.title": "Docker-aware",
+      "whatsnew.docker.item1":
+        "Resolves container name, image, and Compose project via docker ps",
+      "whatsnew.docker.item2":
+        "Stop containers with docker stop — no more killing docker-proxy and breaking Docker",
+      "whatsnew.docker.item3":
+        "List split into Docker and Local instance sections",
+      "whatsnew.improved.title": "Also improved",
+      "whatsnew.improved.item1":
+        "Full process names from ps (fixes truncated names like cloudflar, ControlCe)",
+      "whatsnew.improved.item2":
+        "Docker CLI works from the GUI app via common install paths + PATH fallback",
+
+      "features.title": "Everything for everyday dev-environment control",
       "features.desc":
-        "Built for developers and power users who work with LaunchAgents and LaunchDaemons regularly.",
+        "Built for developers who manage launchd jobs and local services on their Mac every day.",
+      "features.services.title": "Services scanner",
+      "features.services.desc":
+        "See local TCP listeners in the sidebar — Docker-aware, with smart names and custom labels that persist.",
       "features.browse.title": "Browse all scopes",
       "features.browse.desc":
         "User Agents, System Agents, and System Daemons in one sidebar.",
@@ -99,12 +128,14 @@
       "compare.row.schedule": "Interval & calendar scheduling",
       "compare.row.keepalive": "Run at load / keep alive",
       "compare.row.system": "System Agent / Daemon support",
+      "compare.row.services": "Local TCP / port monitoring",
       "compare.row.logs": "Log viewer",
       "compare.row.invalid": "Invalid plist detection",
       "compare.row.running": "App must stay running",
       "compare.row.ai": "AI assistant",
       "compare.row.oss": "Open source",
       "compare.lm.price": "Free & OSS",
+      "compare.lm.services": "✓ Docker-aware",
       "compare.lm.logs": "File + system log",
       "compare.lm.invalid": "✓ inline + delete",
       "compare.lm.running": "Not required",
@@ -119,7 +150,7 @@
       "faq.desc": "Common questions about LaunchManager.",
       "faq.q1": "What is LaunchManager?",
       "faq.a1":
-        "A native macOS app to manage LaunchAgents and LaunchDaemons with a GUI instead of hand-editing plists.",
+        "A native macOS app to manage LaunchAgents and LaunchDaemons, scan local TCP services, and control Docker containers — all from a GUI instead of hand-editing plists or running lsof.",
       "faq.q2": "Do jobs keep running after I quit the app?",
       "faq.a2":
         "Yes. launchd runs loaded jobs. LaunchManager is only for setup and control.",
@@ -145,8 +176,9 @@
     zh: {
       "meta.title": "LaunchManager — 免费 macOS launchd 管理工具",
       "meta.description":
-        "原生 macOS 应用，用于浏览、创建、编辑和控制 LaunchAgents 与 LaunchDaemons。免费开源，MIT 许可。",
+        "原生 macOS 应用，管理 launchd 任务并扫描本地 TCP 服务，支持 Docker 感知端口监控。免费开源，MIT 许可。",
 
+      "nav.whatsnew": "新功能",
       "nav.features": "功能",
       "nav.scheduling": "调度",
       "nav.install": "安装",
@@ -161,14 +193,41 @@
       "hero.badge.oss": "开源",
       "hero.title": "在 Mac 上管理<br />launchd 任务",
       "hero.lead":
-        "LaunchManager 是一款原生 macOS 应用，用于浏览、创建、编辑和控制 LaunchAgents 与 LaunchDaemons——无需手写 XML。",
+        "LaunchManager 是一款原生 macOS 开发环境控制面板——管理 LaunchAgents 与 LaunchDaemons，并查看本机正在运行的服务，无需手写 XML 或翻查 lsof。",
       "hero.cta.download": "下载",
       "hero.cta.github": "在 GitHub 查看",
       "hero.value":
-        "launchd 负责 Mac 上所有后台任务。LaunchManager 提供清晰界面，查看已加载任务、修复损坏的 plist，并通过加载、启动、停止进行操作——免费开源。",
+        "launchd 负责 Mac 上所有后台任务。LaunchManager 提供清晰界面，浏览已加载任务、扫描本地 TCP 监听、修复损坏的 plist，并通过加载、启动、停止控制服务——免费开源。",
 
-      "features.title": "日常 launchd 管理，一应俱全",
-      "features.desc": "为经常使用 LaunchAgents 和 LaunchDaemons 的开发者和进阶用户打造。",
+      "whatsnew.title": "LaunchManager v1.6.0 发布",
+      "whatsnew.desc": "在 launchd 管理之外，新增开发环境控制面板能力。",
+      "whatsnew.services.title": "新功能：Services",
+      "whatsnew.services.lead":
+        "从侧边栏扫描本地 TCP 监听（每 3 秒刷新）。无需翻查 lsof 或活动监视器，即可了解本机正在运行什么。",
+      "whatsnew.naming.title": "更智能的命名",
+      "whatsnew.naming.item1":
+        "宿主机机制（Docker 端口转发、Colima、SSH 隧道）会清晰标注——不再显示 docker-proxy 等原始进程名",
+      "whatsnew.naming.item2":
+        "在可识别时自动标注已知服务（Next.js、Redis、PostgreSQL）",
+      "whatsnew.naming.item3":
+        "其余服务可自定义名称——在展开行中重命名，重启后依然保留",
+      "whatsnew.docker.title": "Docker 感知",
+      "whatsnew.docker.item1":
+        "通过 docker ps 解析容器名、镜像和 Compose 项目",
+      "whatsnew.docker.item2":
+        "使用 docker stop 停止容器——不再误杀 docker-proxy 导致 Docker 异常",
+      "whatsnew.docker.item3":
+        "列表分为 Docker 与本地实例两个分区",
+      "whatsnew.improved.title": "其他改进",
+      "whatsnew.improved.item1":
+        "从 ps 获取完整进程名（修复 cloudflar、ControlCe 等截断名称）",
+      "whatsnew.improved.item2":
+        "GUI 应用可通过常见安装路径 + PATH 回退调用 Docker CLI",
+
+      "features.title": "日常开发环境控制，一应俱全",
+      "features.desc": "为每天在 Mac 上管理 launchd 任务和本地服务的开发者打造。",
+      "features.services.title": "Services 扫描",
+      "features.services.desc": "在侧边栏查看本地 TCP 监听——Docker 感知、智能命名，自定义标签持久保存。",
       "features.browse.title": "浏览所有范围",
       "features.browse.desc": "侧边栏统一查看用户代理、系统代理和系统守护进程。",
       "features.edit.title": "创建与编辑任务",
@@ -231,12 +290,14 @@
       "compare.row.schedule": "间隔与日历调度",
       "compare.row.keepalive": "登录启动 / 保活",
       "compare.row.system": "系统代理 / 守护进程支持",
+      "compare.row.services": "本地 TCP / 端口监控",
       "compare.row.logs": "日志查看",
       "compare.row.invalid": "无效 plist 检测",
       "compare.row.running": "应用需保持运行",
       "compare.row.ai": "AI 助手",
       "compare.row.oss": "开源",
       "compare.lm.price": "免费开源",
+      "compare.lm.services": "✓ Docker 感知",
       "compare.lm.logs": "文件 + 系统日志",
       "compare.lm.invalid": "✓ 行内提示 + 删除",
       "compare.lm.running": "不需要",
@@ -251,7 +312,7 @@
       "faq.desc": "关于 LaunchManager 的常见问题。",
       "faq.q1": "LaunchManager 是什么？",
       "faq.a1":
-        "一款原生 macOS 应用，通过图形界面管理 LaunchAgents 和 LaunchDaemons，无需手写 plist。",
+        "一款原生 macOS 应用，通过图形界面管理 LaunchAgents 和 LaunchDaemons、扫描本地 TCP 服务并控制 Docker 容器——无需手写 plist 或运行 lsof。",
       "faq.q2": "退出应用后，任务还会继续运行吗？",
       "faq.a2": "会。已加载的任务由 launchd 负责运行，LaunchManager 仅用于配置和控制。",
       "faq.q3": "可以管理系统级任务吗？",
