@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://launchmanager.seanhub.top/sitemap.xml
+Sitemap: https://www.launchmanager.dev/sitemap.xml
