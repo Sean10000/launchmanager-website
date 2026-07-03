@@ -7,12 +7,12 @@
       "meta.description":
         "Native macOS app to manage launchd jobs and scan local TCP services. Docker-aware port monitoring. Free, open source, MIT.",
 
-      "nav.whatsnew": "What's new",
       "nav.features": "Features",
+      "nav.screenshots": "Screenshots",
+      "nav.help": "Help",
       "nav.scheduling": "Scheduling",
       "nav.install": "Install",
       "nav.compare": "Compare",
-      "nav.faq": "FAQ",
       "nav.download": "Download",
       "nav.lang": "中文",
 
@@ -24,41 +24,17 @@
       "hero.lead":
         "LaunchManager is a native macOS dev-environment control panel — manage LaunchAgents and LaunchDaemons, and see what's running on your machine, without editing XML or digging through lsof.",
       "hero.cta.download": "Download",
+      "hero.cta.screenshots": "View screenshots",
       "hero.cta.github": "View on GitHub",
       "hero.value":
         "launchd runs the background jobs on every Mac. LaunchManager gives you a clean UI to browse loaded jobs, scan local TCP listeners, fix broken plists, and control services with load, start, and stop — free and open source.",
 
-      "whatsnew.title": "LaunchManager v1.6.0 is out",
-      "whatsnew.desc": "A dev-environment control panel alongside launchd management.",
-      "whatsnew.services.title": "What's new: Services",
-      "whatsnew.services.lead":
-        "Scan local TCP listeners from the sidebar (refreshes every 3 seconds). See what's running on your machine without digging through lsof or Activity Monitor.",
-      "whatsnew.naming.title": "Smarter naming",
-      "whatsnew.naming.item1":
-        "Host mechanisms (Docker port-forward, Colima, SSH tunnels) are labeled clearly — not as raw process names like docker-proxy",
-      "whatsnew.naming.item2":
-        "Known services (Next.js, Redis, PostgreSQL) are identified when we're confident",
-      "whatsnew.naming.item3":
-        "Custom names for anything else — rename in the expanded row and it persists across restarts",
-      "whatsnew.docker.title": "Docker-aware",
-      "whatsnew.docker.item1":
-        "Resolves container name, image, and Compose project via docker ps",
-      "whatsnew.docker.item2":
-        "Stop containers with docker stop — no more killing docker-proxy and breaking Docker",
-      "whatsnew.docker.item3":
-        "List split into Docker and Local instance sections",
-      "whatsnew.improved.title": "Also improved",
-      "whatsnew.improved.item1":
-        "Full process names from ps (fixes truncated names like cloudflar, ControlCe)",
-      "whatsnew.improved.item2":
-        "Docker CLI works from the GUI app via common install paths + PATH fallback",
-
       "features.title": "Everything for everyday dev-environment control",
       "features.desc":
-        "Built for developers who manage launchd jobs and local services on their Mac every day.",
+        "Built for developers who manage launchd jobs and local services on their Mac every day. v1.6 adds Docker-aware Services scanning with smart naming.",
       "features.services.title": "Services scanner",
       "features.services.desc":
-        "See local TCP listeners in the sidebar — Docker-aware, with smart names and custom labels that persist.",
+        "Scan local TCP listeners every 3 seconds. Docker-aware, with smart labels and persistent custom names.",
       "features.browse.title": "Browse all scopes",
       "features.browse.desc":
         "User Agents, System Agents, and System Daemons in one sidebar.",
@@ -71,17 +47,53 @@
       "features.logs.title": "Log viewer",
       "features.logs.desc":
         "File logs and system log output, without leaving the app.",
-      "features.invalid.title": "Invalid plist handling",
-      "features.invalid.desc":
-        "Broken or empty plists show inline, with a one-click delete.",
-      "features.oss.title": "Open source",
-      "features.oss.desc":
-        "MIT licensed. Inspect the code on GitHub or build with Xcode.",
+      "features.loginitems.title": "Login Items",
+      "features.loginitems.desc":
+        "Review apps set to open at login alongside your launchd jobs.",
+      "features.helpLink": "Need a walkthrough? Open the Help guide →",
 
       "screenshots.title": "See it in action",
-      "screenshots.desc": "A focused UI for the jobs that keep your Mac running.",
-      "screenshots.cap1": "Browse agents and daemons by scope",
-      "screenshots.cap2": "Create and edit jobs with a guided form",
+      "screenshots.desc": "LaunchManager UI for launchd jobs, local services, and login items.",
+      "screenshots.cap.home": "Home — launchd scopes and Services in one window",
+      "screenshots.cap.services": "Services — local TCP port listeners, refreshed every 3 seconds",
+      "screenshots.cap.rename": "Services — rename any listener; custom labels persist across restarts",
+      "screenshots.cap.create": "Launchd — create a new job with a guided form",
+      "screenshots.cap.edit": "Launchd — edit job fields and plist values",
+      "screenshots.cap.loginitems": "Login Items — apps configured to open at login",
+      "screenshots.helpLink": "Read the Help guide →",
+
+      "help.title": "LaunchManager Help",
+      "help.desc": "Getting started, everyday tasks, and answers to common questions.",
+      "help.topics.title": "Topics",
+      "help.launchd.title": "Launchd jobs",
+      "help.launchd.desc":
+        "Browse User Agents, System Agents, and System Daemons from the sidebar. Create jobs with a guided form or edit plist fields directly. Load, start, and stop from the list — system-level changes prompt for admin approval when needed.",
+      "help.services.title": "Services (TCP listeners)",
+      "help.services.desc":
+        "Open Services in the sidebar to scan local TCP listeners (refreshes every 3 seconds). Docker containers show name, image, and Compose project. Rename any row to a custom label — it persists across restarts. Stop Docker containers with docker stop instead of killing proxy processes.",
+      "help.scheduling.title": "Scheduling",
+      "help.scheduling.desc":
+        "When creating or editing a job, set interval, calendar, run-at-load, or keep-alive options in the same form. This covers most everyday scheduling without a separate tool.",
+      "help.loginitems.title": "Login Items",
+      "help.loginitems.desc":
+        "Use the Login Items view to see which apps are configured to open at login, alongside the launchd jobs you manage.",
+      "help.troubleshoot.title": "Troubleshooting",
+      "help.troubleshoot.item1":
+        "Broken or empty plists appear inline in the list — delete them with one click.",
+      "help.troubleshoot.item2":
+        "If Docker actions fail, ensure Docker Desktop or Colima is running. The app searches common install paths and falls back to your PATH.",
+      "help.troubleshoot.item3":
+        "Loaded jobs keep running after you quit LaunchManager — only setup and control happen in the app.",
+      "help.screenshotsLink": "See annotated screenshots →",
+      "help.issuesLink": "Report a bug on GitHub →",
+
+      "help.meta.title": "LaunchManager Help",
+      "help.meta.description":
+        "Help guide for LaunchManager — manage launchd jobs, scan local services, and control Docker containers on macOS.",
+
+      "screenshots.meta.title": "LaunchManager Screenshots",
+      "screenshots.meta.description":
+        "Screenshots of LaunchManager — launchd management, Services port scanning, and Login Items on macOS.",
 
       "scheduling.title": "Schedule jobs when you need them",
       "scheduling.desc":
@@ -165,6 +177,8 @@
         "If LaunchManager saved you time, feel free to buy me a coffee. Americano is better. ☕",
 
       "footer.github": "GitHub",
+      "footer.help": "Help",
+      "footer.screenshots": "Screenshots",
       "footer.releases": "Releases",
       "footer.license": "MIT License",
       "footer.issues": "Issues",
@@ -178,12 +192,12 @@
       "meta.description":
         "原生 macOS 应用，管理 launchd 任务并扫描本地 TCP 服务，支持 Docker 感知端口监控。免费开源，MIT 许可。",
 
-      "nav.whatsnew": "新功能",
       "nav.features": "功能",
+      "nav.screenshots": "截图",
+      "nav.help": "帮助",
       "nav.scheduling": "调度",
       "nav.install": "安装",
       "nav.compare": "对比",
-      "nav.faq": "常见问题",
       "nav.download": "下载",
       "nav.lang": "EN",
 
@@ -195,39 +209,15 @@
       "hero.lead":
         "LaunchManager 是一款原生 macOS 开发环境控制面板——管理 LaunchAgents 与 LaunchDaemons，并查看本机正在运行的服务，无需手写 XML 或翻查 lsof。",
       "hero.cta.download": "下载",
+      "hero.cta.screenshots": "查看截图",
       "hero.cta.github": "在 GitHub 查看",
       "hero.value":
         "launchd 负责 Mac 上所有后台任务。LaunchManager 提供清晰界面，浏览已加载任务、扫描本地 TCP 监听、修复损坏的 plist，并通过加载、启动、停止控制服务——免费开源。",
 
-      "whatsnew.title": "LaunchManager v1.6.0 发布",
-      "whatsnew.desc": "在 launchd 管理之外，新增开发环境控制面板能力。",
-      "whatsnew.services.title": "新功能：Services",
-      "whatsnew.services.lead":
-        "从侧边栏扫描本地 TCP 监听（每 3 秒刷新）。无需翻查 lsof 或活动监视器，即可了解本机正在运行什么。",
-      "whatsnew.naming.title": "更智能的命名",
-      "whatsnew.naming.item1":
-        "宿主机机制（Docker 端口转发、Colima、SSH 隧道）会清晰标注——不再显示 docker-proxy 等原始进程名",
-      "whatsnew.naming.item2":
-        "在可识别时自动标注已知服务（Next.js、Redis、PostgreSQL）",
-      "whatsnew.naming.item3":
-        "其余服务可自定义名称——在展开行中重命名，重启后依然保留",
-      "whatsnew.docker.title": "Docker 感知",
-      "whatsnew.docker.item1":
-        "通过 docker ps 解析容器名、镜像和 Compose 项目",
-      "whatsnew.docker.item2":
-        "使用 docker stop 停止容器——不再误杀 docker-proxy 导致 Docker 异常",
-      "whatsnew.docker.item3":
-        "列表分为 Docker 与本地实例两个分区",
-      "whatsnew.improved.title": "其他改进",
-      "whatsnew.improved.item1":
-        "从 ps 获取完整进程名（修复 cloudflar、ControlCe 等截断名称）",
-      "whatsnew.improved.item2":
-        "GUI 应用可通过常见安装路径 + PATH 回退调用 Docker CLI",
-
       "features.title": "日常开发环境控制，一应俱全",
-      "features.desc": "为每天在 Mac 上管理 launchd 任务和本地服务的开发者打造。",
+      "features.desc": "为每天在 Mac 上管理 launchd 任务和本地服务的开发者打造。v1.6 新增 Docker 感知的 Services 扫描与智能命名。",
       "features.services.title": "Services 扫描",
-      "features.services.desc": "在侧边栏查看本地 TCP 监听——Docker 感知、智能命名，自定义标签持久保存。",
+      "features.services.desc": "每 3 秒扫描本地 TCP 监听，Docker 感知，智能标注，自定义名称持久保存。",
       "features.browse.title": "浏览所有范围",
       "features.browse.desc": "侧边栏统一查看用户代理、系统代理和系统守护进程。",
       "features.edit.title": "创建与编辑任务",
@@ -236,15 +226,49 @@
       "features.control.desc": "在列表中直接控制任务；系统级操作需要时会提示管理员权限。",
       "features.logs.title": "日志查看",
       "features.logs.desc": "查看文件日志和系统日志，无需离开应用。",
-      "features.invalid.title": "无效 plist 处理",
-      "features.invalid.desc": "损坏或空的 plist 行内提示，支持一键删除。",
-      "features.oss.title": "开源",
-      "features.oss.desc": "MIT 许可，可在 GitHub 查看源码或用 Xcode 自行编译。",
+      "features.loginitems.title": "Login Items",
+      "features.loginitems.desc": "查看登录时自动打开的应用，与 launchd 任务一并管理。",
+      "features.helpLink": "需要操作指引？打开帮助文档 →",
 
       "screenshots.title": "一睹真容",
-      "screenshots.desc": "专注于让 Mac 持续运行的那些后台任务。",
-      "screenshots.cap1": "按范围浏览代理与守护进程",
-      "screenshots.cap2": "通过引导表单创建和编辑任务",
+      "screenshots.desc": "LaunchManager 的 launchd 任务、本地服务与 Login Items 界面。",
+      "screenshots.cap.home": "主界面 — launchd 范围与 Services 同屏展示",
+      "screenshots.cap.services": "Services — 本地 TCP 端口监听，每 3 秒刷新",
+      "screenshots.cap.rename": "Services — 重命名任意监听，自定义标签重启后保留",
+      "screenshots.cap.create": "Launchd — 通过引导表单新建任务",
+      "screenshots.cap.edit": "Launchd — 编辑任务字段与 plist",
+      "screenshots.cap.loginitems": "Login Items — 登录时自动打开的应用",
+      "screenshots.helpLink": "阅读帮助文档 →",
+
+      "help.title": "LaunchManager 帮助",
+      "help.desc": "快速上手、日常操作说明与常见问题解答。",
+      "help.topics.title": "主题",
+      "help.launchd.title": "Launchd 任务",
+      "help.launchd.desc":
+        "在侧边栏浏览用户代理、系统代理和系统守护进程。通过引导表单创建任务，或直接编辑 plist 字段。在列表中加载、启动、停止——系统级操作需要时会提示管理员权限。",
+      "help.services.title": "Services（TCP 监听）",
+      "help.services.desc":
+        "在侧边栏打开 Services，扫描本地 TCP 监听（每 3 秒刷新）。Docker 容器显示名称、镜像和 Compose 项目。任意行可重命名为自定义标签，重启后保留。使用 docker stop 停止容器，避免误杀代理进程。",
+      "help.scheduling.title": "调度",
+      "help.scheduling.desc":
+        "创建或编辑任务时，在同一表单中设置间隔、日历、登录启动或保活选项，满足大多数日常调度需求。",
+      "help.loginitems.title": "Login Items",
+      "help.loginitems.desc":
+        "在 Login Items 视图中查看配置为登录时打开的应用，与 launchd 任务一并浏览。",
+      "help.troubleshoot.title": "故障排除",
+      "help.troubleshoot.item1": "损坏或空的 plist 会在列表中行内提示，支持一键删除。",
+      "help.troubleshoot.item2": "若 Docker 操作失败，请确认 Docker Desktop 或 Colima 正在运行。应用会搜索常见安装路径并回退到 PATH。",
+      "help.troubleshoot.item3": "已加载的任务在退出 LaunchManager 后仍由 launchd 运行——应用仅用于配置和控制。",
+      "help.screenshotsLink": "查看标注截图 →",
+      "help.issuesLink": "在 GitHub 反馈问题 →",
+
+      "help.meta.title": "LaunchManager 帮助",
+      "help.meta.description":
+        "LaunchManager 帮助文档——在 macOS 上管理 launchd 任务、扫描本地服务并控制 Docker 容器。",
+
+      "screenshots.meta.title": "LaunchManager 截图",
+      "screenshots.meta.description":
+        "LaunchManager 界面截图——launchd 管理、Services 端口扫描与 Login Items。",
 
       "scheduling.title": "需要时再配置调度",
       "scheduling.desc":
@@ -324,6 +348,8 @@
       "support.desc": "如果 LaunchManager 帮你节省了时间，欢迎请我喝杯咖啡。美式更好。☕",
 
       "footer.github": "GitHub",
+      "footer.help": "帮助",
+      "footer.screenshots": "截图",
       "footer.releases": "发布页",
       "footer.license": "MIT 许可",
       "footer.issues": "问题反馈",
@@ -360,8 +386,11 @@
       if (dict[key] !== undefined) el.innerHTML = dict[key];
     });
 
-    const title = dict["meta.title"];
-    const desc = dict["meta.description"];
+    const page = document.body.getAttribute("data-page") || "home";
+    const titleKey = page === "home" ? "meta.title" : `${page}.meta.title`;
+    const descKey = page === "home" ? "meta.description" : `${page}.meta.description`;
+    const title = dict[titleKey] || dict["meta.title"];
+    const desc = dict[descKey] || dict["meta.description"];
     if (title) document.title = title;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc && desc) metaDesc.setAttribute("content", desc);

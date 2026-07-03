@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LaunchManager Help</title>
+  <meta name="description" content="Help guide for LaunchManager — manage launchd jobs, scan local services, and control Docker containers on macOS." />
+  <meta property="og:title" content="LaunchManager Help" />
+  <meta property="og:description" content="Getting started and reference for LaunchManager on macOS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/images/home-page.png" />
+  <meta property="og:url" content="https://www.launchmanager.dev/help" />
+  <meta name="theme-color" content="#0a0a0c" />
+  <link rel="canonical" href="https://www.launchmanager.dev/help" />
+  <link rel="icon" href="/assets/images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body data-page="help">
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/logo.png" alt="" width="28" height="28" />
+        LaunchManager
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menu" id="menu-toggle">☰</button>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/#features" data-i18n="nav.features">Features</a></li>
+          <li><a href="/screenshots" data-i18n="nav.screenshots">Screenshots</a></li>
+          <li><a href="/help" aria-current="page" data-i18n="nav.help">Help</a></li>
+          <li><a href="/#install" data-i18n="nav.install">Install</a></li>
+          <li><a href="/#compare" data-i18n="nav.compare">Compare</a></li>
+          <li><a href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+        <button class="lang-toggle" type="button" id="lang-toggle" aria-label="Switch language" data-i18n="nav.lang">中文</button>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download>Download</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero container">
+      <h1 data-i18n="help.title">LaunchManager Help</h1>
+      <p class="section-desc" data-i18n="help.desc">Getting started, everyday tasks, and answers to common questions.</p>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 data-i18n="usage.title">Quick start</h2>
+        <p class="section-desc" data-i18n="usage.desc">Four steps to take control of your launchd jobs.</p>
+        <ol class="usage-steps">
+          <li data-i18n-html="usage.step1">Pick a scope: <strong>User Agents</strong>, <strong>System Agents</strong>, or <strong>System Daemons</strong>.</li>
+          <li data-i18n-html="usage.step2">Click <strong>+</strong> to create a job, or the pencil to edit.</li>
+          <li data-i18n-html="usage.step3">Use row actions to <strong>load</strong>, <strong>start</strong>, or <strong>stop</strong>.</li>
+          <li data-i18n-html="usage.step4">Expand a row to see details and logs.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="container">
+        <h2 data-i18n="help.topics.title">Topics</h2>
+        <div class="help-topics">
+          <article class="help-topic" id="launchd">
+            <h3 data-i18n="help.launchd.title">Launchd jobs</h3>
+            <p data-i18n="help.launchd.desc">Browse User Agents, System Agents, and System Daemons from the sidebar. Create jobs with a guided form or edit plist fields directly. Load, start, and stop from the list — system-level changes prompt for admin approval when needed.</p>
+          </article>
+          <article class="help-topic" id="services">
+            <h3 data-i18n="help.services.title">Services (TCP listeners)</h3>
+            <p data-i18n="help.services.desc">Open Services in the sidebar to scan local TCP listeners (refreshes every 3 seconds). Docker containers show name, image, and Compose project. Rename any row to a custom label — it persists across restarts. Stop Docker containers with docker stop instead of killing proxy processes.</p>
+          </article>
+          <article class="help-topic" id="scheduling">
+            <h3 data-i18n="help.scheduling.title">Scheduling</h3>
+            <p data-i18n="help.scheduling.desc">When creating or editing a job, set interval, calendar, run-at-load, or keep-alive options in the same form. This covers most everyday scheduling without a separate tool.</p>
+          </article>
+          <article class="help-topic" id="login-items">
+            <h3 data-i18n="help.loginitems.title">Login Items</h3>
+            <p data-i18n="help.loginitems.desc">Use the Login Items view to see which apps are configured to open at login, alongside the launchd jobs you manage.</p>
+          </article>
+          <article class="help-topic" id="troubleshooting">
+            <h3 data-i18n="help.troubleshoot.title">Troubleshooting</h3>
+            <ul>
+              <li data-i18n="help.troubleshoot.item1">Broken or empty plists appear inline in the list — delete them with one click.</li>
+              <li data-i18n="help.troubleshoot.item2">If Docker actions fail, ensure Docker Desktop or Colima is running. The app searches common install paths and falls back to your PATH.</li>
+              <li data-i18n="help.troubleshoot.item3">Loaded jobs keep running after you quit LaunchManager — only setup and control happen in the app.</li>
+            </ul>
+          </article>
+        </div>
+        <p class="text-link-row">
+          <a href="/screenshots" data-i18n="help.screenshotsLink">See annotated screenshots →</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2 data-i18n="faq.title">Frequently asked questions</h2>
+        <p class="section-desc" data-i18n="faq.desc">Common questions about LaunchManager.</p>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3 data-i18n="faq.q1">What is LaunchManager?</h3>
+            <p data-i18n="faq.a1">A native macOS app to manage LaunchAgents and LaunchDaemons, scan local TCP services, and control Docker containers — all from a GUI instead of hand-editing plists or running lsof.</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.q2">Do jobs keep running after I quit the app?</h3>
+            <p data-i18n="faq.a2">Yes. launchd runs loaded jobs. LaunchManager is only for setup and control.</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.q3">Can I manage system-level jobs?</h3>
+            <p data-i18n="faq.a3">Yes, with admin approval when needed.</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.q4">What do I need to run it?</h3>
+            <p data-i18n="faq.a4">macOS 14+, via Homebrew, DMG, or build from source.</p>
+          </article>
+        </div>
+        <p class="text-link-row">
+          <a href="https://github.com/Sean10000/LaunchManager/issues" target="_blank" rel="noopener" data-i18n="help.issuesLink">Report a bug on GitHub →</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <nav class="links">
+        <a href="/help" data-i18n="footer.help">Help</a>
+        <a href="/screenshots" data-i18n="footer.screenshots">Screenshots</a>
+        <a href="https://github.com/Sean10000/LaunchManager" data-i18n="footer.github">GitHub</a>
+        <a href="https://github.com/Sean10000/LaunchManager/releases" data-i18n="footer.releases">Releases</a>
+        <a href="https://github.com/Sean10000/LaunchManager/blob/main/LICENSE" data-i18n="footer.license">MIT License</a>
+        <a href="https://github.com/Sean10000/LaunchManager/issues" data-i18n="footer.issues">Issues</a>
+      </nav>
+      <p data-i18n-html="footer.built">Built with Swift &amp; SwiftUI · Acknowledgements to <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> for AI pair programming</p>
+      <p style="margin-top: 0.5rem;" data-i18n="footer.copy">© Sean10000 · LaunchManager is not affiliated with Apple Inc.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/site.js"></script>
+</body>
+</html>
