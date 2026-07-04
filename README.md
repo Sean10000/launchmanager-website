@@ -26,7 +26,19 @@ In Vercel project **Settings → Domains**, add e.g. `launchmanager.dev` and set
 
 ## Assets
 
-Screenshots and logo load from GitHub raw URLs (`raw.githubusercontent.com/Sean10000/LaunchManager/main/assets/...`). To avoid external dependency, copy `assets/` from the app repo into this project and change image `src` paths to `/assets/...`.
+All images under `/assets/images/` are **not** bundled in the Vercel deployment (see `.vercelignore`). At runtime, `vercel.json` rewrites those requests to the [LaunchManager](https://github.com/Sean10000/LaunchManager) repo on GitHub:
+
+`/assets/images/foo.png` → `raw.githubusercontent.com/Sean10000/LaunchManager/main/assets/foo.png`
+
+This keeps image traffic on your Vercel domain (edge cache) instead of clients hitting GitHub directly, which helps access from mainland China.
+
+**Add or update an image**
+
+1. Put the file in `LaunchManager` → `assets/` on the `main` branch.
+2. Optionally copy it to `assets/images/` here for local preview (`python -m http.server`).
+3. Reference it in HTML as `/assets/images/<filename>`.
+
+**Local dev:** `assets/images/` stays in this repo for `python -m http.server`. Use `npx vercel dev` to test the production rewrite locally.
 
 ## Link from the app repo
 

@@ -1,0 +1,3 @@
+# Images are proxied from LaunchManager via vercel.json (better CDN access in mainland China).
+# Keep assets/images/ in git for local `python -m http.server` dev only.
+assets/images/

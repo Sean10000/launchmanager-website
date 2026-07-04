@@ -544,11 +544,24 @@ tr:last-child td { border-bottom: none; }
   border-bottom: 1px solid var(--border);
 }
 
-.support img {
+.support-codes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.support-code img {
   max-width: 200px;
   border-radius: var(--radius);
-  margin-top: 1.5rem;
   border: 1px solid var(--border);
+}
+
+.support-code-link {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
 }
 
 footer {

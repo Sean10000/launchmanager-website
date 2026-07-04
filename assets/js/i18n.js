@@ -175,6 +175,7 @@
       "support.title": "Support the project",
       "support.desc":
         "If LaunchManager saved you time, feel free to buy me a coffee. Americano is better. ☕",
+      "support.wechat.hint": "Open WeChat and use Scan to scan the code",
 
       "footer.github": "GitHub",
       "footer.help": "Help",
@@ -346,6 +347,7 @@
 
       "support.title": "支持项目",
       "support.desc": "如果 LaunchManager 帮你节省了时间，欢迎请我喝杯咖啡。美式更好。☕",
+      "support.wechat.hint": "请打开微信，使用「扫一扫」扫描赞赏码",
 
       "footer.github": "GitHub",
       "footer.help": "帮助",
