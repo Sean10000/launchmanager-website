@@ -9,6 +9,7 @@
 
       "nav.features": "Features",
       "nav.screenshots": "Screenshots",
+      "nav.templates": "Templates",
       "nav.help": "Help",
       "nav.scheduling": "Scheduling",
       "nav.install": "Install",
@@ -85,6 +86,7 @@
       "help.troubleshoot.item3":
         "Loaded jobs keep running after you quit LaunchManager — only setup and control happen in the app.",
       "help.screenshotsLink": "See annotated screenshots →",
+      "help.templatesLink": "Browse plist templates →",
       "help.issuesLink": "Report a bug on GitHub →",
 
       "help.meta.title": "LaunchManager Help",
@@ -177,8 +179,41 @@
         "If LaunchManager saved you time, feel free to buy me a coffee. Americano is better. ☕",
       "support.wechat.hint": "Open WeChat and use Scan to scan the code",
 
+      "templates.meta.title": "LaunchManager Plist Templates",
+      "templates.meta.description":
+        "Ready-to-use launchd plist templates for macOS — download or copy XML for LaunchAgents and LaunchDaemons.",
+      "templates.title": "Plist templates",
+      "templates.desc":
+        "Starter LaunchAgent plists for common patterns. Download a file or copy the XML, then edit paths and Label before loading.",
+      "templates.note":
+        "User Agents: save to ~/Library/LaunchAgents/ and run launchctl load ~/Library/LaunchAgents/your.plist. Change com.example.* to your own reverse-DNS label.",
+      "templates.download": "Download",
+      "templates.copy": "Copy XML",
+      "templates.helpLink": "Load and manage jobs in LaunchManager →",
+      "templates.t1.title": "Run script at login",
+      "templates.t1.meta": "User Agent · RunAtLoad",
+      "templates.t1.desc":
+        "Runs once when the agent is loaded — typical for login-time setup scripts that exit when finished.",
+      "templates.t2.title": "Daily schedule",
+      "templates.t2.meta": "User Agent · StartCalendarInterval",
+      "templates.t2.desc":
+        "Runs every day at 09:00. Adjust Hour and Minute, or add Weekday for weekly jobs.",
+      "templates.t3.title": "Interval job",
+      "templates.t3.meta": "User Agent · StartInterval",
+      "templates.t3.desc":
+        "Runs every 3600 seconds (1 hour). Also runs once at load when RunAtLoad is true.",
+      "templates.t4.title": "Keep-alive process",
+      "templates.t4.meta": "User Agent · KeepAlive",
+      "templates.t4.desc":
+        "Keeps a long-running process alive — dev servers, workers, or local APIs. launchd restarts it if it exits.",
+      "templates.t5.title": "Watch path",
+      "templates.t5.meta": "User Agent · WatchPaths",
+      "templates.t5.desc":
+        "Runs your script when files change in a watched directory — useful for config reloads or simple file triggers.",
+
       "footer.github": "GitHub",
       "footer.help": "Help",
+      "footer.templates": "Templates",
       "footer.screenshots": "Screenshots",
       "footer.releases": "Releases",
       "footer.license": "MIT License",
@@ -195,6 +230,7 @@
 
       "nav.features": "功能",
       "nav.screenshots": "截图",
+      "nav.templates": "模板",
       "nav.help": "帮助",
       "nav.scheduling": "调度",
       "nav.install": "安装",
@@ -261,6 +297,7 @@
       "help.troubleshoot.item2": "若 Docker 操作失败，请确认 Docker Desktop 或 Colima 正在运行。应用会搜索常见安装路径并回退到 PATH。",
       "help.troubleshoot.item3": "已加载的任务在退出 LaunchManager 后仍由 launchd 运行——应用仅用于配置和控制。",
       "help.screenshotsLink": "查看标注截图 →",
+      "help.templatesLink": "浏览 plist 模板 →",
       "help.issuesLink": "在 GitHub 反馈问题 →",
 
       "help.meta.title": "LaunchManager 帮助",
@@ -349,8 +386,36 @@
       "support.desc": "如果 LaunchManager 帮你节省了时间，欢迎请我喝杯咖啡。美式更好。☕",
       "support.wechat.hint": "请打开微信，使用「扫一扫」扫描赞赏码",
 
+      "templates.meta.title": "LaunchManager Plist 模板",
+      "templates.meta.description":
+        "开箱即用的 macOS launchd plist 模板——可下载或复制 XML，用于 LaunchAgent 与 LaunchDaemon。",
+      "templates.title": "Plist 模板",
+      "templates.desc":
+        "常用场景的 LaunchAgent 起步模板。下载 plist 或复制 XML，修改路径和 Label 后再加载。",
+      "templates.note":
+        "用户代理（User Agent）：保存到 ~/Library/LaunchAgents/，执行 launchctl load ~/Library/LaunchAgents/your.plist。请将 com.example.* 改为你自己的反向 DNS 标识。",
+      "templates.download": "下载",
+      "templates.copy": "复制 XML",
+      "templates.helpLink": "在 LaunchManager 中加载和管理任务 →",
+      "templates.t1.title": "登录时运行脚本",
+      "templates.t1.meta": "User Agent · RunAtLoad",
+      "templates.t1.desc": "加载代理时运行一次——适合登录时执行并退出的初始化脚本。",
+      "templates.t2.title": "每日定时",
+      "templates.t2.meta": "User Agent · StartCalendarInterval",
+      "templates.t2.desc": "每天 09:00 运行。可调整 Hour、Minute，或添加 Weekday 实现每周任务。",
+      "templates.t3.title": "间隔执行",
+      "templates.t3.meta": "User Agent · StartInterval",
+      "templates.t3.desc": "每 3600 秒（1 小时）运行一次。RunAtLoad 为 true 时加载后也会立即执行一次。",
+      "templates.t4.title": "常驻进程",
+      "templates.t4.meta": "User Agent · KeepAlive",
+      "templates.t4.desc": "保持长驻进程运行——开发服务器、worker 或本地 API。进程退出后 launchd 会自动重启。",
+      "templates.t5.title": "监听路径",
+      "templates.t5.meta": "User Agent · WatchPaths",
+      "templates.t5.desc": "当监听目录中的文件发生变化时运行脚本——适用于配置热重载或简单文件触发。",
+
       "footer.github": "GitHub",
       "footer.help": "帮助",
+      "footer.templates": "模板",
       "footer.screenshots": "截图",
       "footer.releases": "发布页",
       "footer.license": "MIT 许可",
