@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LaunchManager — Free macOS launchd Manager</title>
-  <meta name="description" content="Native macOS app to manage launchd jobs and scan local TCP services. Docker-aware port monitoring. Free, open source, MIT." />
-  <meta property="og:title" content="LaunchManager — macOS launchd &amp; Services Manager" />
-  <meta property="og:description" content="Manage LaunchAgents and LaunchDaemons, scan local TCP listeners, and control Docker containers from a native macOS UI." />
+  <title>LaunchManager — macOS Background Services Control Center</title>
+  <meta name="description" content="Manage startup items, launchd jobs, network ports, and Docker containers on your Mac. One native GUI for everything running in the background. Free, open source." />
+  <meta property="og:title" content="LaunchManager — macOS Background Services Control Center" />
+  <meta property="og:description" content="Manage startup items, launchd jobs, ports, and Docker containers from one native macOS app." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/images/home-page.png" />
   <meta property="og:url" content="https://www.launchmanager.dev/" />
@@ -33,6 +33,16 @@
       <div class="nav-right">
         <ul class="nav-links" id="nav-links">
           <li><a href="/#features" data-i18n="nav.features">Features</a></li>
+          <li class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" data-i18n="nav.topics">Topics</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="/startup-manager" data-i18n="nav.topic.startup">Startup &amp; Login Items</a></li>
+              <li><a href="/launchd-manager" data-i18n="nav.topic.launchd">launchd Manager</a></li>
+              <li><a href="/port-manager" data-i18n="nav.topic.ports">Port Manager</a></li>
+              <li><a href="/docker-ports" data-i18n="nav.topic.docker">Docker Ports</a></li>
+            </ul>
+          </li>
+          <li><a href="/blog" data-i18n="nav.blog">Blog</a></li>
           <li><a href="/screenshots" data-i18n="nav.screenshots">Screenshots</a></li>
           <li><a href="/templates" data-i18n="nav.templates">Templates</a></li>
           <li><a href="/help" data-i18n="nav.help">Help</a></li>
@@ -54,12 +64,21 @@
         <span class="badge mit" data-i18n="hero.badge.mit">MIT License</span>
         <span class="badge" data-i18n="hero.badge.oss">Open Source</span>
       </div>
-      <h1 data-i18n-html="hero.title">Manage launchd jobs<br />on your Mac</h1>
+      <h1 data-i18n-html="hero.title">Manage every background service<br />on your Mac</h1>
       <p class="lead" data-i18n="hero.lead">
-        LaunchManager is a native macOS dev-environment control panel — manage LaunchAgents and LaunchDaemons, and see what's running on your machine, without editing XML or digging through lsof.
+        LaunchManager is the control center for macOS background services — startup items, launchd jobs, network ports, and Docker containers — without editing XML or digging through lsof.
       </p>
+      <div class="capability-grid" aria-label="Capabilities">
+        <span class="capability-item" data-i18n="capabilities.launchagents">LaunchAgents</span>
+        <span class="capability-item" data-i18n="capabilities.launchdaemons">LaunchDaemons</span>
+        <span class="capability-item" data-i18n="capabilities.loginitems">Login Items</span>
+        <span class="capability-item" data-i18n="capabilities.background">Background Services</span>
+        <span class="capability-item" data-i18n="capabilities.ports">Network Ports</span>
+        <span class="capability-item" data-i18n="capabilities.scheduled">Scheduled Tasks</span>
+        <span class="capability-item" data-i18n="capabilities.docker">Docker Containers</span>
+      </div>
       <p class="hero-value" data-i18n="hero.value">
-        launchd runs the background jobs on every Mac. LaunchManager gives you a clean UI to browse loaded jobs, scan local TCP listeners, fix broken plists, and control services with load, start, and stop — free and open source.
+        From "why is port 3000 in use?" to "where is this LaunchAgent?" — see what's running, control services, and fix conflicts in one native app. Free and open source.
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary btn-lg" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="hero.cta.download" data-release-download>Download</a>
@@ -71,11 +90,36 @@
       </div>
     </section>
 
+    <section id="guides" class="section-alt">
+      <div class="container">
+        <h2 data-i18n="pillars.title">Guides by topic</h2>
+        <p class="section-desc" data-i18n="pillars.desc">Practical answers for startup apps, launchd, ports, and Docker on macOS.</p>
+        <div class="pillar-grid">
+          <a class="pillar-card" href="/startup-manager">
+            <h3 data-i18n="pillars.startup.title">Startup Manager</h3>
+            <p data-i18n="pillars.startup.desc">Find and control apps that launch at login or boot.</p>
+          </a>
+          <a class="pillar-card" href="/launchd-manager">
+            <h3 data-i18n="pillars.launchd.title">launchd Manager</h3>
+            <p data-i18n="pillars.launchd.desc">Browse, edit, and control LaunchAgents and LaunchDaemons.</p>
+          </a>
+          <a class="pillar-card" href="/port-manager">
+            <h3 data-i18n="pillars.ports.title">Port Manager</h3>
+            <p data-i18n="pillars.ports.desc">See what's listening, find port conflicts, and free blocked ports.</p>
+          </a>
+          <a class="pillar-card" href="/docker-ports">
+            <h3 data-i18n="pillars.docker.title">Docker Ports</h3>
+            <p data-i18n="pillars.docker.desc">Map container ports to localhost and stop conflicts with dev servers.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section id="features">
       <div class="container">
-        <h2 data-i18n="features.title">Everything for everyday dev-environment control</h2>
+        <h2 data-i18n="features.title">An operations console for your Mac</h2>
         <p class="section-desc" data-i18n="features.desc">
-          Built for developers who manage launchd jobs and local services on their Mac every day. v1.6 adds Docker-aware Services scanning with smart naming.
+          Unlike single-purpose tools, LaunchManager combines launchd management, port scanning, and Docker awareness in one window.
         </p>
         <div class="features">
           <article class="feature-card">
@@ -284,6 +328,31 @@ open LaunchManager.xcodeproj</code></pre>
       </div>
     </section>
 
+    <section id="faq">
+      <div class="container">
+        <h2 data-i18n="faq.title">Frequently asked questions</h2>
+        <p class="section-desc" data-i18n="faq.desc">Common questions about LaunchManager.</p>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3 data-i18n="faq.q1">What is LaunchManager?</h3>
+            <p data-i18n="faq.a1">A native macOS control center for background services.</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.q2">Do jobs keep running after I quit the app?</h3>
+            <p data-i18n="faq.a2">Yes. launchd runs loaded jobs. LaunchManager is only for setup and control.</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.q5">How is this different from LaunchControl or Lingon?</h3>
+            <p data-i18n="faq.a5">Those tools focus on launchd. LaunchManager also scans listening ports and shows Login Items in one place — for free.</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.q4">What do I need to run it?</h3>
+            <p data-i18n="faq.a4">macOS 14+, via Homebrew, DMG, or build from source.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="support" id="support">
       <div class="container">
         <h2 data-i18n="support.title">Support the project</h2>
@@ -306,6 +375,13 @@ open LaunchManager.xcodeproj</code></pre>
 
   <footer>
     <div class="container">
+      <nav class="footer-topics">
+        <a href="/startup-manager" data-i18n="pillars.startup.title">Startup Manager</a>
+        <a href="/launchd-manager" data-i18n="pillars.launchd.title">launchd Manager</a>
+        <a href="/port-manager" data-i18n="pillars.ports.title">Port Manager</a>
+        <a href="/docker-ports" data-i18n="pillars.docker.title">Docker Ports</a>
+        <a href="/blog" data-i18n="footer.blog">Blog</a>
+      </nav>
       <nav class="links">
         <a href="/help" data-i18n="footer.help">Help</a>
         <a href="/templates" data-i18n="footer.templates">Templates</a>
@@ -320,6 +396,7 @@ open LaunchManager.xcodeproj</code></pre>
     </div>
   </footer>
 
+  <script src="/assets/js/i18n-seo.js"></script>
   <script src="/assets/js/i18n.js"></script>
   <script src="/assets/js/site.js"></script>
 </body>

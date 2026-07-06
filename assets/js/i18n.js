@@ -1,13 +1,22 @@
 (function () {
   const STORAGE_KEY = "lm-lang";
 
+  const extraEn = window.LM_I18N_EXTRA?.en || {};
+  const extraZh = window.LM_I18N_EXTRA?.zh || {};
+
   const i18n = {
     en: {
-      "meta.title": "LaunchManager — Free macOS launchd Manager",
+      "meta.title": "LaunchManager — macOS Background Services Control Center",
       "meta.description":
-        "Native macOS app to manage launchd jobs and scan local TCP services. Docker-aware port monitoring. Free, open source, MIT.",
+        "Manage startup items, launchd jobs, network ports, and Docker containers on your Mac. One native GUI for everything running in the background. Free, open source.",
 
       "nav.features": "Features",
+      "nav.topics": "Topics",
+      "nav.blog": "Blog",
+      "nav.topic.startup": "Startup & Login Items",
+      "nav.topic.launchd": "launchd Manager",
+      "nav.topic.ports": "Port Manager",
+      "nav.topic.docker": "Docker Ports",
       "nav.screenshots": "Screenshots",
       "nav.templates": "Templates",
       "nav.help": "Help",
@@ -21,18 +30,39 @@
       "hero.badge.swift": "Swift 5.10",
       "hero.badge.mit": "MIT License",
       "hero.badge.oss": "Open Source",
-      "hero.title": "Manage launchd jobs<br />on your Mac",
+      "hero.title": "Manage every background service<br />on your Mac",
       "hero.lead":
-        "LaunchManager is a native macOS dev-environment control panel — manage LaunchAgents and LaunchDaemons, and see what's running on your machine, without editing XML or digging through lsof.",
+        "LaunchManager is the control center for macOS background services — startup items, launchd jobs, network ports, and Docker containers — without editing XML or digging through lsof.",
       "hero.cta.download": "Download",
       "hero.cta.screenshots": "View screenshots",
       "hero.cta.github": "View on GitHub",
       "hero.value":
-        "launchd runs the background jobs on every Mac. LaunchManager gives you a clean UI to browse loaded jobs, scan local TCP listeners, fix broken plists, and control services with load, start, and stop — free and open source.",
+        "From \"why is port 3000 in use?\" to \"where is this LaunchAgent?\" — see what's running, control services, and fix conflicts in one native app. Free and open source.",
 
-      "features.title": "Everything for everyday dev-environment control",
+      "capabilities.title": "One place for background service management",
+      "capabilities.desc": "Launchd is one feature. LaunchManager covers the full picture of what runs on your Mac.",
+      "capabilities.launchagents": "LaunchAgents",
+      "capabilities.launchdaemons": "LaunchDaemons",
+      "capabilities.loginitems": "Login Items",
+      "capabilities.background": "Background Services",
+      "capabilities.ports": "Network Ports",
+      "capabilities.scheduled": "Scheduled Tasks",
+      "capabilities.docker": "Docker Containers",
+
+      "pillars.title": "Guides by topic",
+      "pillars.desc": "Practical answers for startup apps, launchd, ports, and Docker on macOS.",
+      "pillars.startup.title": "Startup Manager",
+      "pillars.startup.desc": "Find and control apps that launch at login or boot.",
+      "pillars.launchd.title": "launchd Manager",
+      "pillars.launchd.desc": "Browse, edit, and control LaunchAgents and LaunchDaemons.",
+      "pillars.ports.title": "Port Manager",
+      "pillars.ports.desc": "See what's listening, find port conflicts, and free blocked ports.",
+      "pillars.docker.title": "Docker Ports",
+      "pillars.docker.desc": "Map container ports to localhost and stop conflicts with dev servers.",
+
+      "features.title": "An operations console for your Mac",
       "features.desc":
-        "Built for developers who manage launchd jobs and local services on their Mac every day. v1.6 adds Docker-aware Services scanning with smart naming.",
+        "Unlike single-purpose tools, LaunchManager combines launchd management, port scanning, and Docker awareness in one window.",
       "features.services.title": "Services scanner",
       "features.services.desc":
         "Scan local TCP listeners every 3 seconds. Docker-aware, with smart labels and persistent custom names.",
@@ -133,7 +163,7 @@
 
       "compare.title": "How it compares",
       "compare.desc":
-        "A free option for everyday launchd management. Paid tools add extras like AI or an XML editor.",
+        "Most tools cover one layer — launchd, ports, or processes. LaunchManager combines them in a free operations console.",
       "compare.note":
         'Power users needing an AI assistant or expert XML editor may prefer <a href="https://www.soma-zone.com/LaunchControl/" target="_blank" rel="noopener">LaunchControl</a>.',
       "compare.row.price": "Price",
@@ -164,7 +194,10 @@
       "faq.desc": "Common questions about LaunchManager.",
       "faq.q1": "What is LaunchManager?",
       "faq.a1":
-        "A native macOS app to manage LaunchAgents and LaunchDaemons, scan local TCP services, and control Docker containers — all from a GUI instead of hand-editing plists or running lsof.",
+        "A native macOS control center for background services — manage LaunchAgents, LaunchDaemons, Login Items, local TCP ports, and Docker containers from one GUI instead of hand-editing plists or running lsof.",
+      "faq.q5": "How is this different from LaunchControl or Lingon?",
+      "faq.a5":
+        "Those tools focus on launchd. LaunchManager also scans listening ports (Docker-aware), shows Login Items, and helps answer \"what's running on my Mac?\" in one place — for free.",
       "faq.q2": "Do jobs keep running after I quit the app?",
       "faq.a2":
         "Yes. launchd runs loaded jobs. LaunchManager is only for setup and control.",
@@ -214,6 +247,8 @@
       "footer.github": "GitHub",
       "footer.help": "Help",
       "footer.templates": "Templates",
+      "footer.blog": "Blog",
+      "footer.guides": "Guides",
       "footer.screenshots": "Screenshots",
       "footer.releases": "Releases",
       "footer.license": "MIT License",
@@ -221,14 +256,26 @@
       "footer.built":
         'Built with Swift & SwiftUI · Acknowledgements to <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> for AI pair programming',
       "footer.copy": "© Sean10000 · LaunchManager is not affiliated with Apple Inc.",
+
+      "seo.cta.title": "Do it visually in LaunchManager",
+      "seo.cta.desc": "Browse startup items, launchd jobs, ports, and Docker — then load, stop, or fix conflicts from one native app.",
+      "seo.cta.btn": "Download LaunchManager",
+      "seo.related": "Related guides",
+      ...extraEn,
     },
 
     zh: {
-      "meta.title": "LaunchManager — 免费 macOS launchd 管理工具",
+      "meta.title": "LaunchManager — macOS 后台服务控制中心",
       "meta.description":
-        "原生 macOS 应用，管理 launchd 任务并扫描本地 TCP 服务，支持 Docker 感知端口监控。免费开源，MIT 许可。",
+        "管理 Mac 启动项、launchd 任务、网络端口与 Docker 容器。一个原生 GUI 掌控所有后台服务。免费开源。",
 
       "nav.features": "功能",
+      "nav.topics": "主题",
+      "nav.blog": "博客",
+      "nav.topic.startup": "启动项与 Login Items",
+      "nav.topic.launchd": "launchd 管理",
+      "nav.topic.ports": "端口管理",
+      "nav.topic.docker": "Docker 端口",
       "nav.screenshots": "截图",
       "nav.templates": "模板",
       "nav.help": "帮助",
@@ -242,17 +289,38 @@
       "hero.badge.swift": "Swift 5.10",
       "hero.badge.mit": "MIT 许可",
       "hero.badge.oss": "开源",
-      "hero.title": "在 Mac 上管理<br />launchd 任务",
+      "hero.title": "管理 Mac 上<br />所有后台服务",
       "hero.lead":
-        "LaunchManager 是一款原生 macOS 开发环境控制面板——管理 LaunchAgents 与 LaunchDaemons，并查看本机正在运行的服务，无需手写 XML 或翻查 lsof。",
+        "LaunchManager 是 macOS 后台服务控制中心——启动项、launchd 任务、网络端口与 Docker 容器，无需手写 XML 或翻查 lsof。",
       "hero.cta.download": "下载",
       "hero.cta.screenshots": "查看截图",
       "hero.cta.github": "在 GitHub 查看",
       "hero.value":
-        "launchd 负责 Mac 上所有后台任务。LaunchManager 提供清晰界面，浏览已加载任务、扫描本地 TCP 监听、修复损坏的 plist，并通过加载、启动、停止控制服务——免费开源。",
+        "从「3000 端口被谁占了？」到「这个 LaunchAgent 在哪？」——在一个原生应用里查看运行状态、控制服务、解决冲突。免费开源。",
 
-      "features.title": "日常开发环境控制，一应俱全",
-      "features.desc": "为每天在 Mac 上管理 launchd 任务和本地服务的开发者打造。v1.6 新增 Docker 感知的 Services 扫描与智能命名。",
+      "capabilities.title": "后台服务管理，一站搞定",
+      "capabilities.desc": "launchd 只是其中一环。LaunchManager 覆盖 Mac 上后台运行的全貌。",
+      "capabilities.launchagents": "LaunchAgents",
+      "capabilities.launchdaemons": "LaunchDaemons",
+      "capabilities.loginitems": "Login Items",
+      "capabilities.background": "后台服务",
+      "capabilities.ports": "网络端口",
+      "capabilities.scheduled": "定时任务",
+      "capabilities.docker": "Docker 容器",
+
+      "pillars.title": "按主题查看指南",
+      "pillars.desc": "启动项、launchd、端口与 Docker 的实用解答。",
+      "pillars.startup.title": "启动项管理",
+      "pillars.startup.desc": "查找并控制登录或开机时自动启动的应用。",
+      "pillars.launchd.title": "launchd 管理",
+      "pillars.launchd.desc": "浏览、编辑并控制 LaunchAgents 与 LaunchDaemons。",
+      "pillars.ports.title": "端口管理",
+      "pillars.ports.desc": "查看监听端口、定位冲突并释放被占用的端口。",
+      "pillars.docker.title": "Docker 端口",
+      "pillars.docker.desc": "查看容器端口映射，避免与本地开发服务冲突。",
+
+      "features.title": "Mac 后台运维控制台",
+      "features.desc": "不同于单一用途工具，LaunchManager 将 launchd 管理、端口扫描与 Docker 感知整合在同一窗口。",
       "features.services.title": "Services 扫描",
       "features.services.desc": "每 3 秒扫描本地 TCP 监听，Docker 感知，智能标注，自定义名称持久保存。",
       "features.browse.title": "浏览所有范围",
@@ -343,7 +411,7 @@
 
       "compare.title": "与其他工具对比",
       "compare.desc":
-        "日常 launchd 管理的免费选择。付费工具通常额外提供 AI 或 XML 专家编辑等功能。",
+        "多数工具只覆盖一层——launchd、端口或进程。LaunchManager 在免费的运维控制台中把它们整合在一起。",
       "compare.note":
         '需要 AI 助手或 XML 专家编辑的进阶用户，可考虑 <a href="https://www.soma-zone.com/LaunchControl/" target="_blank" rel="noopener">LaunchControl</a>。',
       "compare.row.price": "价格",
@@ -374,7 +442,10 @@
       "faq.desc": "关于 LaunchManager 的常见问题。",
       "faq.q1": "LaunchManager 是什么？",
       "faq.a1":
-        "一款原生 macOS 应用，通过图形界面管理 LaunchAgents 和 LaunchDaemons、扫描本地 TCP 服务并控制 Docker 容器——无需手写 plist 或运行 lsof。",
+        "一款原生 macOS 后台服务控制中心——在同一 GUI 中管理 LaunchAgents、LaunchDaemons、Login Items、本地 TCP 端口与 Docker 容器，无需手写 plist 或运行 lsof。",
+      "faq.q5": "和 LaunchControl、Lingon 有什么不同？",
+      "faq.a5":
+        "那些工具专注 launchd。LaunchManager 还扫描监听端口（Docker 感知）、显示 Login Items，免费帮你回答「Mac 上到底在跑什么？」。",
       "faq.q2": "退出应用后，任务还会继续运行吗？",
       "faq.a2": "会。已加载的任务由 launchd 负责运行，LaunchManager 仅用于配置和控制。",
       "faq.q3": "可以管理系统级任务吗？",
@@ -416,6 +487,8 @@
       "footer.github": "GitHub",
       "footer.help": "帮助",
       "footer.templates": "模板",
+      "footer.blog": "博客",
+      "footer.guides": "指南",
       "footer.screenshots": "截图",
       "footer.releases": "发布页",
       "footer.license": "MIT 许可",
@@ -423,6 +496,12 @@
       "footer.built":
         '使用 Swift & SwiftUI 构建 · 感谢 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 协助编程',
       "footer.copy": "© Sean10000 · LaunchManager 与 Apple Inc. 无关联。",
+
+      "seo.cta.title": "在 LaunchManager 里可视化完成",
+      "seo.cta.desc": "浏览启动项、launchd 任务、端口与 Docker，在同一原生应用中加载、停止或解决冲突。",
+      "seo.cta.btn": "下载 LaunchManager",
+      "seo.related": "相关指南",
+      ...extraZh,
     },
   };
 

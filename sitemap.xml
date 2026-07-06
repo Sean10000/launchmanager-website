@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.launchmanager.dev/</loc>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
@@ -19,5 +19,55 @@
     <loc>https://www.launchmanager.dev/screenshots</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.launchmanager.dev/startup-manager</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.launchmanager.dev/launchd-manager</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.launchmanager.dev/port-manager</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.launchmanager.dev/kill-port</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.launchmanager.dev/docker-ports</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.launchmanager.dev/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.launchmanager.dev/blog/kill-port-3000-mac</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.launchmanager.dev/blog/fix-eaddrinuse-mac</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.launchmanager.dev/blog/launchagent-vs-login-items</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.launchmanager.dev/blog/docker-port-5432</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
 </urlset>
