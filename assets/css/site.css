@@ -680,6 +680,223 @@ footer .links {
     border-bottom: 1px solid var(--border);
     gap: 0.75rem;
   }
+  .nav-dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0.25rem 0 0 0.75rem;
+    margin-top: 0;
+  }
   .menu-toggle { display: block; }
   .nav-cta-desktop { display: none; }
 }
+
+/* Capability grid */
+.capability-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  max-width: 42rem;
+  margin: 0 auto 2.5rem;
+}
+
+.capability-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.capability-item::before {
+  content: "✓";
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* Pillar hub */
+.pillar-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .pillar-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.pillar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.35rem;
+  transition: border-color 0.2s, transform 0.2s;
+  display: block;
+  color: var(--text);
+}
+
+.pillar-card:hover {
+  border-color: rgba(10, 132, 255, 0.35);
+  transform: translateY(-2px);
+  color: var(--text);
+}
+
+.pillar-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.pillar-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Topics dropdown */
+.nav-dropdown { position: relative; }
+
+.nav-dropdown-toggle {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+.nav-dropdown-toggle:hover { color: var(--text); }
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.5rem;
+  min-width: 12rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.35rem 0;
+  list-style: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 200;
+}
+
+.nav-dropdown.open .nav-dropdown-menu { display: block; }
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.nav-dropdown-menu a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Article / SEO prose */
+.article {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.article h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 2rem 0 0.75rem;
+  text-align: left;
+}
+
+.article h2:first-child { margin-top: 0; }
+
+.article p,
+.article li {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+.article ul {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.article pre {
+  margin: 1rem 0;
+}
+
+.seo-cta {
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.seo-cta h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.seo-cta p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+/* Blog list */
+.blog-list {
+  display: grid;
+  gap: 1rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.blog-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  transition: border-color 0.2s;
+  display: block;
+  color: var(--text);
+}
+
+.blog-card:hover {
+  border-color: rgba(10, 132, 255, 0.35);
+  color: var(--text);
+}
+
+.blog-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.blog-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.footer-topics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.footer-topics a { color: var(--text-muted); }
