@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LaunchManager Plist 模板</title>
+  <meta name="description" content="开箱即用的 macOS launchd plist 模板——可下载或复制 XML，用于 LaunchAgent 与 LaunchDaemon。">
+  <meta property="og:title" content="LaunchManager Plist 模板">
+  <meta property="og:description" content="开箱即用的 macOS launchd plist 模板——可下载或复制 XML，用于 LaunchAgent 与 LaunchDaemon。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/images/home-page.png">
+  <meta property="og:url" content="https://launchmanager.dev/zh/templates">
+  <meta name="theme-color" content="#0a0a0c">
+  <link rel="canonical" href="https://launchmanager.dev/zh/templates">
+  <link rel="alternate" hreflang="en" href="https://launchmanager.dev/templates">
+  <link rel="alternate" hreflang="zh-Hans" href="https://launchmanager.dev/zh/templates">
+  <link rel="alternate" hreflang="x-default" href="https://launchmanager.dev/templates">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="icon" href="/assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer="" src="/_vercel/insights/script.js"></script>
+
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US"></head>
+<body data-page="templates">
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/zh">
+        <img src="/assets/images/logo.png" alt="" width="28" height="28">
+        LaunchManager
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menu" id="menu-toggle">☰</button>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/zh#features" data-i18n="nav.features">功能</a></li>
+          <li><a href="/zh/screenshots" data-i18n="nav.screenshots">截图</a></li>
+          <li><a href="/zh/templates" aria-current="page" data-i18n="nav.templates">模板</a></li>
+          <li><a href="/zh/help" data-i18n="nav.help">帮助</a></li>
+          <li><a href="/zh#install" data-i18n="nav.install">安装</a></li>
+          <li><a href="/zh#compare" data-i18n="nav.compare">对比</a></li>
+          <li><a href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+        <a class="lang-toggle" id="lang-switch" href="/templates" hreflang="en" rel="alternate">EN</a>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download="">下载</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero container">
+      <h1 data-i18n="templates.title">Plist 模板</h1>
+      <p class="section-desc" data-i18n="templates.desc">常用场景的 LaunchAgent 起步模板。下载 plist 或复制 XML，修改路径和 Label 后再加载。</p>
+    </section>
+
+    <section>
+      <div class="container">
+        <p class="template-note" data-i18n="templates.note">用户代理（User Agent）：保存到 ~/Library/LaunchAgents/，执行 launchctl load ~/Library/LaunchAgents/your.plist。请将 com.example.* 改为你自己的反向 DNS 标识。</p>
+
+        <div class="template-list">
+          <article class="template-card">
+            <div class="template-card-head">
+              <div>
+                <h2 data-i18n="templates.t1.title">登录时运行脚本</h2>
+                <p class="template-meta" data-i18n="templates.t1.meta">User Agent · RunAtLoad</p>
+              </div>
+              <div class="template-actions">
+                <a class="btn btn-primary" href="/assets/templates/run-at-login.plist" download="run-at-login.plist" data-i18n="templates.download">下载</a>
+                <button type="button" class="btn btn-ghost" data-copy-xml="" data-i18n="templates.copy">复制 XML</button>
+              </div>
+            </div>
+            <p class="template-desc" data-i18n="templates.t1.desc">加载代理时运行一次——适合登录时执行并退出的初始化脚本。</p>
+            <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+	&lt;key&gt;Label&lt;/key&gt;
+	&lt;string&gt;com.example.run-at-login&lt;/string&gt;
+	&lt;key&gt;ProgramArguments&lt;/key&gt;
+	&lt;array&gt;
+		&lt;string&gt;/bin/sh&lt;/string&gt;
+		&lt;string&gt;-c&lt;/string&gt;
+		&lt;string&gt;/path/to/your/script.sh&lt;/string&gt;
+	&lt;/array&gt;
+	&lt;key&gt;RunAtLoad&lt;/key&gt;
+	&lt;true/&gt;
+	&lt;key&gt;KeepAlive&lt;/key&gt;
+	&lt;false/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</code></pre>
+          </article>
+
+          <article class="template-card">
+            <div class="template-card-head">
+              <div>
+                <h2 data-i18n="templates.t2.title">每日定时</h2>
+                <p class="template-meta" data-i18n="templates.t2.meta">User Agent · StartCalendarInterval</p>
+              </div>
+              <div class="template-actions">
+                <a class="btn btn-primary" href="/assets/templates/daily-schedule.plist" download="daily-schedule.plist" data-i18n="templates.download">下载</a>
+                <button type="button" class="btn btn-ghost" data-copy-xml="" data-i18n="templates.copy">复制 XML</button>
+              </div>
+            </div>
+            <p class="template-desc" data-i18n="templates.t2.desc">每天 09:00 运行。可调整 Hour、Minute，或添加 Weekday 实现每周任务。</p>
+            <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+	&lt;key&gt;Label&lt;/key&gt;
+	&lt;string&gt;com.example.daily-schedule&lt;/string&gt;
+	&lt;key&gt;ProgramArguments&lt;/key&gt;
+	&lt;array&gt;
+		&lt;string&gt;/bin/sh&lt;/string&gt;
+		&lt;string&gt;-c&lt;/string&gt;
+		&lt;string&gt;/path/to/your/backup.sh&lt;/string&gt;
+	&lt;/array&gt;
+	&lt;key&gt;StartCalendarInterval&lt;/key&gt;
+	&lt;dict&gt;
+		&lt;key&gt;Hour&lt;/key&gt;
+		&lt;integer&gt;9&lt;/integer&gt;
+		&lt;key&gt;Minute&lt;/key&gt;
+		&lt;integer&gt;0&lt;/integer&gt;
+	&lt;/dict&gt;
+	&lt;key&gt;StandardOutPath&lt;/key&gt;
+	&lt;string&gt;/tmp/com.example.daily-schedule.log&lt;/string&gt;
+	&lt;key&gt;StandardErrorPath&lt;/key&gt;
+	&lt;string&gt;/tmp/com.example.daily-schedule.log&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</code></pre>
+          </article>
+
+          <article class="template-card">
+            <div class="template-card-head">
+              <div>
+                <h2 data-i18n="templates.t3.title">间隔执行</h2>
+                <p class="template-meta" data-i18n="templates.t3.meta">User Agent · StartInterval</p>
+              </div>
+              <div class="template-actions">
+                <a class="btn btn-primary" href="/assets/templates/interval-job.plist" download="interval-job.plist" data-i18n="templates.download">下载</a>
+                <button type="button" class="btn btn-ghost" data-copy-xml="" data-i18n="templates.copy">复制 XML</button>
+              </div>
+            </div>
+            <p class="template-desc" data-i18n="templates.t3.desc">每 3600 秒（1 小时）运行一次。RunAtLoad 为 true 时加载后也会立即执行一次。</p>
+            <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+	&lt;key&gt;Label&lt;/key&gt;
+	&lt;string&gt;com.example.interval-job&lt;/string&gt;
+	&lt;key&gt;ProgramArguments&lt;/key&gt;
+	&lt;array&gt;
+		&lt;string&gt;/bin/sh&lt;/string&gt;
+		&lt;string&gt;-c&lt;/string&gt;
+		&lt;string&gt;/path/to/your/sync.sh&lt;/string&gt;
+	&lt;/array&gt;
+	&lt;key&gt;StartInterval&lt;/key&gt;
+	&lt;integer&gt;3600&lt;/integer&gt;
+	&lt;key&gt;RunAtLoad&lt;/key&gt;
+	&lt;true/&gt;
+	&lt;key&gt;StandardOutPath&lt;/key&gt;
+	&lt;string&gt;/tmp/com.example.interval-job.log&lt;/string&gt;
+	&lt;key&gt;StandardErrorPath&lt;/key&gt;
+	&lt;string&gt;/tmp/com.example.interval-job.log&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</code></pre>
+          </article>
+
+          <article class="template-card">
+            <div class="template-card-head">
+              <div>
+                <h2 data-i18n="templates.t4.title">常驻进程</h2>
+                <p class="template-meta" data-i18n="templates.t4.meta">User Agent · KeepAlive</p>
+              </div>
+              <div class="template-actions">
+                <a class="btn btn-primary" href="/assets/templates/keepalive-process.plist" download="keepalive-process.plist" data-i18n="templates.download">下载</a>
+                <button type="button" class="btn btn-ghost" data-copy-xml="" data-i18n="templates.copy">复制 XML</button>
+              </div>
+            </div>
+            <p class="template-desc" data-i18n="templates.t4.desc">保持长驻进程运行——开发服务器、worker 或本地 API。进程退出后 launchd 会自动重启。</p>
+            <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+	&lt;key&gt;Label&lt;/key&gt;
+	&lt;string&gt;com.example.keepalive-process&lt;/string&gt;
+	&lt;key&gt;ProgramArguments&lt;/key&gt;
+	&lt;array&gt;
+		&lt;string&gt;/usr/local/bin/node&lt;/string&gt;
+		&lt;string&gt;server.js&lt;/string&gt;
+	&lt;/array&gt;
+	&lt;key&gt;WorkingDirectory&lt;/key&gt;
+	&lt;string&gt;/path/to/your/project&lt;/string&gt;
+	&lt;key&gt;KeepAlive&lt;/key&gt;
+	&lt;true/&gt;
+	&lt;key&gt;RunAtLoad&lt;/key&gt;
+	&lt;true/&gt;
+	&lt;key&gt;StandardOutPath&lt;/key&gt;
+	&lt;string&gt;/tmp/com.example.keepalive-process.log&lt;/string&gt;
+	&lt;key&gt;StandardErrorPath&lt;/key&gt;
+	&lt;string&gt;/tmp/com.example.keepalive-process.log&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</code></pre>
+          </article>
+
+          <article class="template-card">
+            <div class="template-card-head">
+              <div>
+                <h2 data-i18n="templates.t5.title">监听路径</h2>
+                <p class="template-meta" data-i18n="templates.t5.meta">User Agent · WatchPaths</p>
+              </div>
+              <div class="template-actions">
+                <a class="btn btn-primary" href="/assets/templates/watch-path.plist" download="watch-path.plist" data-i18n="templates.download">下载</a>
+                <button type="button" class="btn btn-ghost" data-copy-xml="" data-i18n="templates.copy">复制 XML</button>
+              </div>
+            </div>
+            <p class="template-desc" data-i18n="templates.t5.desc">当监听目录中的文件发生变化时运行脚本——适用于配置热重载或简单文件触发。</p>
+            <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+	&lt;key&gt;Label&lt;/key&gt;
+	&lt;string&gt;com.example.watch-path&lt;/string&gt;
+	&lt;key&gt;ProgramArguments&lt;/key&gt;
+	&lt;array&gt;
+		&lt;string&gt;/bin/sh&lt;/string&gt;
+		&lt;string&gt;-c&lt;/string&gt;
+		&lt;string&gt;/path/to/your/reload.sh&lt;/string&gt;
+	&lt;/array&gt;
+	&lt;key&gt;WatchPaths&lt;/key&gt;
+	&lt;array&gt;
+		&lt;string&gt;/path/to/watch&lt;/string&gt;
+	&lt;/array&gt;
+	&lt;key&gt;RunAtLoad&lt;/key&gt;
+	&lt;false/&gt;
+	&lt;key&gt;StandardOutPath&lt;/key&gt;
+	&lt;string&gt;/tmp/com.example.watch-path.log&lt;/string&gt;
+	&lt;key&gt;StandardErrorPath&lt;/key&gt;
+	&lt;string&gt;/tmp/com.example.watch-path.log&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</code></pre>
+          </article>
+        </div>
+
+        <p class="text-link-row">
+          <a href="/zh/help#launchd" data-i18n="templates.helpLink">在 LaunchManager 中加载和管理任务 →</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <nav class="links">
+        <a href="/zh/help" data-i18n="footer.help">帮助</a>
+        <a href="/zh/templates" data-i18n="footer.templates">模板</a>
+        <a href="/zh/screenshots" data-i18n="footer.screenshots">截图</a>
+        <a href="https://github.com/Sean10000/LaunchManager" data-i18n="footer.github">GitHub</a>
+        <a href="https://github.com/Sean10000/LaunchManager/releases" data-i18n="footer.releases">发布页</a>
+        <a href="https://github.com/Sean10000/LaunchManager/blob/main/LICENSE" data-i18n="footer.license">MIT 许可</a>
+        <a href="https://github.com/Sean10000/LaunchManager/issues" data-i18n="footer.issues">问题反馈</a>
+      </nav>
+      <p data-i18n-html="footer.built">使用 Swift &amp; SwiftUI 构建 · 感谢 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 协助编程</p>
+      <p style="margin-top: 0.5rem;" data-i18n="footer.copy">© Sean10000 · LaunchManager 与 Apple Inc. 无关联。</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n-data.js"></script>
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/site.js"></script>
+  <script src="/assets/js/templates.js"></script>
+
+
+</body></html>

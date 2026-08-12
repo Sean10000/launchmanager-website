@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>launchd 管理工具 / launchctl GUI — LaunchManager</title>
+  <meta name="description" content="浏览、创建、编辑并控制 macOS LaunchAgents 与 LaunchDaemons。免费的 launchctl 图形界面。">
+  <link rel="canonical" href="https://launchmanager.dev/zh/launchd-manager">
+  <link rel="alternate" hreflang="en" href="https://launchmanager.dev/launchd-manager">
+  <link rel="alternate" hreflang="zh-Hans" href="https://launchmanager.dev/zh/launchd-manager">
+  <link rel="alternate" hreflang="x-default" href="https://launchmanager.dev/launchd-manager">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="icon" href="/assets/images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer="" src="/_vercel/insights/script.js"></script>
+
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US"></head>
+<body data-page="launchd-manager">
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/zh"><img src="/assets/images/logo.png" alt="" width="28" height="28">LaunchManager</a>
+      <button class="menu-toggle" type="button" id="menu-toggle">☰</button>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/zh#features" data-i18n="nav.features">功能</a></li>
+          <li class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" data-i18n="nav.topics">主题</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="/zh/startup-manager" data-i18n="nav.topic.startup">启动项与 Login Items</a></li>
+              <li><a href="/zh/launchd-manager" aria-current="page" data-i18n="nav.topic.launchd">launchd 管理</a></li>
+              <li><a href="/zh/port-manager" data-i18n="nav.topic.ports">端口管理</a></li>
+              <li><a href="/zh/docker-ports" data-i18n="nav.topic.docker">Docker 端口</a></li>
+            </ul>
+          </li>
+          <li><a href="/zh/blog" data-i18n="nav.blog">博客</a></li>
+          <li><a href="/zh/help" data-i18n="nav.help">帮助</a></li>
+          <li><a href="/zh#install" data-i18n="nav.install">安装</a></li>
+        </ul>
+        <a class="lang-toggle" id="lang-switch" href="/launchd-manager" hreflang="en" rel="alternate">EN</a>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download="">下载</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero container"><h1 data-i18n="launchd-manager.title">macOS launchd 管理</h1><p class="section-desc" data-i18n="launchd-manager.lead">launchctl 的原生 GUI——浏览用户代理、系统代理与系统守护进程，加载、启动、停止或编辑 plist 任务。</p></section>
+    <section><div class="container article" data-i18n-html="launchd-manager.body"><h2>常见问题</h2><p><code>launchctl</code> 功能强大但不直观。查找 plist、修复损坏任务或新建 LaunchAgent 都涉及 XML、domain 与易输错的命令。</p><h2>终端基础</h2><pre><code>launchctl list
+launchctl load ~/Library/LaunchAgents/com.example.job.plist
+launchctl unload ~/Library/LaunchAgents/com.example.job.plist</code></pre><h2>LaunchManager 图形界面</h2><p>在侧边栏选择 <strong>用户代理</strong>、<strong>系统代理</strong> 或 <strong>系统守护进程</strong>。用引导表单创建任务、编辑 plist、行内查看日志，并在列表中加载/启动/停止。无效 plist 会行内提示并支持一键删除。</p><p>相关：<a href="/zh/startup-manager">启动项管理</a> · <a href="/zh/port-manager">端口管理</a></p></div></section>
+    <section class="section-alt"><div class="container"><div class="seo-cta"><h2 data-i18n="seo.cta.title">在 LaunchManager 里可视化完成</h2><p data-i18n="seo.cta.desc">浏览启动项、launchd 任务、端口与 Docker，在同一原生应用中加载、停止或解决冲突。</p><a class="btn btn-primary btn-lg" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="seo.cta.btn" data-release-download="">下载 LaunchManager</a></div></div></section>
+  </main>
+  <footer><div class="container"><nav class="footer-topics"><a href="/zh/startup-manager" data-i18n="pillars.startup.title">启动项管理</a><a href="/zh/launchd-manager" data-i18n="pillars.launchd.title">launchd 管理</a><a href="/zh/port-manager" data-i18n="pillars.ports.title">端口管理</a><a href="/zh/docker-ports" data-i18n="pillars.docker.title">Docker 端口</a><a href="/zh/blog" data-i18n="footer.blog">博客</a></nav><p data-i18n="footer.copy">© Sean10000 · LaunchManager 与 Apple Inc. 无关联。</p></div></footer>
+  <script src="/assets/js/i18n-data.js"></script>
+  <script src="/assets/js/i18n-seo.js"></script><script src="/assets/js/i18n.js"></script><script src="/assets/js/site.js"></script>
+
+
+</body></html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mac 释放 3000 端口 — LaunchManager 博客</title>
+  <meta name="description" content="分步说明：在 macOS 上找出占用 3000 端口的进程并释放，且不影响 Docker。">
+  <link rel="canonical" href="https://launchmanager.dev/zh/blog/kill-port-3000-mac">
+  <link rel="alternate" hreflang="en" href="https://launchmanager.dev/blog/kill-port-3000-mac">
+  <link rel="alternate" hreflang="zh-Hans" href="https://launchmanager.dev/zh/blog/kill-port-3000-mac">
+  <link rel="alternate" hreflang="x-default" href="https://launchmanager.dev/blog/kill-port-3000-mac">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="icon" href="/assets/images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer="" src="/_vercel/insights/script.js"></script>
+
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US"></head>
+<body data-page="blog-kill-port-3000-mac">
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/zh"><img src="/assets/images/logo.png" alt="" width="28" height="28">LaunchManager</a>
+      <button class="menu-toggle" type="button" id="menu-toggle">☰</button>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/zh/blog" data-i18n="nav.blog">博客</a></li>
+          <li><a href="/zh/port-manager" data-i18n="nav.topic.ports">端口管理</a></li>
+          <li><a href="/zh/help" data-i18n="nav.help">帮助</a></li>
+        </ul>
+        <a class="lang-toggle" id="lang-switch" href="/blog/kill-port-3000-mac" hreflang="en" rel="alternate">EN</a>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download="">下载</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero container">
+      <p class="section-desc"><a href="/zh/blog">← Blog</a></p>
+      <h1 data-i18n="blog-kill-port-3000-mac.title">如何在 macOS 上结束占用 3000 端口的进程</h1>
+      <p class="section-desc" data-i18n="blog-kill-port-3000-mac.lead">3000 是 React、Next.js 等常用开发端口——这样释放它。</p>
+    </section>
+    <section><div class="container article" data-i18n-html="blog-kill-port-3000-mac.body"><p>运行 <code>npm run dev</code> 时出现 <code>Error: listen EADDRINUSE: address already in use :::3000</code>，说明 localhost:3000 已被监听。</p><h2>步骤 1：查找进程</h2><pre><code>lsof -nP -iTCP:3000 -sTCP:LISTEN</code></pre><p>注意 <code>PID</code> 与 <code>COMMAND</code>。常见原因：残留的 <code>node</code>、其他开发服务器，或 Docker 转发 3000 端口。</p><h2>步骤 2：安全停止</h2><pre><code>kill &lt;PID&gt;</code></pre><p>若命令为 <code>com.docker</code>，请用 <code>docker stop</code> 停止容器。</p><h2>步骤 3：避免反复出现</h2><p>若 launchd 会重新拉起进程，请在 LaunchManager 中卸载对应 LaunchAgent。</p><h2>图形化操作</h2><p>LaunchManager → <strong>Services</strong>，找到 3000 端口，查看 PID 与 Docker 标签。<a href="/zh/port-manager">端口管理指南 →</a></p></div></section>
+    <section class="section-alt"><div class="container"><div class="seo-cta"><h2 data-i18n="seo.cta.title">在 LaunchManager 里可视化完成</h2><a class="btn btn-primary" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="seo.cta.btn" data-release-download="">下载 LaunchManager</a></div></div></section>
+  </main>
+  <footer><div class="container"><p data-i18n="footer.copy">© Sean10000 · LaunchManager 与 Apple Inc. 无关联。</p></div></footer>
+  <script src="/assets/js/i18n-data.js"></script>
+  <script src="/assets/js/i18n-seo.js"></script><script src="/assets/js/i18n.js"></script><script src="/assets/js/site.js"></script>
+
+
+</body></html>

@@ -1,32 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LaunchManager — macOS Background Services Control Center</title>
-  <meta name="description" content="Manage startup items, launchd jobs, network ports, and Docker containers on your Mac. One native GUI for everything running in the background. Free, open source." />
-  <meta property="og:title" content="LaunchManager — macOS Background Services Control Center" />
-  <meta property="og:description" content="Manage startup items, launchd jobs, ports, and Docker containers from one native macOS app." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/images/home-page.png" />
-  <meta property="og:url" content="https://www.launchmanager.dev/" />
-  <meta name="theme-color" content="#0a0a0c" />
-  <link rel="canonical" href="https://www.launchmanager.dev/" />
-  <link rel="icon" href="/assets/images/logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/site.css" />
+  <meta name="description" content="Manage startup items, launchd jobs, network ports, and Docker containers on your Mac. One native GUI for everything running in the background. Free, open source.">
+  <meta property="og:title" content="LaunchManager — macOS Background Services Control Center">
+  <meta property="og:description" content="Manage startup items, launchd jobs, network ports, and Docker containers on your Mac. One native GUI for everything running in the background. Free, open source.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/images/home-page.png">
+  <meta property="og:url" content="https://launchmanager.dev/">
+  <meta name="theme-color" content="#0a0a0c">
+  <link rel="canonical" href="https://launchmanager.dev/">
+  <link rel="alternate" hreflang="en" href="https://launchmanager.dev/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://launchmanager.dev/zh">
+  <link rel="alternate" hreflang="x-default" href="https://launchmanager.dev/">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="icon" href="/assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
-  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer="" src="/_vercel/insights/script.js"></script>
 </head>
 <body data-page="home">
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="/">
-        <img src="/assets/images/logo.png" alt="" width="28" height="28" />
+        <img src="/assets/images/logo.png" alt="" width="28" height="28">
         LaunchManager
       </a>
       <button class="menu-toggle" type="button" aria-label="Menu" id="menu-toggle">☰</button>
@@ -50,8 +60,8 @@
           <li><a href="/#compare" data-i18n="nav.compare">Compare</a></li>
           <li><a href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
-        <button class="lang-toggle" type="button" id="lang-toggle" aria-label="Switch language" data-i18n="nav.lang">中文</button>
-        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download>Download</a>
+        <a class="lang-toggle" id="lang-switch" href="/zh" hreflang="zh-Hans" rel="alternate">中文</a>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download="">Download</a>
       </div>
     </div>
   </header>
@@ -64,7 +74,7 @@
         <span class="badge mit" data-i18n="hero.badge.mit">MIT License</span>
         <span class="badge" data-i18n="hero.badge.oss">Open Source</span>
       </div>
-      <h1 data-i18n-html="hero.title">Manage every background service<br />on your Mac</h1>
+      <h1 data-i18n-html="hero.title">Manage every background service<br>on your Mac</h1>
       <p class="lead" data-i18n="hero.lead">
         LaunchManager is the control center for macOS background services — startup items, launchd jobs, network ports, and Docker containers — without editing XML or digging through lsof.
       </p>
@@ -81,14 +91,12 @@
         From "why is port 3000 in use?" to "where is this LaunchAgent?" — see what's running, control services, and fix conflicts in one native app. Free and open source.
       </p>
       <div class="hero-cta">
-        <a class="btn btn-primary btn-lg" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="hero.cta.download" data-release-download>Download</a>
+        <a class="btn btn-primary btn-lg" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="hero.cta.download" data-release-download="">Download</a>
         <a class="btn btn-ghost btn-lg" href="/screenshots" data-i18n="hero.cta.screenshots">View screenshots</a>
         <a class="btn btn-ghost btn-lg" href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener" data-i18n="hero.cta.github">View on GitHub</a>
       </div>
       <div class="hero-shot">
-        <video src="/assets/videos/launchmanager-promo.mp4" poster="/assets/images/home-page.png"
-               autoplay muted loop playsinline preload="none"
-               aria-label="LaunchManager promotional video"></video>
+        <video src="/assets/videos/launchmanager-promo.mp4" poster="/assets/images/home-page.png" autoplay="" muted="" loop="" playsinline="" preload="none" aria-label="LaunchManager promotional video"></video>
       </div>
     </section>
 
@@ -361,12 +369,12 @@ open LaunchManager.xcodeproj</code></pre>
         <p class="section-desc" data-i18n="support.desc">If LaunchManager saved you time, feel free to buy me a coffee. Americano is better. ☕</p>
         <div class="support-codes">
           <div class="support-code">
-            <img src="/assets/images/wechat-reward.jpg" alt="WeChat reward QR code" width="200" height="200" loading="lazy" />
+            <img src="/assets/images/wechat-reward.jpg" alt="WeChat reward QR code" width="200" height="200" loading="lazy">
             <p class="support-code-link" data-i18n="support.wechat.hint">Open WeChat and use Scan to scan the code</p>
           </div>
           <div class="support-code">
             <a href="https://paypal.me/seanma9254678" target="_blank" rel="noopener">
-              <img src="/assets/images/paypal-qr.png" alt="PayPal QR code" width="200" height="200" loading="lazy" />
+              <img src="/assets/images/paypal-qr.png" alt="PayPal QR code" width="200" height="200" loading="lazy">
             </a>
             <p class="support-code-link"><a href="https://paypal.me/seanma9254678" target="_blank" rel="noopener">paypal.me/seanma9254678</a></p>
           </div>
@@ -398,8 +406,10 @@ open LaunchManager.xcodeproj</code></pre>
     </div>
   </footer>
 
+  <script src="/assets/js/i18n-data.js"></script>
   <script src="/assets/js/i18n-seo.js"></script>
   <script src="/assets/js/i18n.js"></script>
   <script src="/assets/js/site.js"></script>
-</body>
-</html>
+
+
+</body></html>

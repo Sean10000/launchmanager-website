@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LaunchAgent 与 Login Items — LaunchManager 博客</title>
+  <meta name="description" content="对比 macOS Login Items 与 LaunchAgents——登录时启动什么、如何分别查看。">
+  <link rel="canonical" href="https://launchmanager.dev/zh/blog/launchagent-vs-login-items">
+  <link rel="alternate" hreflang="en" href="https://launchmanager.dev/blog/launchagent-vs-login-items">
+  <link rel="alternate" hreflang="zh-Hans" href="https://launchmanager.dev/zh/blog/launchagent-vs-login-items">
+  <link rel="alternate" hreflang="x-default" href="https://launchmanager.dev/blog/launchagent-vs-login-items">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="icon" href="/assets/images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer="" src="/_vercel/insights/script.js"></script>
+
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US"></head>
+<body data-page="blog-launchagent-vs-login-items">
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/zh"><img src="/assets/images/logo.png" alt="" width="28" height="28">LaunchManager</a>
+      <button class="menu-toggle" type="button" id="menu-toggle">☰</button>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/zh/blog" data-i18n="nav.blog">博客</a></li>
+          <li><a href="/zh/startup-manager" data-i18n="nav.topic.startup">启动项与 Login Items</a></li>
+        </ul>
+        <a class="lang-toggle" id="lang-switch" href="/blog/launchagent-vs-login-items" hreflang="en" rel="alternate">EN</a>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download="">下载</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero container">
+      <p class="section-desc"><a href="/zh/blog">← Blog</a></p>
+      <h1 data-i18n="blog-launchagent-vs-login-items.title">LaunchAgent 与 Login Items 的区别</h1>
+      <p class="section-desc" data-i18n="blog-launchagent-vs-login-items.lead">两者都能让软件在登录时运行——但机制与存放位置不同。</p>
+    </section>
+    <section><div class="container article" data-i18n-html="blog-launchagent-vs-login-items.body"><h2>Login Items</h2><p>用户可见、登录时打开的应用，在<strong>系统设置 → 通用 → 登录项</strong>中管理。并非所有自动启动项都会出现在这里。</p><h2>LaunchAgents</h2><p>由 XML plist 定义、由 <code>launchd</code> 管理的后台任务，通常在 <code>~/Library/LaunchAgents</code>。可运行脚本、守护进程或助手——不一定显示为应用图标。</p><h2>何时用哪种</h2><ul><li><strong>Login Items</strong> — 需要在会话中打开的 GUI 应用。</li><li><strong>LaunchAgents</strong> — 应在后台运行的脚本、服务器、同步或开发服务。</li></ul><h2>在 LaunchManager 中一并查看</h2><p><strong>Login Items</strong> 视图看登录应用；<strong>User Agents</strong> 查看带 <code>RunAtLoad</code> 的 plist。<a href="/zh/startup-manager">启动项管理指南 →</a></p></div></section>
+    <section class="section-alt"><div class="container"><div class="seo-cta"><h2 data-i18n="seo.cta.title">在 LaunchManager 里可视化完成</h2><a class="btn btn-primary" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="seo.cta.btn" data-release-download="">下载 LaunchManager</a></div></div></section>
+  </main>
+  <footer><div class="container"><p data-i18n="footer.copy">© Sean10000 · LaunchManager 与 Apple Inc. 无关联。</p></div></footer>
+  <script src="/assets/js/i18n-data.js"></script>
+  <script src="/assets/js/i18n-seo.js"></script><script src="/assets/js/i18n.js"></script><script src="/assets/js/site.js"></script>
+
+
+</body></html>

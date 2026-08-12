@@ -1,0 +1,405 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LaunchManager — macOS 后台服务控制中心</title>
+  <meta name="description" content="管理 Mac 启动项、launchd 任务、网络端口与 Docker 容器。一个原生 GUI 掌控所有后台服务。免费开源。">
+  <meta property="og:title" content="LaunchManager — macOS 后台服务控制中心">
+  <meta property="og:description" content="管理 Mac 启动项、launchd 任务、网络端口与 Docker 容器。一个原生 GUI 掌控所有后台服务。免费开源。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/images/home-page.png">
+  <meta property="og:url" content="https://launchmanager.dev/zh">
+  <meta name="theme-color" content="#0a0a0c">
+  <link rel="canonical" href="https://launchmanager.dev/zh">
+  <link rel="alternate" hreflang="en" href="https://launchmanager.dev/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://launchmanager.dev/zh">
+  <link rel="alternate" hreflang="x-default" href="https://launchmanager.dev/">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="icon" href="/assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer="" src="/_vercel/insights/script.js"></script>
+
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US"></head>
+<body data-page="home">
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/zh">
+        <img src="/assets/images/logo.png" alt="" width="28" height="28">
+        LaunchManager
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menu" id="menu-toggle">☰</button>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/zh#features" data-i18n="nav.features">功能</a></li>
+          <li class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" data-i18n="nav.topics">主题</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="/zh/startup-manager" data-i18n="nav.topic.startup">启动项与 Login Items</a></li>
+              <li><a href="/zh/launchd-manager" data-i18n="nav.topic.launchd">launchd 管理</a></li>
+              <li><a href="/zh/port-manager" data-i18n="nav.topic.ports">端口管理</a></li>
+              <li><a href="/zh/docker-ports" data-i18n="nav.topic.docker">Docker 端口</a></li>
+            </ul>
+          </li>
+          <li><a href="/zh/blog" data-i18n="nav.blog">博客</a></li>
+          <li><a href="/zh/screenshots" data-i18n="nav.screenshots">截图</a></li>
+          <li><a href="/zh/templates" data-i18n="nav.templates">模板</a></li>
+          <li><a href="/zh/help" data-i18n="nav.help">帮助</a></li>
+          <li><a href="/zh#install" data-i18n="nav.install">安装</a></li>
+          <li><a href="/zh#compare" data-i18n="nav.compare">对比</a></li>
+          <li><a href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+        <a class="lang-toggle" id="lang-switch" href="/" hreflang="en" rel="alternate">EN</a>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download="">下载</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="badges">
+        <span class="badge" data-i18n="hero.badge.macos">macOS 14+</span>
+        <span class="badge" data-i18n="hero.badge.swift">Swift 5.10</span>
+        <span class="badge mit" data-i18n="hero.badge.mit">MIT 许可</span>
+        <span class="badge" data-i18n="hero.badge.oss">开源</span>
+      </div>
+      <h1 data-i18n-html="hero.title">管理 Mac 上<br>所有后台服务</h1>
+      <p class="lead" data-i18n="hero.lead">LaunchManager 是 macOS 后台服务控制中心——启动项、launchd 任务、网络端口与 Docker 容器，无需手写 XML 或翻查 lsof。</p>
+      <div class="capability-grid" aria-label="Capabilities">
+        <span class="capability-item" data-i18n="capabilities.launchagents">LaunchAgents</span>
+        <span class="capability-item" data-i18n="capabilities.launchdaemons">LaunchDaemons</span>
+        <span class="capability-item" data-i18n="capabilities.loginitems">Login Items</span>
+        <span class="capability-item" data-i18n="capabilities.background">后台服务</span>
+        <span class="capability-item" data-i18n="capabilities.ports">网络端口</span>
+        <span class="capability-item" data-i18n="capabilities.scheduled">定时任务</span>
+        <span class="capability-item" data-i18n="capabilities.docker">Docker 容器</span>
+      </div>
+      <p class="hero-value" data-i18n="hero.value">从「3000 端口被谁占了？」到「这个 LaunchAgent 在哪？」——在一个原生应用里查看运行状态、控制服务、解决冲突。免费开源。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="hero.cta.download" data-release-download="">下载</a>
+        <a class="btn btn-ghost btn-lg" href="/zh/screenshots" data-i18n="hero.cta.screenshots">查看截图</a>
+        <a class="btn btn-ghost btn-lg" href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener" data-i18n="hero.cta.github">在 GitHub 查看</a>
+      </div>
+      <div class="hero-shot">
+        <video src="/assets/videos/launchmanager-promo.mp4" poster="/assets/images/home-page.png" autoplay="" muted="" loop="" playsinline="" preload="none" aria-label="LaunchManager promotional video"></video>
+      </div>
+    </section>
+
+    <section id="guides" class="section-alt">
+      <div class="container">
+        <h2 data-i18n="pillars.title">按主题查看指南</h2>
+        <p class="section-desc" data-i18n="pillars.desc">启动项、launchd、端口与 Docker 的实用解答。</p>
+        <div class="pillar-grid">
+          <a class="pillar-card" href="/zh/startup-manager">
+            <h3 data-i18n="pillars.startup.title">启动项管理</h3>
+            <p data-i18n="pillars.startup.desc">查找并控制登录或开机时自动启动的应用。</p>
+          </a>
+          <a class="pillar-card" href="/zh/launchd-manager">
+            <h3 data-i18n="pillars.launchd.title">launchd 管理</h3>
+            <p data-i18n="pillars.launchd.desc">浏览、编辑并控制 LaunchAgents 与 LaunchDaemons。</p>
+          </a>
+          <a class="pillar-card" href="/zh/port-manager">
+            <h3 data-i18n="pillars.ports.title">端口管理</h3>
+            <p data-i18n="pillars.ports.desc">查看监听端口、定位冲突并释放被占用的端口。</p>
+          </a>
+          <a class="pillar-card" href="/zh/docker-ports">
+            <h3 data-i18n="pillars.docker.title">Docker 端口</h3>
+            <p data-i18n="pillars.docker.desc">查看容器端口映射，避免与本地开发服务冲突。</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <h2 data-i18n="features.title">Mac 后台运维控制台</h2>
+        <p class="section-desc" data-i18n="features.desc">不同于单一用途工具，LaunchManager 将 launchd 管理、端口扫描与 Docker 感知整合在同一窗口。</p>
+        <div class="features">
+          <article class="feature-card">
+            <div class="feature-icon">🔌</div>
+            <h3 data-i18n="features.services.title">Services 扫描</h3>
+            <p data-i18n="features.services.desc">每 3 秒扫描本地 TCP 监听，Docker 感知，智能标注，自定义名称持久保存。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📂</div>
+            <h3 data-i18n="features.browse.title">浏览所有范围</h3>
+            <p data-i18n="features.browse.desc">侧边栏统一查看用户代理、系统代理和系统守护进程。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">✏️</div>
+            <h3 data-i18n="features.edit.title">创建与编辑任务</h3>
+            <p data-i18n="features.edit.desc">表单化编辑程序路径、启动参数和 plist 字段。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">▶️</div>
+            <h3 data-i18n="features.control.title">加载、启动、停止</h3>
+            <p data-i18n="features.control.desc">在列表中直接控制任务；系统级操作需要时会提示管理员权限。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📋</div>
+            <h3 data-i18n="features.logs.title">日志查看</h3>
+            <p data-i18n="features.logs.desc">查看文件日志和系统日志，无需离开应用。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3 data-i18n="features.loginitems.title">Login Items</h3>
+            <p data-i18n="features.loginitems.desc">查看登录时自动打开的应用，与 launchd 任务一并管理。</p>
+          </article>
+        </div>
+        <p class="text-link-row">
+          <a href="/zh/help" data-i18n="features.helpLink">需要操作指引？打开帮助文档 →</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="scheduling" class="section-alt">
+      <div class="container">
+        <h2 data-i18n="scheduling.title">需要时再配置调度</h2>
+        <p class="section-desc" data-i18n="scheduling.desc">launchd 支持按时间或登录时运行任务。LaunchManager 在同一表单中即可设置这些选项——基础调度无需另装付费工具。</p>
+        <div class="schedule-types">
+          <article class="schedule-type">
+            <h3 data-i18n="scheduling.interval.title">间隔执行</h3>
+            <p data-i18n="scheduling.interval.desc">每隔 N 秒运行一次脚本。</p>
+          </article>
+          <article class="schedule-type">
+            <h3 data-i18n="scheduling.calendar.title">日历调度</h3>
+            <p data-i18n="scheduling.calendar.desc">在指定时间运行，类似简单的 cron 任务。</p>
+          </article>
+          <article class="schedule-type">
+            <h3 data-i18n="scheduling.login.title">登录启动 / 保活</h3>
+            <p data-i18n="scheduling.login.desc">开机启动，或在进程退出后自动重启。</p>
+          </article>
+        </div>
+        <p class="scheduling-note" data-i18n="scheduling.note">对大多数用户来说，这已足够满足日常调度，无需付费 launchd 图形工具。</p>
+      </div>
+    </section>
+
+    <section id="install">
+      <div class="container">
+        <h2 data-i18n="install.title">获取 LaunchManager</h2>
+        <p class="section-desc" data-i18n="install.desc">需要 macOS 14 Sonoma 或更高版本。</p>
+        <div class="install-grid">
+          <article class="install-card">
+            <span class="tag" data-i18n="install.brew.tag">推荐</span>
+            <h3 data-i18n="install.brew.title">Homebrew</h3>
+            <p data-i18n="install.brew.desc">通过 tap 快速更新，适合已使用 Homebrew 的开发者。</p>
+            <pre><code>brew tap Sean10000/tap
+brew trust --cask sean10000/tap/launchmanager
+brew install --cask launchmanager</code></pre>
+          </article>
+          <article class="install-card">
+            <span class="tag" data-i18n="install.dmg.tag">直接下载</span>
+            <h3 data-i18n="install.dmg.title">下载 DMG</h3>
+            <p data-i18n="install.dmg.desc">下载最新版本，拖入应用程序文件夹。首次启动请右键 → 打开（尚未公证）。</p>
+            <a class="btn btn-primary" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="install.dmg.btn">下载 DMG</a>
+          </article>
+          <article class="install-card">
+            <span class="tag" data-i18n="install.src.tag">开发者</span>
+            <h3 data-i18n="install.src.title">从源码构建</h3>
+            <p data-i18n="install.src.desc">克隆仓库，用 Xcode 16 打开，按 ⌘R 构建运行。</p>
+            <pre><code>git clone https://github.com/Sean10000/LaunchManager.git
+cd LaunchManager
+open LaunchManager.xcodeproj</code></pre>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="compare">
+      <div class="container">
+        <h2 data-i18n="compare.title">与其他工具对比</h2>
+        <p class="section-desc" data-i18n="compare.desc">多数工具只覆盖一层——launchd、端口或进程。LaunchManager 在免费的运维控制台中把它们整合在一起。</p>
+        <div class="compare-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="col-highlight">LaunchManager</th>
+                <th>LaunchControl</th>
+                <th>Lingon Pro 10</th>
+                <th>LaunchD Task Scheduler</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="compare.row.price">价格</td>
+                <td class="col-highlight"><strong data-i18n="compare.lm.price">免费开源</strong></td>
+                <td>~$33</td>
+                <td>$23.99</td>
+                <td>$5.00</td>
+              </tr>
+              <tr>
+                <td data-i18n="compare.row.browse">浏览代理与守护进程</td>
+                <td class="col-highlight yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="yes">✓</td>
+              </tr>
+              <tr>
+                <td data-i18n="compare.row.gui">图形界面创建与编辑</td>
+                <td class="col-highlight yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="yes">✓</td>
+              </tr>
+              <tr>
+                <td data-i18n="compare.row.schedule">间隔与日历调度</td>
+                <td class="col-highlight yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="yes">✓</td>
+              </tr>
+              <tr>
+                <td data-i18n="compare.row.keepalive">登录启动 / 保活</td>
+                <td class="col-highlight yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="warn" data-i18n="compare.ldts.keepalive">有限</td>
+              </tr>
+              <tr>
+                <td data-i18n="compare.row.system">系统代理 / 守护进程支持</td>
+                <td class="col-highlight yes">✓</td>
+                <td class="yes">✓</td>
+                <td class="yes" data-i18n="compare.lingon.system">✓（Pro）</td>
+                <td class="warn" data-i18n="compare.ldts.system">有限</td>
+              </tr>
+              <tr>
+                <td data-i18n="compare.row.services">本地 TCP / 端口监控</td>
+                <td class="col-highlight yes" data-i18n="compare.lm.services">✓ Docker 感知</td>
+                <td class="no">✗</td>
+                <td class="no">✗</td>
+                <td class="no">✗</td>
+              </tr>
+              <tr>
+                <td data-i18n="compare.row.logs">日志查看</td>
+                <td class="col-highlight" data-i18n="compare.lm.logs">文件 + 系统日志</td>
+                <td data-i18n="compare.lc.logs">高级</td>
+                <td class="yes">✓</td>
+                <td class="yes">✓</td>
+              </tr>
+              <tr>
+                <td data-i18n="compare.row.invalid">无效 plist 检测</td>
+                <td class="col-highlight yes" data-i18n="compare.lm.invalid">✓ 行内提示 + 删除</td>
+                <td class="no">✗</td>
+                <td class="no">✗</td>
+                <td class="no">✗</td>
+              </tr>
+              <tr>
+                <td data-i18n="compare.row.running">应用需保持运行</td>
+                <td class="col-highlight yes" data-i18n="compare.lm.running">不需要</td>
+                <td class="yes" data-i18n="compare.lm.running">不需要</td>
+                <td class="warn" data-i18n="compare.lingon.running">需要</td>
+                <td class="yes" data-i18n="compare.lm.running">不需要</td>
+              </tr>
+              <tr>
+                <td data-i18n="compare.row.ai">AI 助手</td>
+                <td class="col-highlight no">✗</td>
+                <td class="yes" data-i18n="compare.lc.ai">7 种 LLM</td>
+                <td class="no">✗</td>
+                <td class="no">✗</td>
+              </tr>
+              <tr>
+                <td data-i18n="compare.row.oss">开源</td>
+                <td class="col-highlight yes">MIT</td>
+                <td class="no">✗</td>
+                <td class="no">✗</td>
+                <td class="no">✗</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="section-desc" style="margin-top: 1.5rem; font-size: 0.85rem;" data-i18n-html="compare.note">需要 AI 助手或 XML 专家编辑的进阶用户，可考虑 <a href="https://www.soma-zone.com/LaunchControl/" target="_blank" rel="noopener">LaunchControl</a>。</p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2 data-i18n="faq.title">常见问题</h2>
+        <p class="section-desc" data-i18n="faq.desc">关于 LaunchManager 的常见问题。</p>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3 data-i18n="faq.q1">LaunchManager 是什么？</h3>
+            <p data-i18n="faq.a1">一款原生 macOS 后台服务控制中心——在同一 GUI 中管理 LaunchAgents、LaunchDaemons、Login Items、本地 TCP 端口与 Docker 容器，无需手写 plist 或运行 lsof。</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.q2">退出应用后，任务还会继续运行吗？</h3>
+            <p data-i18n="faq.a2">会。已加载的任务由 launchd 负责运行，LaunchManager 仅用于配置和控制。</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.q5">和 LaunchControl、Lingon 有什么不同？</h3>
+            <p data-i18n="faq.a5">那些工具专注 launchd。LaunchManager 还扫描监听端口（Docker 感知）、显示 Login Items，免费帮你回答「Mac 上到底在跑什么？」。</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.q4">运行需要什么环境？</h3>
+            <p data-i18n="faq.a4">macOS 14 及以上，可通过 Homebrew、DMG 或从源码构建安装。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="support" id="support">
+      <div class="container">
+        <h2 data-i18n="support.title">支持项目</h2>
+        <p class="section-desc" data-i18n="support.desc">如果 LaunchManager 帮你节省了时间，欢迎请我喝杯咖啡。美式更好。☕</p>
+        <div class="support-codes">
+          <div class="support-code">
+            <img src="/assets/images/wechat-reward.jpg" alt="WeChat reward QR code" width="200" height="200" loading="lazy">
+            <p class="support-code-link" data-i18n="support.wechat.hint">请打开微信，使用「扫一扫」扫描赞赏码</p>
+          </div>
+          <div class="support-code">
+            <a href="https://paypal.me/seanma9254678" target="_blank" rel="noopener">
+              <img src="/assets/images/paypal-qr.png" alt="PayPal QR code" width="200" height="200" loading="lazy">
+            </a>
+            <p class="support-code-link"><a href="https://paypal.me/seanma9254678" target="_blank" rel="noopener">paypal.me/seanma9254678</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <nav class="footer-topics">
+        <a href="/zh/startup-manager" data-i18n="pillars.startup.title">启动项管理</a>
+        <a href="/zh/launchd-manager" data-i18n="pillars.launchd.title">launchd 管理</a>
+        <a href="/zh/port-manager" data-i18n="pillars.ports.title">端口管理</a>
+        <a href="/zh/docker-ports" data-i18n="pillars.docker.title">Docker 端口</a>
+        <a href="/zh/blog" data-i18n="footer.blog">博客</a>
+      </nav>
+      <nav class="links">
+        <a href="/zh/help" data-i18n="footer.help">帮助</a>
+        <a href="/zh/templates" data-i18n="footer.templates">模板</a>
+        <a href="/zh/screenshots" data-i18n="footer.screenshots">截图</a>
+        <a href="https://github.com/Sean10000/LaunchManager" data-i18n="footer.github">GitHub</a>
+        <a href="https://github.com/Sean10000/LaunchManager/releases" data-i18n="footer.releases">发布页</a>
+        <a href="https://github.com/Sean10000/LaunchManager/blob/main/LICENSE" data-i18n="footer.license">MIT 许可</a>
+        <a href="https://github.com/Sean10000/LaunchManager/issues" data-i18n="footer.issues">问题反馈</a>
+      </nav>
+      <p data-i18n-html="footer.built">使用 Swift &amp; SwiftUI 构建 · 感谢 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 协助编程</p>
+      <p style="margin-top: 0.5rem;" data-i18n="footer.copy">© Sean10000 · LaunchManager 与 Apple Inc. 无关联。</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n-data.js"></script>
+  <script src="/assets/js/i18n-seo.js"></script>
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/site.js"></script>
+
+
+</body></html>

@@ -1,0 +1,10 @@
+{
+  "name": "launchmanager-website",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/generate-locale-pages.mjs && node scripts/generate-sitemap.mjs"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0"
+  }
+}

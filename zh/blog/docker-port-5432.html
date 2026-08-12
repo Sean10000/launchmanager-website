@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docker 占用 5432 端口 — LaunchManager 博客</title>
+  <meta name="description" content="Postgres 等容器在 Mac 上绑定 5432——找到容器并释放端口。">
+  <link rel="canonical" href="https://launchmanager.dev/zh/blog/docker-port-5432">
+  <link rel="alternate" hreflang="en" href="https://launchmanager.dev/blog/docker-port-5432">
+  <link rel="alternate" hreflang="zh-Hans" href="https://launchmanager.dev/zh/blog/docker-port-5432">
+  <link rel="alternate" hreflang="x-default" href="https://launchmanager.dev/blog/docker-port-5432">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="icon" href="/assets/images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer="" src="/_vercel/insights/script.js"></script>
+
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US"></head>
+<body data-page="blog-docker-port-5432">
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/zh"><img src="/assets/images/logo.png" alt="" width="28" height="28">LaunchManager</a>
+      <button class="menu-toggle" type="button" id="menu-toggle">☰</button>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/zh/blog" data-i18n="nav.blog">博客</a></li>
+          <li><a href="/zh/docker-ports" data-i18n="nav.topic.docker">Docker 端口</a></li>
+        </ul>
+        <a class="lang-toggle" id="lang-switch" href="/blog/docker-port-5432" hreflang="en" rel="alternate">EN</a>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download="">下载</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero container">
+      <p class="section-desc"><a href="/zh/blog">← Blog</a></p>
+      <h1 data-i18n="blog-docker-port-5432.title">为什么 Docker 一直占用 5432 端口</h1>
+      <p class="section-desc" data-i18n="blog-docker-port-5432.lead">5432 是 Postgres 默认端口——旧的 docker compose 栈常会一直占用。</p>
+    </section>
+    <section><div class="container article" data-i18n-html="blog-docker-port-5432.body"><p>在 5432 上运行本地 Postgres 或应用时发生冲突，往往是旧的 <code>postgres</code> 容器仍在运行。</p><h2>查找容器</h2><pre><code>docker ps --filter "publish=5432"
+docker ps -a | grep 5432</code></pre><h2>停止容器</h2><pre><code>docker stop &lt;container_name&gt;</code></pre><h2>若 lsof 显示 Docker 代理</h2><p>监听进程可能是 <code>com.docker.backend</code>。应停止容器，不要结束该 PID。</p><p>LaunchManager 为 Docker 行标注容器名与镜像，便于将 5432 对应到正确技术栈。<a href="/zh/docker-ports">Docker 端口指南 →</a></p></div></section>
+    <section class="section-alt"><div class="container"><div class="seo-cta"><h2 data-i18n="seo.cta.title">在 LaunchManager 里可视化完成</h2><a class="btn btn-primary" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="seo.cta.btn" data-release-download="">下载 LaunchManager</a></div></div></section>
+  </main>
+  <footer><div class="container"><p data-i18n="footer.copy">© Sean10000 · LaunchManager 与 Apple Inc. 无关联。</p></div></footer>
+  <script src="/assets/js/i18n-data.js"></script>
+  <script src="/assets/js/i18n-seo.js"></script><script src="/assets/js/i18n.js"></script><script src="/assets/js/site.js"></script>
+
+
+</body></html>

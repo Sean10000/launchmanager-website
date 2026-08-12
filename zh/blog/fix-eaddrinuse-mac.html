@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>修复 macOS EADDRINUSE — LaunchManager 博客</title>
+  <meta name="description" content="解决 Mac 上「address already in use」——找到阻塞进程或 Docker 容器。">
+  <link rel="canonical" href="https://launchmanager.dev/zh/blog/fix-eaddrinuse-mac">
+  <link rel="alternate" hreflang="en" href="https://launchmanager.dev/blog/fix-eaddrinuse-mac">
+  <link rel="alternate" hreflang="zh-Hans" href="https://launchmanager.dev/zh/blog/fix-eaddrinuse-mac">
+  <link rel="alternate" hreflang="x-default" href="https://launchmanager.dev/blog/fix-eaddrinuse-mac">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="icon" href="/assets/images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer="" src="/_vercel/insights/script.js"></script>
+
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US"></head>
+<body data-page="blog-fix-eaddrinuse-mac">
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/zh"><img src="/assets/images/logo.png" alt="" width="28" height="28">LaunchManager</a>
+      <button class="menu-toggle" type="button" id="menu-toggle">☰</button>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/zh/blog" data-i18n="nav.blog">博客</a></li>
+          <li><a href="/zh/kill-port" data-i18n="nav.topic.ports">端口管理</a></li>
+        </ul>
+        <a class="lang-toggle" id="lang-switch" href="/blog/fix-eaddrinuse-mac" hreflang="en" rel="alternate">EN</a>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download="">下载</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero container">
+      <p class="section-desc"><a href="/zh/blog">← Blog</a></p>
+      <h1 data-i18n="blog-fix-eaddrinuse-mac.title">在 macOS 上修复 EADDRINUSE</h1>
+      <p class="section-desc" data-i18n="blog-fix-eaddrinuse-mac.lead">EADDRINUSE 表示该地址:端口已被其他进程绑定——按此路径排查。</p>
+    </section>
+    <section><div class="container article" data-i18n-html="blog-fix-eaddrinuse-mac.body"><p>错误信息中包含端口号（如 3000、5173、8080），从这里开始。</p><h2>1. 确认端口</h2><p>例如 <code>:::5173</code> → 端口 <strong>5173</strong>。</p><h2>2. 查找监听进程</h2><pre><code>lsof -nP -iTCP:5173 -sTCP:LISTEN</code></pre><h2>3. 判断类型：普通进程、Docker 或 launchd</h2><ul><li><strong>普通应用</strong> — <code>kill PID</code></li><li><strong>Docker</strong> — <code>docker stop</code></li><li><strong>launchd</strong> — 卸载任务，避免反复重启</li></ul><h2>4. 验证</h2><pre><code>lsof -nP -iTCP:5173 -sTCP:LISTEN</code></pre><p>无输出表示端口已释放。</p><p>LaunchManager Services 每 3 秒刷新，无需反复运行 lsof。<a href="/zh/kill-port">释放端口指南 →</a></p></div></section>
+    <section class="section-alt"><div class="container"><div class="seo-cta"><h2 data-i18n="seo.cta.title">在 LaunchManager 里可视化完成</h2><a class="btn btn-primary" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="seo.cta.btn" data-release-download="">下载 LaunchManager</a></div></div></section>
+  </main>
+  <footer><div class="container"><p data-i18n="footer.copy">© Sean10000 · LaunchManager 与 Apple Inc. 无关联。</p></div></footer>
+  <script src="/assets/js/i18n-data.js"></script>
+  <script src="/assets/js/i18n-seo.js"></script><script src="/assets/js/i18n.js"></script><script src="/assets/js/site.js"></script>
+
+
+</body></html>

@@ -1,0 +1,16 @@
+[
+  { "slug": "", "page": "home", "file": "index.html", "priority": 1.0, "changefreq": "weekly" },
+  { "slug": "help", "page": "help", "file": "help.html", "priority": 0.8, "changefreq": "monthly" },
+  { "slug": "templates", "page": "templates", "file": "templates.html", "priority": 0.8, "changefreq": "monthly" },
+  { "slug": "screenshots", "page": "screenshots", "file": "screenshots.html", "priority": 0.7, "changefreq": "monthly" },
+  { "slug": "startup-manager", "page": "startup-manager", "file": "startup-manager.html", "priority": 0.85, "changefreq": "monthly" },
+  { "slug": "launchd-manager", "page": "launchd-manager", "file": "launchd-manager.html", "priority": 0.85, "changefreq": "monthly" },
+  { "slug": "port-manager", "page": "port-manager", "file": "port-manager.html", "priority": 0.9, "changefreq": "monthly" },
+  { "slug": "kill-port", "page": "kill-port", "file": "kill-port.html", "priority": 0.85, "changefreq": "monthly" },
+  { "slug": "docker-ports", "page": "docker-ports", "file": "docker-ports.html", "priority": 0.85, "changefreq": "monthly" },
+  { "slug": "blog", "page": "blog", "file": "blog/index.html", "priority": 0.8, "changefreq": "weekly" },
+  { "slug": "blog/kill-port-3000-mac", "page": "blog-kill-port-3000-mac", "file": "blog/kill-port-3000-mac.html", "priority": 0.75, "changefreq": "monthly" },
+  { "slug": "blog/fix-eaddrinuse-mac", "page": "blog-fix-eaddrinuse-mac", "file": "blog/fix-eaddrinuse-mac.html", "priority": 0.75, "changefreq": "monthly" },
+  { "slug": "blog/launchagent-vs-login-items", "page": "blog-launchagent-vs-login-items", "file": "blog/launchagent-vs-login-items.html", "priority": 0.75, "changefreq": "monthly" },
+  { "slug": "blog/docker-port-5432", "page": "blog-docker-port-5432", "file": "blog/docker-port-5432.html", "priority": 0.75, "changefreq": "monthly" }
+]

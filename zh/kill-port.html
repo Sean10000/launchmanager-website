@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mac 释放端口 — 查找并释放被占用端口</title>
+  <meta name="description" content="如何在 macOS 上结束占用端口的进程。用 lsof 查找 PID，释放 3000、8080、5173 等端口。">
+  <link rel="canonical" href="https://launchmanager.dev/zh/kill-port">
+  <link rel="alternate" hreflang="en" href="https://launchmanager.dev/kill-port">
+  <link rel="alternate" hreflang="zh-Hans" href="https://launchmanager.dev/zh/kill-port">
+  <link rel="alternate" hreflang="x-default" href="https://launchmanager.dev/kill-port">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="icon" href="/assets/images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer="" src="/_vercel/insights/script.js"></script>
+
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US"></head>
+<body data-page="kill-port">
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/zh"><img src="/assets/images/logo.png" alt="" width="28" height="28">LaunchManager</a>
+      <button class="menu-toggle" type="button" id="menu-toggle">☰</button>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/zh#features" data-i18n="nav.features">功能</a></li>
+          <li class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" data-i18n="nav.topics">主题</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="/zh/startup-manager" data-i18n="nav.topic.startup">启动项与 Login Items</a></li>
+              <li><a href="/zh/launchd-manager" data-i18n="nav.topic.launchd">launchd 管理</a></li>
+              <li><a href="/zh/port-manager" data-i18n="nav.topic.ports">端口管理</a></li>
+              <li><a href="/zh/docker-ports" data-i18n="nav.topic.docker">Docker 端口</a></li>
+            </ul>
+          </li>
+          <li><a href="/zh/blog" data-i18n="nav.blog">博客</a></li>
+          <li><a href="/zh/help" data-i18n="nav.help">帮助</a></li>
+        </ul>
+        <a class="lang-toggle" id="lang-switch" href="/kill-port" hreflang="en" rel="alternate">EN</a>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download="">下载</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero container"><h1 data-i18n="kill-port.title">Mac 释放端口</h1><p class="section-desc" data-i18n="kill-port.lead">端口已被占用时，安全找到所属进程并停止——包括 Docker 容器。</p></section>
+    <section><div class="container article" data-i18n-html="kill-port.body"><h2>快速修复（将 PORT 换成实际端口）</h2><pre><code>lsof -nP -iTCP:PORT -sTCP:LISTEN
+kill &lt;PID&gt;</code></pre><p>仅在进程不响应正常终止信号时使用 <code>kill -9</code>。</p><h2>常见情况</h2><ul><li><strong>残留的 Node/Vite 进程</strong> — 结束 lsof 显示的 node 进程。</li><li><strong>Docker</strong> — 监听可能是 <code>com.docker.backend</code>；用 <code>docker stop</code> 停止容器。</li><li><strong>launchd 任务</strong> — 在 LaunchManager 中卸载 LaunchAgent/Daemon，避免子进程被反复拉起。</li></ul><h2>图形化流程</h2><p>在 LaunchManager <strong>Services</strong> 中按端口查看进程名、PID 及是否由 Docker 占用，无需猜测 PID。</p><p>延伸阅读：<a href="/zh/blog/kill-port-3000-mac">释放 3000 端口</a> · <a href="/zh/blog/fix-eaddrinuse-mac">修复 EADDRINUSE</a></p></div></section>
+    <section class="section-alt"><div class="container"><div class="seo-cta"><h2 data-i18n="seo.cta.title">在 LaunchManager 里可视化完成</h2><p data-i18n="seo.cta.desc">浏览启动项、launchd 任务、端口与 Docker，在同一原生应用中加载、停止或解决冲突。</p><a class="btn btn-primary btn-lg" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="seo.cta.btn" data-release-download="">下载 LaunchManager</a></div></div></section>
+  </main>
+  <footer><div class="container"><nav class="footer-topics"><a href="/zh/port-manager" data-i18n="pillars.ports.title">端口管理</a><a href="/zh/blog" data-i18n="footer.blog">博客</a></nav><p data-i18n="footer.copy">© Sean10000 · LaunchManager 与 Apple Inc. 无关联。</p></div></footer>
+  <script src="/assets/js/i18n-data.js"></script>
+  <script src="/assets/js/i18n-seo.js"></script><script src="/assets/js/i18n.js"></script><script src="/assets/js/site.js"></script>
+
+
+</body></html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LaunchManager 博客 — macOS 后台服务</title>
+  <meta name="description" content="端口、launchd、启动项与 Docker 的 macOS 实操指南——配合 LaunchManager 图形化工作流。">
+  <link rel="canonical" href="https://launchmanager.dev/zh/blog">
+  <link rel="alternate" hreflang="en" href="https://launchmanager.dev/blog">
+  <link rel="alternate" hreflang="zh-Hans" href="https://launchmanager.dev/zh/blog">
+  <link rel="alternate" hreflang="x-default" href="https://launchmanager.dev/blog">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="icon" href="/assets/images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer="" src="/_vercel/insights/script.js"></script>
+
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US"></head>
+<body data-page="blog">
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/zh"><img src="/assets/images/logo.png" alt="" width="28" height="28">LaunchManager</a>
+      <button class="menu-toggle" type="button" id="menu-toggle">☰</button>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/zh#features" data-i18n="nav.features">功能</a></li>
+          <li class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" data-i18n="nav.topics">主题</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="/zh/startup-manager" data-i18n="nav.topic.startup">启动项与 Login Items</a></li>
+              <li><a href="/zh/launchd-manager" data-i18n="nav.topic.launchd">launchd 管理</a></li>
+              <li><a href="/zh/port-manager" data-i18n="nav.topic.ports">端口管理</a></li>
+              <li><a href="/zh/docker-ports" data-i18n="nav.topic.docker">Docker 端口</a></li>
+            </ul>
+          </li>
+          <li><a href="/zh/blog" aria-current="page" data-i18n="nav.blog">博客</a></li>
+          <li><a href="/zh/help" data-i18n="nav.help">帮助</a></li>
+        </ul>
+        <a class="lang-toggle" id="lang-switch" href="/blog" hreflang="en" rel="alternate">EN</a>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download="">下载</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero container">
+      <h1 data-i18n="blog.title">博客</h1>
+      <p class="section-desc" data-i18n="blog.lead">解决真实 Mac 问题——端口、启动应用、launchd 与 Docker。</p>
+    </section>
+    <section>
+      <div class="container blog-list">
+        <a class="blog-card" href="/zh/blog/kill-port-3000-mac">
+          <h3 data-i18n="blog.post.kill-port-3000.title">如何在 macOS 上结束占用 3000 端口的进程</h3>
+          <p data-i18n="blog.post.kill-port-3000.excerpt">用 lsof 找出占用 3000 端口的进程，安全停止，避免误杀 Docker 代理。</p>
+        </a>
+        <a class="blog-card" href="/zh/blog/fix-eaddrinuse-mac">
+          <h3 data-i18n="blog.post.fix-eaddrinuse.title">在 macOS 上修复 EADDRINUSE</h3>
+          <p data-i18n="blog.post.fix-eaddrinuse.excerpt">开发服务器无法绑定端口时，从错误信息追踪到进程或容器。</p>
+        </a>
+        <a class="blog-card" href="/zh/blog/launchagent-vs-login-items">
+          <h3 data-i18n="blog.post.launchagent-vs-login.title">LaunchAgent 与 Login Items 的区别</h3>
+          <p data-i18n="blog.post.launchagent-vs-login.excerpt">macOS 上两种不同启动机制——何时运行、如何分别查看。</p>
+        </a>
+        <a class="blog-card" href="/zh/blog/docker-port-5432">
+          <h3 data-i18n="blog.post.docker-5432.title">为什么 Docker 一直占用 5432 端口</h3>
+          <p data-i18n="blog.post.docker-5432.excerpt">Postgres 容器、残留代理，以及如何在 localhost 查看 Docker 端口映射。</p>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container"><p data-i18n="footer.copy">© Sean10000 · LaunchManager 与 Apple Inc. 无关联。</p></div></footer>
+  <script src="/assets/js/i18n-data.js"></script>
+  <script src="/assets/js/i18n-seo.js"></script><script src="/assets/js/i18n.js"></script><script src="/assets/js/site.js"></script>
+
+
+</body></html>

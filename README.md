@@ -4,11 +4,22 @@ Static landing page for [LaunchManager](https://github.com/Sean10000/LaunchManag
 
 ## Deploy to Vercel
 
+### Build (i18n + sitemap)
+
+English pages live at `/`; Chinese pages are generated under `/zh/` at build time:
+
+```bash
+npm install
+npm run build
+```
+
+Vercel runs `npm run build` automatically (`vercel.json` → `buildCommand`). After editing English HTML or translations in `assets/js/i18n-data.js` / `assets/js/i18n-seo.js`, run `npm run build` before committing.
+
 ### Option A — GitHub (recommended)
 
 1. Push this folder to a repo (e.g. `Sean10000/launchmanager-website` or add a `website/` directory in the main repo).
 2. In [Vercel Dashboard](https://vercel.com/new) → **Add New Project** → import the repo.
-3. Framework preset: **Other** (static HTML, no build step).
+3. Framework preset: **Other** (static HTML; build step generates `/zh/` pages).
 4. Root directory: `.` (or `website` if nested).
 5. Deploy.
 

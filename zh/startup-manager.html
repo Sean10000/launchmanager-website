@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mac 启动项管理 — LaunchManager</title>
+  <meta name="description" content="查找登录时自动打开的应用、管理 Login Items 与 launchd 启动任务。">
+  <meta property="og:url" content="https://launchmanager.dev/zh/startup-manager">
+  <link rel="canonical" href="https://launchmanager.dev/zh/startup-manager">
+  <link rel="alternate" hreflang="en" href="https://launchmanager.dev/startup-manager">
+  <link rel="alternate" hreflang="zh-Hans" href="https://launchmanager.dev/zh/startup-manager">
+  <link rel="alternate" hreflang="x-default" href="https://launchmanager.dev/startup-manager">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="icon" href="/assets/images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer="" src="/_vercel/insights/script.js"></script>
+
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US"></head>
+<body data-page="startup-manager">
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/zh"><img src="/assets/images/logo.png" alt="" width="28" height="28">LaunchManager</a>
+      <button class="menu-toggle" type="button" aria-label="Menu" id="menu-toggle">☰</button>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/zh#features" data-i18n="nav.features">功能</a></li>
+          <li class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" data-i18n="nav.topics">主题</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="/zh/startup-manager" aria-current="page" data-i18n="nav.topic.startup">启动项与 Login Items</a></li>
+              <li><a href="/zh/launchd-manager" data-i18n="nav.topic.launchd">launchd 管理</a></li>
+              <li><a href="/zh/port-manager" data-i18n="nav.topic.ports">端口管理</a></li>
+              <li><a href="/zh/docker-ports" data-i18n="nav.topic.docker">Docker 端口</a></li>
+            </ul>
+          </li>
+          <li><a href="/zh/blog" data-i18n="nav.blog">博客</a></li>
+          <li><a href="/zh/screenshots" data-i18n="nav.screenshots">截图</a></li>
+          <li><a href="/zh/help" data-i18n="nav.help">帮助</a></li>
+          <li><a href="/zh#install" data-i18n="nav.install">安装</a></li>
+          <li><a href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+        <a class="lang-toggle" id="lang-switch" href="/startup-manager" hreflang="en" rel="alternate">EN</a>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download="">下载</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero container">
+      <h1 data-i18n="startup-manager.title">Mac 启动项管理</h1>
+      <p class="section-desc" data-i18n="startup-manager.lead">回答「为什么每次登录都会打开这个应用？」——在同一处查看 Login Items 与 launchd RunAtLoad 任务。</p>
+    </section>
+    <section><div class="container article" data-i18n-html="startup-manager.body"><h2>常见问题</h2><p>Mac 会积累各类启动项——Login Items、带 <code>RunAtLoad</code> 的 LaunchAgents、以及被遗忘的后台助手。系统设置只能看到其中一部分。</p><h2>需要检查什么</h2><ul><li><strong>Login Items</strong> — 登录时打开的应用（系统设置 → 通用 → 登录项）。</li><li><strong>LaunchAgents</strong> — <code>~/Library/LaunchAgents</code> 中的用户级 plist 任务。</li><li><strong>LaunchDaemons</strong> — 系统级任务（修改需管理员权限）。</li></ul><h2>LaunchManager 图形界面</h2><p>在 <strong>Login Items</strong> 视图查看登录应用，与用户级 launchd 任务并列浏览。在 <strong>User Agents</strong> 中查找 <code>RunAtLoad</code> 条目并卸载或禁用，无需手写 XML。</p><p>相关：<a href="/zh/launchd-manager">launchd 管理</a> · <a href="/zh/blog/launchagent-vs-login-items">LaunchAgent 与 Login Items 区别</a></p></div></section>
+    <section class="section-alt"><div class="container"><div class="seo-cta"><h2 data-i18n="seo.cta.title">在 LaunchManager 里可视化完成</h2><p data-i18n="seo.cta.desc">浏览启动项、launchd 任务、端口与 Docker，在同一原生应用中加载、停止或解决冲突。</p><a class="btn btn-primary btn-lg" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="seo.cta.btn" data-release-download="">下载 LaunchManager</a></div></div></section>
+  </main>
+  <footer><div class="container"><nav class="footer-topics"><a href="/zh/startup-manager" data-i18n="pillars.startup.title">启动项管理</a><a href="/zh/launchd-manager" data-i18n="pillars.launchd.title">launchd 管理</a><a href="/zh/port-manager" data-i18n="pillars.ports.title">端口管理</a><a href="/zh/docker-ports" data-i18n="pillars.docker.title">Docker 端口</a><a href="/zh/blog" data-i18n="footer.blog">博客</a></nav><nav class="links"><a href="/zh/help" data-i18n="footer.help">帮助</a><a href="/zh/screenshots" data-i18n="footer.screenshots">截图</a><a href="https://github.com/Sean10000/LaunchManager" data-i18n="footer.github">GitHub</a></nav><p data-i18n="footer.copy">© Sean10000 · LaunchManager 与 Apple Inc. 无关联。</p></div></footer>
+  <script src="/assets/js/i18n-data.js"></script>
+  <script src="/assets/js/i18n-seo.js"></script><script src="/assets/js/i18n.js"></script><script src="/assets/js/site.js"></script>
+
+
+</body></html>

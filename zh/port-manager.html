@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>macOS 端口管理工具 — LaunchManager</title>
+  <meta name="description" content="查看 Mac 监听端口、定位端口冲突、找出占用端口的进程。免费的 lsof 图形化替代方案。">
+  <meta property="og:title" content="macOS 端口管理工具 — LaunchManager">
+  <meta property="og:description" content="查看 Mac 监听端口、定位端口冲突、找出占用端口的进程。免费的 lsof 图形化替代方案。">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="/assets/images/services-ports.png">
+  <meta property="og:url" content="https://launchmanager.dev/zh/port-manager">
+  <meta name="theme-color" content="#0a0a0c">
+  <link rel="canonical" href="https://launchmanager.dev/zh/port-manager">
+  <link rel="alternate" hreflang="en" href="https://launchmanager.dev/port-manager">
+  <link rel="alternate" hreflang="zh-Hans" href="https://launchmanager.dev/zh/port-manager">
+  <link rel="alternate" hreflang="x-default" href="https://launchmanager.dev/port-manager">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="icon" href="/assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer="" src="/_vercel/insights/script.js"></script>
+
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US"></head>
+<body data-page="port-manager">
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/zh"><img src="/assets/images/logo.png" alt="" width="28" height="28">LaunchManager</a>
+      <button class="menu-toggle" type="button" aria-label="Menu" id="menu-toggle">☰</button>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/zh#features" data-i18n="nav.features">功能</a></li>
+          <li class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" data-i18n="nav.topics">主题</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="/zh/startup-manager" data-i18n="nav.topic.startup">启动项与 Login Items</a></li>
+              <li><a href="/zh/launchd-manager" data-i18n="nav.topic.launchd">launchd 管理</a></li>
+              <li><a href="/zh/port-manager" aria-current="page" data-i18n="nav.topic.ports">端口管理</a></li>
+              <li><a href="/zh/docker-ports" data-i18n="nav.topic.docker">Docker 端口</a></li>
+            </ul>
+          </li>
+          <li><a href="/zh/blog" data-i18n="nav.blog">博客</a></li>
+          <li><a href="/zh/screenshots" data-i18n="nav.screenshots">截图</a></li>
+          <li><a href="/zh/help" data-i18n="nav.help">帮助</a></li>
+          <li><a href="/zh#install" data-i18n="nav.install">安装</a></li>
+          <li><a href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+        <a class="lang-toggle" id="lang-switch" href="/port-manager" hreflang="en" rel="alternate">EN</a>
+        <a class="btn btn-primary nav-cta-desktop" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="nav.download" data-release-download="">下载</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero container">
+      <h1 data-i18n="port-manager.title">macOS 端口管理</h1>
+      <p class="section-desc" data-i18n="port-manager.lead">查看本机所有 TCP 监听、匹配端口与进程、解决冲突——无需死记 lsof 参数。</p>
+    </section>
+    <section>
+      <div class="container article" data-i18n-html="port-manager.body"><h2>常见问题</h2><p>启动开发服务器时出现 <code>EADDRINUSE</code>。3000、5173 或 8080 端口已被占用——但活动监视器不显示端口，<code>lsof</code> 输出又难读。</p><h2>终端做法</h2><pre><code># 查看 3000 端口
+lsof -nP -iTCP:3000 -sTCP:LISTEN
+
+# 所有 TCP 监听
+lsof -nP -iTCP -sTCP:LISTEN</code></pre><p>在输出中找到 PID，执行 <code>kill &lt;PID&gt;</code>。若是 Docker 代理进程，应停止容器而非误杀代理。</p><h2>LaunchManager 图形界面</h2><p>打开侧边栏 <strong>Services</strong>。每 3 秒刷新本地 TCP 监听，显示进程名、PID，并为 Docker 容器标注镜像与 Compose 项目。可重命名任意行，标签重启后保留。</p><p>相关：<a href="/zh/kill-port">释放 Mac 端口</a> · <a href="/zh/docker-ports">Docker 端口</a></p></div>
+    </section>
+    <section class="section-alt">
+      <div class="container">
+        <div class="seo-cta">
+          <h2 data-i18n="seo.cta.title">在 LaunchManager 里可视化完成</h2>
+          <p data-i18n="seo.cta.desc">浏览启动项、launchd 任务、端口与 Docker，在同一原生应用中加载、停止或解决冲突。</p>
+          <a class="btn btn-primary btn-lg" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="seo.cta.btn" data-release-download="">下载 LaunchManager</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <nav class="footer-topics">
+        <a href="/zh/startup-manager" data-i18n="pillars.startup.title">启动项管理</a>
+        <a href="/zh/launchd-manager" data-i18n="pillars.launchd.title">launchd 管理</a>
+        <a href="/zh/port-manager" data-i18n="pillars.ports.title">端口管理</a>
+        <a href="/zh/docker-ports" data-i18n="pillars.docker.title">Docker 端口</a>
+        <a href="/zh/blog" data-i18n="footer.blog">博客</a>
+      </nav>
+      <nav class="links">
+        <a href="/zh/help" data-i18n="footer.help">帮助</a>
+        <a href="/zh/screenshots" data-i18n="footer.screenshots">截图</a>
+        <a href="https://github.com/Sean10000/LaunchManager" data-i18n="footer.github">GitHub</a>
+        <a href="https://github.com/Sean10000/LaunchManager/releases" data-i18n="footer.releases">发布页</a>
+        <a href="https://github.com/Sean10000/LaunchManager/issues" data-i18n="footer.issues">问题反馈</a>
+      </nav>
+      <p data-i18n-html="footer.built">使用 Swift &amp; SwiftUI 构建 · 感谢 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 协助编程</p>
+      <p style="margin-top: 0.5rem;" data-i18n="footer.copy">© Sean10000 · LaunchManager 与 Apple Inc. 无关联。</p>
+    </div>
+  </footer>
+  <script src="/assets/js/i18n-data.js"></script>
+  <script src="/assets/js/i18n-seo.js"></script>
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/site.js"></script>
+
+
+</body></html>
