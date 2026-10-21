@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LaunchManager — macOS Background Services Control Center</title>
-  <meta name="description" content="Manage startup items, launchd jobs, network ports, and Docker containers on your Mac. One native GUI for everything running in the background. Free, open source.">
-  <meta property="og:title" content="LaunchManager — macOS Background Services Control Center">
-  <meta property="og:description" content="Manage startup items, launchd jobs, network ports, and Docker containers on your Mac. One native GUI for everything running in the background. Free, open source.">
+  <title>LaunchManager — AI creates the jobs. You stay in control.</title>
+  <meta name="description" content="Native macOS app for visually managing launchd tasks, background services, and AI-built automation. Import plists, edit with Form or XML, control what runs. Free and open source.">
+  <meta property="og:title" content="LaunchManager — AI creates the jobs. You stay in control.">
+  <meta property="og:description" content="Native macOS app for visually managing launchd tasks, background services, and AI-built automation. Import plists, edit with Form or XML, control what runs. Free and open source.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/assets/images/home-page.png">
   <meta property="og:url" content="https://launchmanager.dev/">
@@ -13,6 +13,12 @@
   <link rel="alternate" hreflang="en" href="https://launchmanager.dev/">
   <link rel="alternate" hreflang="zh-Hans" href="https://launchmanager.dev/zh">
   <link rel="alternate" hreflang="x-default" href="https://launchmanager.dev/">
+  
+  
+  
+  
+  
+  
   
   
   
@@ -57,7 +63,6 @@
           <li><a href="/templates" data-i18n="nav.templates">Templates</a></li>
           <li><a href="/help" data-i18n="nav.help">Help</a></li>
           <li><a href="/#install" data-i18n="nav.install">Install</a></li>
-          <li><a href="/#compare" data-i18n="nav.compare">Compare</a></li>
           <li><a href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
         <a class="lang-toggle" id="lang-switch" href="/zh" hreflang="zh-Hans" rel="alternate">中文</a>
@@ -74,9 +79,9 @@
         <span class="badge mit" data-i18n="hero.badge.mit">MIT License</span>
         <span class="badge" data-i18n="hero.badge.oss">Open Source</span>
       </div>
-      <h1 data-i18n-html="hero.title">Manage every background service<br>on your Mac</h1>
+      <h1 data-i18n-html="hero.title">AI creates the jobs.<br>You stay in control.</h1>
       <p class="lead" data-i18n="hero.lead">
-        LaunchManager is the control center for macOS background services — startup items, launchd jobs, network ports, and Docker containers — without editing XML or digging through lsof.
+        A native macOS app for visually managing launchd tasks, background services, and the automation you build with AI.
       </p>
       <div class="capability-grid" aria-label="Capabilities">
         <span class="capability-item" data-i18n="capabilities.launchagents">LaunchAgents</span>
@@ -88,7 +93,7 @@
         <span class="capability-item" data-i18n="capabilities.docker">Docker Containers</span>
       </div>
       <p class="hero-value" data-i18n="hero.value">
-        From "why is port 3000 in use?" to "where is this LaunchAgent?" — see what's running, control services, and fix conflicts in one native app. Free and open source.
+        Import a .plist or paste XML from your AI assistant. Inspect what it created, adjust configuration, check logs, and decide what stays active — free and open source.
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary btn-lg" href="https://github.com/Sean10000/LaunchManager/releases/latest" target="_blank" rel="noopener" data-i18n="hero.cta.download" data-release-download="">Download</a>
@@ -127,25 +132,20 @@
 
     <section id="features">
       <div class="container">
-        <h2 data-i18n="features.title">An operations console for your Mac</h2>
+        <h2 data-i18n="features.title">Bring AI-generated jobs into view</h2>
         <p class="section-desc" data-i18n="features.desc">
-          Unlike single-purpose tools, LaunchManager combines launchd management, port scanning, and Docker awareness in one window.
+          Import or paste what your assistant wrote, then browse, edit, and control LaunchAgents and LaunchDaemons in one native window — plus Services and Login Items.
         </p>
         <div class="features">
           <article class="feature-card">
-            <div class="feature-icon">🔌</div>
-            <h3 data-i18n="features.services.title">Services scanner</h3>
-            <p data-i18n="features.services.desc">Scan local TCP listeners every 3 seconds. Docker-aware, with smart labels and persistent custom names.</p>
+            <div class="feature-icon">📥</div>
+            <h3 data-i18n="features.import.title">Import / Paste</h3>
+            <p data-i18n="features.import.desc">Bring in a .plist or paste XML from an AI assistant into user or system agent directories.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">📂</div>
-            <h3 data-i18n="features.browse.title">Browse all scopes</h3>
-            <p data-i18n="features.browse.desc">User Agents, System Agents, and System Daemons in one sidebar.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon">✏️</div>
-            <h3 data-i18n="features.edit.title">Create &amp; edit jobs</h3>
-            <p data-i18n="features.edit.desc">Form-based editing for program path, arguments, and plist fields.</p>
+            <h3 data-i18n="features.browse.title">Browse &amp; edit</h3>
+            <p data-i18n="features.browse.desc">One list for User Agents, System Agents, and LaunchDaemons. Edit with Form or XML — extra keys preserved.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">▶️</div>
@@ -155,12 +155,17 @@
           <article class="feature-card">
             <div class="feature-icon">📋</div>
             <h3 data-i18n="features.logs.title">Log viewer</h3>
-            <p data-i18n="features.logs.desc">File logs and system log output, without leaving the app.</p>
+            <p data-i18n="features.logs.desc">File stdout/stderr and system log (log show) when something fails.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🔌</div>
+            <h3 data-i18n="features.services.title">Services scanner</h3>
+            <p data-i18n="features.services.desc">Host TCP listeners and Docker ports published on your Mac. Create a Launch Agent from a running service.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">🚀</div>
             <h3 data-i18n="features.loginitems.title">Login Items</h3>
-            <p data-i18n="features.loginitems.desc">Review apps set to open at login alongside your launchd jobs.</p>
+            <p data-i18n="features.loginitems.desc">See how launchd differs from macOS Login Items, with a shortcut to System Settings.</p>
           </article>
         </div>
         <p class="text-link-row">
@@ -171,9 +176,9 @@
 
     <section id="scheduling" class="section-alt">
       <div class="container">
-        <h2 data-i18n="scheduling.title">Schedule jobs when you need them</h2>
+        <h2 data-i18n="scheduling.title">Multi-trigger editing in one job</h2>
         <p class="section-desc" data-i18n="scheduling.desc">
-          launchd can run jobs on a timer or at login. LaunchManager lets you set those options in the same form — no separate scheduler app required for basic use.
+          Calendar, interval, and WatchPaths can coexist. Add daily, weekly, monthly, yearly, interval, and path rules in one list — each rule applies independently.
         </p>
         <div class="schedule-types">
           <article class="schedule-type">
@@ -182,15 +187,15 @@
           </article>
           <article class="schedule-type">
             <h3 data-i18n="scheduling.calendar.title">Calendar</h3>
-            <p data-i18n="scheduling.calendar.desc">Run at a set time, like a simple cron job.</p>
+            <p data-i18n="scheduling.calendar.desc">Daily, weekly, monthly, or yearly at a set time.</p>
           </article>
           <article class="schedule-type">
-            <h3 data-i18n="scheduling.login.title">At login / keep alive</h3>
-            <p data-i18n="scheduling.login.desc">Start on boot or restart if a process exits.</p>
+            <h3 data-i18n="scheduling.watch.title">WatchPaths</h3>
+            <p data-i18n="scheduling.watch.desc">Run when files change in a watched directory.</p>
           </article>
         </div>
         <p class="scheduling-note" data-i18n="scheduling.note">
-          For most users, this covers everyday scheduling without a paid launchd GUI.
+          Form edits apply as a change set so unknown keys and custom calendar entries are kept when possible.
         </p>
       </div>
     </section>
@@ -205,7 +210,6 @@
             <h3 data-i18n="install.brew.title">Homebrew</h3>
             <p data-i18n="install.brew.desc">Fast updates via tap. Best for developers already on Homebrew.</p>
             <pre><code>brew tap Sean10000/tap
-brew trust --cask sean10000/tap/launchmanager
 brew install --cask launchmanager</code></pre>
           </article>
           <article class="install-card">
@@ -226,118 +230,6 @@ open LaunchManager.xcodeproj</code></pre>
       </div>
     </section>
 
-    <section id="compare">
-      <div class="container">
-        <h2 data-i18n="compare.title">How it compares</h2>
-        <p class="section-desc" data-i18n="compare.desc">
-          A free option for everyday launchd management. Paid tools add extras like AI or an XML editor.
-        </p>
-        <div class="compare-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Feature</th>
-                <th class="col-highlight">LaunchManager</th>
-                <th>LaunchControl</th>
-                <th>Lingon Pro 10</th>
-                <th>LaunchD Task Scheduler</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-i18n="compare.row.price">Price</td>
-                <td class="col-highlight"><strong data-i18n="compare.lm.price">Free &amp; OSS</strong></td>
-                <td>~$33</td>
-                <td>$23.99</td>
-                <td>$5.00</td>
-              </tr>
-              <tr>
-                <td data-i18n="compare.row.browse">Browse agents &amp; daemons</td>
-                <td class="col-highlight yes">✓</td>
-                <td class="yes">✓</td>
-                <td class="yes">✓</td>
-                <td class="yes">✓</td>
-              </tr>
-              <tr>
-                <td data-i18n="compare.row.gui">Create &amp; edit (GUI)</td>
-                <td class="col-highlight yes">✓</td>
-                <td class="yes">✓</td>
-                <td class="yes">✓</td>
-                <td class="yes">✓</td>
-              </tr>
-              <tr>
-                <td data-i18n="compare.row.schedule">Interval &amp; calendar scheduling</td>
-                <td class="col-highlight yes">✓</td>
-                <td class="yes">✓</td>
-                <td class="yes">✓</td>
-                <td class="yes">✓</td>
-              </tr>
-              <tr>
-                <td data-i18n="compare.row.keepalive">Run at load / keep alive</td>
-                <td class="col-highlight yes">✓</td>
-                <td class="yes">✓</td>
-                <td class="yes">✓</td>
-                <td class="warn" data-i18n="compare.ldts.keepalive">Limited</td>
-              </tr>
-              <tr>
-                <td data-i18n="compare.row.system">System Agent / Daemon support</td>
-                <td class="col-highlight yes">✓</td>
-                <td class="yes">✓</td>
-                <td class="yes" data-i18n="compare.lingon.system">✓ (Pro)</td>
-                <td class="warn" data-i18n="compare.ldts.system">Limited</td>
-              </tr>
-              <tr>
-                <td data-i18n="compare.row.services">Local TCP / port monitoring</td>
-                <td class="col-highlight yes" data-i18n="compare.lm.services">✓ Docker-aware</td>
-                <td class="no">✗</td>
-                <td class="no">✗</td>
-                <td class="no">✗</td>
-              </tr>
-              <tr>
-                <td data-i18n="compare.row.logs">Log viewer</td>
-                <td class="col-highlight" data-i18n="compare.lm.logs">File + system log</td>
-                <td data-i18n="compare.lc.logs">Advanced</td>
-                <td class="yes">✓</td>
-                <td class="yes">✓</td>
-              </tr>
-              <tr>
-                <td data-i18n="compare.row.invalid">Invalid plist detection</td>
-                <td class="col-highlight yes" data-i18n="compare.lm.invalid">✓ inline + delete</td>
-                <td class="no">✗</td>
-                <td class="no">✗</td>
-                <td class="no">✗</td>
-              </tr>
-              <tr>
-                <td data-i18n="compare.row.running">App must stay running</td>
-                <td class="col-highlight yes" data-i18n="compare.lm.running">Not required</td>
-                <td class="yes" data-i18n="compare.lm.running">Not required</td>
-                <td class="warn" data-i18n="compare.lingon.running">Required</td>
-                <td class="yes" data-i18n="compare.lm.running">Not required</td>
-              </tr>
-              <tr>
-                <td data-i18n="compare.row.ai">AI assistant</td>
-                <td class="col-highlight no">✗</td>
-                <td class="yes" data-i18n="compare.lc.ai">7 LLM providers</td>
-                <td class="no">✗</td>
-                <td class="no">✗</td>
-              </tr>
-              <tr>
-                <td data-i18n="compare.row.oss">Open source</td>
-                <td class="col-highlight yes">MIT</td>
-                <td class="no">✗</td>
-                <td class="no">✗</td>
-                <td class="no">✗</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="section-desc" style="margin-top: 1.5rem; font-size: 0.85rem;" data-i18n-html="compare.note">
-          Power users needing an AI assistant or expert XML editor may prefer
-          <a href="https://www.soma-zone.com/LaunchControl/" target="_blank" rel="noopener">LaunchControl</a>.
-        </p>
-      </div>
-    </section>
-
     <section id="faq">
       <div class="container">
         <h2 data-i18n="faq.title">Frequently asked questions</h2>
@@ -345,15 +237,15 @@ open LaunchManager.xcodeproj</code></pre>
         <div class="faq-list">
           <article class="faq-item">
             <h3 data-i18n="faq.q1">What is LaunchManager?</h3>
-            <p data-i18n="faq.a1">A native macOS control center for background services.</p>
+            <p data-i18n="faq.a1">A native macOS app for visually managing launchd tasks and the automation you build with AI.</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.q5">Can I import plists from an AI assistant?</h3>
+            <p data-i18n="faq.a5">Yes. Import a .plist or paste XML from the toolbar, then edit with Form or XML and load/start/stop from the list.</p>
           </article>
           <article class="faq-item">
             <h3 data-i18n="faq.q2">Do jobs keep running after I quit the app?</h3>
             <p data-i18n="faq.a2">Yes. launchd runs loaded jobs. LaunchManager is only for setup and control.</p>
-          </article>
-          <article class="faq-item">
-            <h3 data-i18n="faq.q5">How is this different from LaunchControl or Lingon?</h3>
-            <p data-i18n="faq.a5">Those tools focus on launchd. LaunchManager also scans listening ports and shows Login Items in one place — for free.</p>
           </article>
           <article class="faq-item">
             <h3 data-i18n="faq.q4">What do I need to run it?</h3>

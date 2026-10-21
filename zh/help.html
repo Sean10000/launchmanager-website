@@ -25,6 +25,12 @@
   
   
   
+  
+  
+  
+  
+  
+  
   <link rel="icon" href="/assets/images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -62,7 +68,6 @@
           <li><a href="/zh/templates" data-i18n="nav.templates">模板</a></li>
           <li><a href="/zh/help" aria-current="page" data-i18n="nav.help">帮助</a></li>
           <li><a href="/zh#install" data-i18n="nav.install">安装</a></li>
-          <li><a href="/zh#compare" data-i18n="nav.compare">对比</a></li>
           <li><a href="https://github.com/Sean10000/LaunchManager" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
         <a class="lang-toggle" id="lang-switch" href="/help" hreflang="en" rel="alternate">EN</a>
@@ -94,12 +99,13 @@
     <section>
       <div class="container">
         <h2 data-i18n="usage.title">快速上手</h2>
-        <p class="section-desc" data-i18n="usage.desc">四步即可掌控 launchd 任务。</p>
+        <p class="section-desc" data-i18n="usage.desc">五步即可掌控 launchd 任务。</p>
         <ol class="usage-steps">
-          <li data-i18n-html="usage.step1">在侧边栏选择范围：<strong>用户代理</strong>、<strong>系统代理</strong>或<strong>系统守护进程</strong>。</li>
-          <li data-i18n-html="usage.step2">点击 <strong>+</strong> 创建任务，或点击铅笔图标编辑。</li>
-          <li data-i18n-html="usage.step3">使用行内按钮<strong>加载</strong>、<strong>启动</strong>或<strong>停止</strong>任务。</li>
-          <li data-i18n-html="usage.step4">展开行查看详情和日志输出。</li>
+          <li data-i18n-html="usage.step1">在侧边栏选择 <strong>Launch Agents</strong>、<strong>Login Items</strong> 或 <strong>Services</strong>。</li>
+          <li data-i18n-html="usage.step2"><strong>导入</strong> .plist 或<strong>粘贴 XML</strong>（也可从 New 菜单新建）。</li>
+          <li data-i18n-html="usage.step3">用<strong>表单</strong>或 <strong>XML</strong> 编辑；保存后用行内操作<strong>加载 / 启动 / 停止</strong>。</li>
+          <li data-i18n-html="usage.step4">展开行查看详情与日志；需要时从菜单克隆。</li>
+          <li data-i18n-html="usage.step5">在 <strong>Services</strong> 中管理本机监听，或从运行中的进程创建 Launch Agent。</li>
         </ol>
       </div>
     </section>
@@ -110,19 +116,19 @@
         <div class="help-topics">
           <article class="help-topic" id="launchd">
             <h3 data-i18n="help.launchd.title">Launchd 任务</h3>
-            <p data-i18n="help.launchd.desc">在侧边栏浏览用户代理、系统代理和系统守护进程。通过引导表单创建任务，或直接编辑 plist 字段。在列表中加载、启动、停止——系统级操作需要时会提示管理员权限。</p>
+            <p data-i18n="help.launchd.desc">在侧边栏浏览用户 Agent、系统 Agent 与 LaunchDaemon。可导入 .plist 或粘贴 XML（含 AI 助手生成的内容），也可从 New 菜单新建。用表单或 XML 编辑——额外键会保留。在列表中加载、启动、停止；系统级操作需要时会提示管理员权限。</p>
           </article>
           <article class="help-topic" id="services">
             <h3 data-i18n="help.services.title">Services（TCP 监听）</h3>
-            <p data-i18n="help.services.desc">在侧边栏打开 Services，扫描本地 TCP 监听（每 3 秒刷新）。Docker 容器显示名称、镜像和 Compose 项目。任意行可重命名为自定义标签，重启后保留。使用 docker stop 停止容器，避免误杀代理进程。</p>
+            <p data-i18n="help.services.desc">在侧边栏打开 Services，扫描本机 TCP 监听与已发布到 Mac 的 Docker 端口。可重命名、打开 URL、停止进程或容器，或从运行中的本地服务创建 Launch Agent。</p>
           </article>
           <article class="help-topic" id="scheduling">
             <h3 data-i18n="help.scheduling.title">调度</h3>
-            <p data-i18n="help.scheduling.desc">创建或编辑任务时，在同一表单中设置间隔、日历、登录启动或保活选项，满足大多数日常调度需求。</p>
+            <p data-i18n="help.scheduling.desc">在同一列表中添加每日、每周、每月、每年、间隔与 WatchPaths 规则。日历、间隔与 WatchPaths 可并存，各规则独立生效。</p>
           </article>
           <article class="help-topic" id="login-items">
             <h3 data-i18n="help.loginitems.title">Login Items</h3>
-            <p data-i18n="help.loginitems.desc">在 Login Items 视图中查看配置为登录时打开的应用，与 launchd 任务一并浏览。</p>
+            <p data-i18n="help.loginitems.desc">通过 Login Items 说明了解 launchd 与系统登录项的区别，并可快捷打开系统设置。</p>
           </article>
           <article class="help-topic" id="troubleshooting">
             <h3 data-i18n="help.troubleshoot.title">故障排除</h3>
@@ -148,15 +154,15 @@
         <div class="faq-list">
           <article class="faq-item">
             <h3 data-i18n="faq.q1">LaunchManager 是什么？</h3>
-            <p data-i18n="faq.a1">一款原生 macOS 后台服务控制中心——在同一 GUI 中管理 LaunchAgents、LaunchDaemons、Login Items、本地 TCP 端口与 Docker 容器，无需手写 plist 或运行 lsof。</p>
+            <p data-i18n="faq.a1">一款原生 macOS 应用，可视化管理 launchd 任务、后台服务以及你用 AI 搭建的自动化——可导入或粘贴 plist，用表单或 XML 编辑，并控制运行。</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.q5">可以从 AI 助手导入 plist 吗？</h3>
+            <p data-i18n="faq.a5">可以。从工具栏导入 .plist 或粘贴 XML，再用表单或 XML 编辑，并在列表中加载/启动/停止。</p>
           </article>
           <article class="faq-item">
             <h3 data-i18n="faq.q2">退出应用后，任务还会继续运行吗？</h3>
             <p data-i18n="faq.a2">会。已加载的任务由 launchd 负责运行，LaunchManager 仅用于配置和控制。</p>
-          </article>
-          <article class="faq-item">
-            <h3 data-i18n="faq.q3">可以管理系统级任务吗？</h3>
-            <p data-i18n="faq.a3">可以，在需要时会提示输入管理员密码。</p>
           </article>
           <article class="faq-item">
             <h3 data-i18n="faq.q4">运行需要什么环境？</h3>

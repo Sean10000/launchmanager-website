@@ -1,8 +1,8 @@
 window.LM_I18N = {
     en: {
-      "meta.title": "LaunchManager — macOS Background Services Control Center",
+      "meta.title": "LaunchManager — AI creates the jobs. You stay in control.",
       "meta.description":
-        "Manage startup items, launchd jobs, network ports, and Docker containers on your Mac. One native GUI for everything running in the background. Free, open source.",
+        "Native macOS app for visually managing launchd tasks, background services, and AI-built automation. Import plists, edit with Form or XML, control what runs. Free and open source.",
 
       "nav.features": "Features",
       "nav.topics": "Topics",
@@ -16,7 +16,6 @@ window.LM_I18N = {
       "nav.help": "Help",
       "nav.scheduling": "Scheduling",
       "nav.install": "Install",
-      "nav.compare": "Compare",
       "nav.download": "Download",
       "nav.lang": "中文",
 
@@ -24,14 +23,14 @@ window.LM_I18N = {
       "hero.badge.swift": "Swift 5.10",
       "hero.badge.mit": "MIT License",
       "hero.badge.oss": "Open Source",
-      "hero.title": "Manage every background service<br />on your Mac",
+      "hero.title": "AI creates the jobs.<br />You stay in control.",
       "hero.lead":
-        "LaunchManager is the control center for macOS background services — startup items, launchd jobs, network ports, and Docker containers — without editing XML or digging through lsof.",
+        "A native macOS app for visually managing launchd tasks, background services, and the automation you build with AI.",
       "hero.cta.download": "Download",
       "hero.cta.screenshots": "View screenshots",
       "hero.cta.github": "View on GitHub",
       "hero.value":
-        "From \"why is port 3000 in use?\" to \"where is this LaunchAgent?\" — see what's running, control services, and fix conflicts in one native app. Free and open source.",
+        "Import a .plist or paste XML from your AI assistant. Inspect what it created, adjust configuration, check logs, and decide what stays active — free and open source.",
 
       "capabilities.title": "One place for background service management",
       "capabilities.desc": "Launchd is one feature. LaunchManager covers the full picture of what runs on your Mac.",
@@ -54,27 +53,27 @@ window.LM_I18N = {
       "pillars.docker.title": "Docker Ports",
       "pillars.docker.desc": "Map container ports to localhost and stop conflicts with dev servers.",
 
-      "features.title": "An operations console for your Mac",
+      "features.title": "Bring AI-generated jobs into view",
       "features.desc":
-        "Unlike single-purpose tools, LaunchManager combines launchd management, port scanning, and Docker awareness in one window.",
+        "Import or paste what your assistant wrote, then browse, edit, and control LaunchAgents and LaunchDaemons in one native window — plus Services and Login Items.",
+      "features.import.title": "Import / Paste",
+      "features.import.desc":
+        "Bring in a .plist or paste XML from an AI assistant into user or system agent directories.",
       "features.services.title": "Services scanner",
       "features.services.desc":
-        "Scan local TCP listeners every 3 seconds. Docker-aware, with smart labels and persistent custom names.",
-      "features.browse.title": "Browse all scopes",
+        "Host TCP listeners and Docker ports published on your Mac. Create a Launch Agent from a running service.",
+      "features.browse.title": "Browse & edit",
       "features.browse.desc":
-        "User Agents, System Agents, and System Daemons in one sidebar.",
-      "features.edit.title": "Create & edit jobs",
-      "features.edit.desc":
-        "Form-based editing for program path, arguments, and plist fields.",
+        "One list for User Agents, System Agents, and LaunchDaemons. Edit with Form or XML — extra keys preserved.",
       "features.control.title": "Load, start, stop",
       "features.control.desc":
         "Control jobs from the list. Admin prompt when system scope needs it.",
       "features.logs.title": "Log viewer",
       "features.logs.desc":
-        "File logs and system log output, without leaving the app.",
+        "File stdout/stderr and system log (log show) when something fails.",
       "features.loginitems.title": "Login Items",
       "features.loginitems.desc":
-        "Review apps set to open at login alongside your launchd jobs.",
+        "See how launchd differs from macOS Login Items, with a shortcut to System Settings.",
       "features.helpLink": "Need a walkthrough? Open the Help guide →",
 
       "screenshots.title": "See it in action",
@@ -92,16 +91,16 @@ window.LM_I18N = {
       "help.topics.title": "Topics",
       "help.launchd.title": "Launchd jobs",
       "help.launchd.desc":
-        "Browse User Agents, System Agents, and System Daemons from the sidebar. Create jobs with a guided form or edit plist fields directly. Load, start, and stop from the list — system-level changes prompt for admin approval when needed.",
+        "Browse User Agents, System Agents, and LaunchDaemons from the sidebar. Import a .plist or paste XML (including from an AI assistant), or create a job from the New menu. Edit with Form or XML — extra keys are preserved. Load, start, and stop from the list; system-level changes prompt for admin approval when needed.",
       "help.services.title": "Services (TCP listeners)",
       "help.services.desc":
-        "Open Services in the sidebar to scan local TCP listeners (refreshes every 3 seconds). Docker containers show name, image, and Compose project. Rename any row to a custom label — it persists across restarts. Stop Docker containers with docker stop instead of killing proxy processes.",
+        "Open Services in the sidebar to scan host TCP listeners and Docker ports published on your Mac. Rename entries, open URLs, stop processes or containers, or create a Launch Agent from a running local service.",
       "help.scheduling.title": "Scheduling",
       "help.scheduling.desc":
-        "When creating or editing a job, set interval, calendar, run-at-load, or keep-alive options in the same form. This covers most everyday scheduling without a separate tool.",
+        "Add daily, weekly, monthly, yearly, interval, and WatchPaths rules in one list. Calendar, interval, and WatchPaths can coexist — each rule applies independently.",
       "help.loginitems.title": "Login Items",
       "help.loginitems.desc":
-        "Use the Login Items view to see which apps are configured to open at login, alongside the launchd jobs you manage.",
+        "Use the Login Items guide to see how launchd differs from macOS Login Items, with a shortcut to System Settings.",
       "help.troubleshoot.title": "Troubleshooting",
       "help.troubleshoot.item1":
         "Broken or empty plists appear inline in the list — delete them with one click.",
@@ -121,17 +120,17 @@ window.LM_I18N = {
       "screenshots.meta.description":
         "Screenshots of LaunchManager — launchd management, Services port scanning, and Login Items on macOS.",
 
-      "scheduling.title": "Schedule jobs when you need them",
+      "scheduling.title": "Multi-trigger editing in one job",
       "scheduling.desc":
-        "launchd can run jobs on a timer or at login. LaunchManager lets you set those options in the same form — no separate scheduler app required for basic use.",
+        "Calendar, interval, and WatchPaths can coexist. Add daily, weekly, monthly, yearly, interval, and path rules in one list — each rule applies independently.",
       "scheduling.interval.title": "Intervals",
       "scheduling.interval.desc": "Run a script every N seconds.",
       "scheduling.calendar.title": "Calendar",
-      "scheduling.calendar.desc": "Run at a set time, like a simple cron job.",
-      "scheduling.login.title": "At login / keep alive",
-      "scheduling.login.desc": "Start on boot or restart if a process exits.",
+      "scheduling.calendar.desc": "Daily, weekly, monthly, or yearly at a set time.",
+      "scheduling.watch.title": "WatchPaths",
+      "scheduling.watch.desc": "Run when files change in a watched directory.",
       "scheduling.note":
-        "For most users, this covers everyday scheduling without a paid launchd GUI.",
+        "Form edits apply as a change set so unknown keys and custom calendar entries are kept when possible.",
 
       "install.title": "Get LaunchManager",
       "install.desc": "macOS 14 Sonoma or later.",
@@ -148,50 +147,25 @@ window.LM_I18N = {
       "install.src.desc": "Clone the repo and open in Xcode 16. Build and run with ⌘R.",
 
       "usage.title": "Quick start",
-      "usage.desc": "Four steps to take control of your launchd jobs.",
+      "usage.desc": "Five steps to take control of your launchd jobs.",
       "usage.step1":
-        "Pick a scope: <strong>User Agents</strong>, <strong>System Agents</strong>, or <strong>System Daemons</strong>.",
-      "usage.step2": "Click <strong>+</strong> to create a job, or the pencil to edit.",
-      "usage.step3": "Use row actions to <strong>load</strong>, <strong>start</strong>, or <strong>stop</strong>.",
-      "usage.step4": "Expand a row to see details and logs.",
-
-      "compare.title": "How it compares",
-      "compare.desc":
-        "Most tools cover one layer — launchd, ports, or processes. LaunchManager combines them in a free operations console.",
-      "compare.note":
-        'Power users needing an AI assistant or expert XML editor may prefer <a href="https://www.soma-zone.com/LaunchControl/" target="_blank" rel="noopener">LaunchControl</a>.',
-      "compare.row.price": "Price",
-      "compare.row.browse": "Browse agents & daemons",
-      "compare.row.gui": "Create & edit (GUI)",
-      "compare.row.schedule": "Interval & calendar scheduling",
-      "compare.row.keepalive": "Run at load / keep alive",
-      "compare.row.system": "System Agent / Daemon support",
-      "compare.row.services": "Local TCP / port monitoring",
-      "compare.row.logs": "Log viewer",
-      "compare.row.invalid": "Invalid plist detection",
-      "compare.row.running": "App must stay running",
-      "compare.row.ai": "AI assistant",
-      "compare.row.oss": "Open source",
-      "compare.lm.price": "Free & OSS",
-      "compare.lm.services": "✓ Docker-aware",
-      "compare.lm.logs": "File + system log",
-      "compare.lm.invalid": "✓ inline + delete",
-      "compare.lm.running": "Not required",
-      "compare.lc.logs": "Advanced",
-      "compare.lc.ai": "7 LLM providers",
-      "compare.lingon.system": "✓ (Pro)",
-      "compare.lingon.running": "Required",
-      "compare.ldts.system": "Limited",
-      "compare.ldts.keepalive": "Limited",
+        "Select <strong>Launch Agents</strong>, <strong>Login Items</strong>, or <strong>Services</strong> in the sidebar.",
+      "usage.step2":
+        "<strong>Import</strong> a .plist or <strong>Paste XML</strong> (or create a new job from the New menu).",
+      "usage.step3":
+        "Edit with <strong>Form</strong> or <strong>XML</strong>; save and use row actions to <strong>load / start / stop</strong>.",
+      "usage.step4": "Expand a row for details and logs; clone from the row menu when needed.",
+      "usage.step5":
+        "On <strong>Services</strong>, manage local listeners or create a Launch Agent from a running process.",
 
       "faq.title": "Frequently asked questions",
       "faq.desc": "Common questions about LaunchManager.",
       "faq.q1": "What is LaunchManager?",
       "faq.a1":
-        "A native macOS control center for background services — manage LaunchAgents, LaunchDaemons, Login Items, local TCP ports, and Docker containers from one GUI instead of hand-editing plists or running lsof.",
-      "faq.q5": "How is this different from LaunchControl or Lingon?",
+        "A native macOS app for visually managing launchd tasks, background services, and the automation you build with AI — import or paste plists, edit with Form or XML, and control what runs.",
+      "faq.q5": "Can I import plists from an AI assistant?",
       "faq.a5":
-        "Those tools focus on launchd. LaunchManager also scans listening ports (Docker-aware), shows Login Items, and helps answer \"what's running on my Mac?\" in one place — for free.",
+        "Yes. Import a .plist or paste XML from the toolbar, then edit with Form or XML and load/start/stop from the list.",
       "faq.q2": "Do jobs keep running after I quit the app?",
       "faq.a2":
         "Yes. launchd runs loaded jobs. LaunchManager is only for setup and control.",
@@ -258,9 +232,9 @@ window.LM_I18N = {
     },
 
     zh: {
-      "meta.title": "LaunchManager — macOS 后台服务控制中心",
+      "meta.title": "LaunchManager — AI 创建任务，你掌握运行。",
       "meta.description":
-        "管理 Mac 启动项、launchd 任务、网络端口与 Docker 容器。一个原生 GUI 掌控所有后台服务。免费开源。",
+        "原生 macOS 应用，可视化管理 launchd 任务、后台服务与 AI 创建的自动化。导入 plist、用表单或 XML 编辑、控制运行。免费开源。",
 
       "nav.features": "功能",
       "nav.topics": "主题",
@@ -274,7 +248,6 @@ window.LM_I18N = {
       "nav.help": "帮助",
       "nav.scheduling": "调度",
       "nav.install": "安装",
-      "nav.compare": "对比",
       "nav.download": "下载",
       "nav.lang": "EN",
 
@@ -282,14 +255,14 @@ window.LM_I18N = {
       "hero.badge.swift": "Swift 5.10",
       "hero.badge.mit": "MIT 许可",
       "hero.badge.oss": "开源",
-      "hero.title": "管理 Mac 上<br />所有后台服务",
+      "hero.title": "AI 创建任务。<br />你掌握运行。",
       "hero.lead":
-        "LaunchManager 是 macOS 后台服务控制中心——启动项、launchd 任务、网络端口与 Docker 容器，无需手写 XML 或翻查 lsof。",
+        "原生 macOS 应用，可视化管理 launchd 任务、后台服务，以及你用 AI 搭建的自动化。",
       "hero.cta.download": "下载",
       "hero.cta.screenshots": "查看截图",
       "hero.cta.github": "在 GitHub 查看",
       "hero.value":
-        "从「3000 端口被谁占了？」到「这个 LaunchAgent 在哪？」——在一个原生应用里查看运行状态、控制服务、解决冲突。免费开源。",
+        "导入 .plist，或粘贴 AI 助手给出的 XML。查看它创建了什么、调整配置、检查日志，决定哪些继续运行——免费开源。",
 
       "capabilities.title": "后台服务管理，一站搞定",
       "capabilities.desc": "launchd 只是其中一环。LaunchManager 覆盖 Mac 上后台运行的全貌。",
@@ -312,20 +285,21 @@ window.LM_I18N = {
       "pillars.docker.title": "Docker 端口",
       "pillars.docker.desc": "查看容器端口映射，避免与本地开发服务冲突。",
 
-      "features.title": "Mac 后台运维控制台",
-      "features.desc": "不同于单一用途工具，LaunchManager 将 launchd 管理、端口扫描与 Docker 感知整合在同一窗口。",
+      "features.title": "把 AI 生成的任务收进视野",
+      "features.desc":
+        "导入或粘贴助手写出的内容，然后在同一原生窗口中浏览、编辑并控制 LaunchAgents 与 LaunchDaemons——另含 Services 与 Login Items。",
+      "features.import.title": "导入 / 粘贴",
+      "features.import.desc": "导入 .plist，或粘贴 AI 助手给出的 XML，写入用户或系统 Agent 目录。",
       "features.services.title": "Services 扫描",
-      "features.services.desc": "每 3 秒扫描本地 TCP 监听，Docker 感知，智能标注，自定义名称持久保存。",
-      "features.browse.title": "浏览所有范围",
-      "features.browse.desc": "侧边栏统一查看用户代理、系统代理和系统守护进程。",
-      "features.edit.title": "创建与编辑任务",
-      "features.edit.desc": "表单化编辑程序路径、启动参数和 plist 字段。",
+      "features.services.desc": "本机 TCP 监听与已发布到 Mac 的 Docker 端口；可从运行中的服务创建 Launch Agent。",
+      "features.browse.title": "浏览与编辑",
+      "features.browse.desc": "统一查看用户 Agent、系统 Agent 与 LaunchDaemon；用表单或 XML 编辑，额外键会保留。",
       "features.control.title": "加载、启动、停止",
       "features.control.desc": "在列表中直接控制任务；系统级操作需要时会提示管理员权限。",
       "features.logs.title": "日志查看",
-      "features.logs.desc": "查看文件日志和系统日志，无需离开应用。",
+      "features.logs.desc": "文件 stdout/stderr 与系统日志（log show），出问题时可查看。",
       "features.loginitems.title": "Login Items",
-      "features.loginitems.desc": "查看登录时自动打开的应用，与 launchd 任务一并管理。",
+      "features.loginitems.desc": "说明 launchd 与系统登录项的区别，并提供打开系统设置的快捷入口。",
       "features.helpLink": "需要操作指引？打开帮助文档 →",
 
       "screenshots.title": "一睹真容",
@@ -343,16 +317,16 @@ window.LM_I18N = {
       "help.topics.title": "主题",
       "help.launchd.title": "Launchd 任务",
       "help.launchd.desc":
-        "在侧边栏浏览用户代理、系统代理和系统守护进程。通过引导表单创建任务，或直接编辑 plist 字段。在列表中加载、启动、停止——系统级操作需要时会提示管理员权限。",
+        "在侧边栏浏览用户 Agent、系统 Agent 与 LaunchDaemon。可导入 .plist 或粘贴 XML（含 AI 助手生成的内容），也可从 New 菜单新建。用表单或 XML 编辑——额外键会保留。在列表中加载、启动、停止；系统级操作需要时会提示管理员权限。",
       "help.services.title": "Services（TCP 监听）",
       "help.services.desc":
-        "在侧边栏打开 Services，扫描本地 TCP 监听（每 3 秒刷新）。Docker 容器显示名称、镜像和 Compose 项目。任意行可重命名为自定义标签，重启后保留。使用 docker stop 停止容器，避免误杀代理进程。",
+        "在侧边栏打开 Services，扫描本机 TCP 监听与已发布到 Mac 的 Docker 端口。可重命名、打开 URL、停止进程或容器，或从运行中的本地服务创建 Launch Agent。",
       "help.scheduling.title": "调度",
       "help.scheduling.desc":
-        "创建或编辑任务时，在同一表单中设置间隔、日历、登录启动或保活选项，满足大多数日常调度需求。",
+        "在同一列表中添加每日、每周、每月、每年、间隔与 WatchPaths 规则。日历、间隔与 WatchPaths 可并存，各规则独立生效。",
       "help.loginitems.title": "Login Items",
       "help.loginitems.desc":
-        "在 Login Items 视图中查看配置为登录时打开的应用，与 launchd 任务一并浏览。",
+        "通过 Login Items 说明了解 launchd 与系统登录项的区别，并可快捷打开系统设置。",
       "help.troubleshoot.title": "故障排除",
       "help.troubleshoot.item1": "损坏或空的 plist 会在列表中行内提示，支持一键删除。",
       "help.troubleshoot.item2": "若 Docker 操作失败，请确认 Docker Desktop 或 Colima 正在运行。应用会搜索常见安装路径并回退到 PATH。",
@@ -369,16 +343,16 @@ window.LM_I18N = {
       "screenshots.meta.description":
         "LaunchManager 界面截图——launchd 管理、Services 端口扫描与 Login Items。",
 
-      "scheduling.title": "需要时再配置调度",
+      "scheduling.title": "多触发规则，同一任务",
       "scheduling.desc":
-        "launchd 支持按时间或登录时运行任务。LaunchManager 在同一表单中即可设置这些选项——基础调度无需另装付费工具。",
+        "日历、间隔与 WatchPaths 可并存。在同一列表中添加每日、每周、每月、每年、间隔与路径规则——各规则独立生效。",
       "scheduling.interval.title": "间隔执行",
       "scheduling.interval.desc": "每隔 N 秒运行一次脚本。",
       "scheduling.calendar.title": "日历调度",
-      "scheduling.calendar.desc": "在指定时间运行，类似简单的 cron 任务。",
-      "scheduling.login.title": "登录启动 / 保活",
-      "scheduling.login.desc": "开机启动，或在进程退出后自动重启。",
-      "scheduling.note": "对大多数用户来说，这已足够满足日常调度，无需付费 launchd 图形工具。",
+      "scheduling.calendar.desc": "按日、周、月或年在指定时间运行。",
+      "scheduling.watch.title": "WatchPaths",
+      "scheduling.watch.desc": "当监听目录中的文件发生变化时运行。",
+      "scheduling.note": "表单编辑以变更集方式写回，尽量保留未知键与自定义日历条目。",
 
       "install.title": "获取 LaunchManager",
       "install.desc": "需要 macOS 14 Sonoma 或更高版本。",
@@ -395,50 +369,25 @@ window.LM_I18N = {
       "install.src.desc": "克隆仓库，用 Xcode 16 打开，按 ⌘R 构建运行。",
 
       "usage.title": "快速上手",
-      "usage.desc": "四步即可掌控 launchd 任务。",
+      "usage.desc": "五步即可掌控 launchd 任务。",
       "usage.step1":
-        "在侧边栏选择范围：<strong>用户代理</strong>、<strong>系统代理</strong>或<strong>系统守护进程</strong>。",
-      "usage.step2": "点击 <strong>+</strong> 创建任务，或点击铅笔图标编辑。",
-      "usage.step3": "使用行内按钮<strong>加载</strong>、<strong>启动</strong>或<strong>停止</strong>任务。",
-      "usage.step4": "展开行查看详情和日志输出。",
-
-      "compare.title": "与其他工具对比",
-      "compare.desc":
-        "多数工具只覆盖一层——launchd、端口或进程。LaunchManager 在免费的运维控制台中把它们整合在一起。",
-      "compare.note":
-        '需要 AI 助手或 XML 专家编辑的进阶用户，可考虑 <a href="https://www.soma-zone.com/LaunchControl/" target="_blank" rel="noopener">LaunchControl</a>。',
-      "compare.row.price": "价格",
-      "compare.row.browse": "浏览代理与守护进程",
-      "compare.row.gui": "图形界面创建与编辑",
-      "compare.row.schedule": "间隔与日历调度",
-      "compare.row.keepalive": "登录启动 / 保活",
-      "compare.row.system": "系统代理 / 守护进程支持",
-      "compare.row.services": "本地 TCP / 端口监控",
-      "compare.row.logs": "日志查看",
-      "compare.row.invalid": "无效 plist 检测",
-      "compare.row.running": "应用需保持运行",
-      "compare.row.ai": "AI 助手",
-      "compare.row.oss": "开源",
-      "compare.lm.price": "免费开源",
-      "compare.lm.services": "✓ Docker 感知",
-      "compare.lm.logs": "文件 + 系统日志",
-      "compare.lm.invalid": "✓ 行内提示 + 删除",
-      "compare.lm.running": "不需要",
-      "compare.lc.logs": "高级",
-      "compare.lc.ai": "7 种 LLM",
-      "compare.lingon.system": "✓（Pro）",
-      "compare.lingon.running": "需要",
-      "compare.ldts.system": "有限",
-      "compare.ldts.keepalive": "有限",
+        "在侧边栏选择 <strong>Launch Agents</strong>、<strong>Login Items</strong> 或 <strong>Services</strong>。",
+      "usage.step2":
+        "<strong>导入</strong> .plist 或<strong>粘贴 XML</strong>（也可从 New 菜单新建）。",
+      "usage.step3":
+        "用<strong>表单</strong>或 <strong>XML</strong> 编辑；保存后用行内操作<strong>加载 / 启动 / 停止</strong>。",
+      "usage.step4": "展开行查看详情与日志；需要时从菜单克隆。",
+      "usage.step5":
+        "在 <strong>Services</strong> 中管理本机监听，或从运行中的进程创建 Launch Agent。",
 
       "faq.title": "常见问题",
       "faq.desc": "关于 LaunchManager 的常见问题。",
       "faq.q1": "LaunchManager 是什么？",
       "faq.a1":
-        "一款原生 macOS 后台服务控制中心——在同一 GUI 中管理 LaunchAgents、LaunchDaemons、Login Items、本地 TCP 端口与 Docker 容器，无需手写 plist 或运行 lsof。",
-      "faq.q5": "和 LaunchControl、Lingon 有什么不同？",
+        "一款原生 macOS 应用，可视化管理 launchd 任务、后台服务以及你用 AI 搭建的自动化——可导入或粘贴 plist，用表单或 XML 编辑，并控制运行。",
+      "faq.q5": "可以从 AI 助手导入 plist 吗？",
       "faq.a5":
-        "那些工具专注 launchd。LaunchManager 还扫描监听端口（Docker 感知）、显示 Login Items，免费帮你回答「Mac 上到底在跑什么？」。",
+        "可以。从工具栏导入 .plist 或粘贴 XML，再用表单或 XML 编辑，并在列表中加载/启动/停止。",
       "faq.q2": "退出应用后，任务还会继续运行吗？",
       "faq.a2": "会。已加载的任务由 launchd 负责运行，LaunchManager 仅用于配置和控制。",
       "faq.q3": "可以管理系统级任务吗？",
